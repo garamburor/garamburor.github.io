@@ -1,0 +1,71 @@
+/* Import font */
+@font-face {
+    font-family: "Lexend";
+    src: url("Lexend-VariableFont_wght.ttf");
+  }
+
+html,
+body { 
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0; 
+}
+
+canvas {
+    position: relative;
+    z-index: -3 !important;
+    mask: radial-gradient(circle, #0000 5%, rgba(0, 0, 0, 0.9) 100%);
+    backdrop-filter:blur(8px);
+}
+
+/* Style for hyperlinks */
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+/* Center horizontally and vertically */
+.center {
+    margin: 0;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    
+  }
+
+/* Style for cover section */
+.cover {
+    display: block;
+    margin: auto;
+    width: 80%;
+    /* background: radial-gradient(rgba(255, 255, 255, 255), rgba(255, 255, 255, 0)); */
+}
+
+/* Style for cover title */
+.title {
+    display: flex;
+    margin: auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Lexend';
+    font-weight: 500;
+}
+
+/* Style for website index links */
+.index {
+    display: flex;
+    margin: auto;
+    width: 60%;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: justify;
+    font-family: 'Lexend';
+    font-weight: 250;
+    font-size: 1em;
+}
