@@ -7,30 +7,42 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/addons/p5.sound.min.js"></script>
     <!-- Load stylesheet -->
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
     <!-- Set char encoding -->
     <meta charset="UTF-8">
     <!-- Get device dimensions -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="coverart.js"></script>
+    <script src="js/coverart.js"></script>
+    <script src="js/wave.js"></script>
+    <script src="js/intro.js"></script>
   </head>
 
   <body>
+    <div class="topnav">
+      <div class="menu">
+        <span><a href="">ABOUT</a></span>
+        <span><a href="">CONTACT</a></span>
+        <span><a href="">WORK</a></span>
+      </div>
+      <div class="home">
+        <span><a href="">HOME</a></span>
+      </div>
+    </div>
+
     <!-- Center content -->
     <div class="center">
       <div class="cover">
         <div class="title">
-          <span>Guillermo Arámburo Rodríguez</span>
+        <span id="intro1"></span>
+        <span id="span1">O</span>
+        <span id="intro2"></span>
         </div>
-        <br />
-        <div class="index">
-          <a href="">About</a>
-          <a href="">Contact</a>
-          <a href="">Works</a>
+        <div class="subtitle" id="subt">
+        
         </div>
       </div>
+      
     </div>
 
   </body>
-  
 </html>
