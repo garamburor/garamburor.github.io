@@ -71,10 +71,8 @@ a {
 }
 
 #span1 {
-    border:0.01px solid transparent;
-    position: sticky;
+    position: fixed;
     color: #fffff7;
-    font-size: min(13vw, 128px);
 }
 
 /* Style for website index links */
