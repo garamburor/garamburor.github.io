@@ -14,6 +14,8 @@ let step = 30;
 /* Intro animation */
 let counter = 0;
 let j = 0;
+let child = 0
+let parent = 0;
 
 // p5js setup
 function setup() {
@@ -66,30 +68,42 @@ function textChange() {
     if (counter >= fps) {
       switch(j) {
         case 0: // Motif intro
-          var el = document.getElementById('span1');
-          var rect = el.getBoundingClientRect();
-          canvas.position(width * 0.5, rect.top + r * 0.88);
           document.getElementById("intro1").textContent = '';
           document.getElementById("intro2").textContent = "";
           document.getElementById("subt").textContent = '';
+          child = document.getElementById("span1").getBoundingClientRect();
+          parent = document.getElementById("title").getBoundingClientRect();
+          document.getElementById("span1").left = parent.width * 0.5 - child.width * 0.5;
           windowResized();
           break;
         case 1: // greeting
           document.getElementById("intro1").textContent = 'H';
           document.getElementById("intro2").textContent = "LA";
           document.getElementById("subt").textContent = '';
+          document.getElementById("intro1").style.width = '12%';
+          document.getElementById("intro2").style.width = '12%';
+          child = document.getElementById("span1").getBoundingClientRect();
+          parent = document.getElementById("title").getBoundingClientRect();
+          child.left = parent.width * 0.5 - child.width * 0.5;
           windowResized();
           break;
         case 2: // I'm
           document.getElementById("intro1").textContent = 'S';
           document.getElementById("intro2").textContent = "Y";
           document.getElementById("subt").textContent = '';
+          document.getElementById("intro1").style.width = '10%';
+          document.getElementById("intro2").style.width = '10%';
+          child = document.getElementById("span1").getBoundingClientRect();
+          parent = document.getElementById("title").getBoundingClientRect();
+          document.getElementById("span1").left = parent.width * 0.5 - child.width * 0.5;
           windowResized();
           break;
         case 3: // Cover
           document.getElementById('span1').style.position = "sticky";
           document.getElementById("intro1").textContent = 'GUILLERM';
           document.getElementById("intro2").textContent = "";
+          document.getElementById("intro1").style.width = 'auto';
+          document.getElementById("intro2").style.width = 'auto';
           document.getElementById("subt").style.opacity = 0;
           document.getElementById("subt").textContent = 'ARAMBURO RODRIGUEZ';
           windowResized();
@@ -103,14 +117,14 @@ function textChange() {
 
     if (j < 4) {
       textFadeInNOut();
-    }
+    } // Final fade in
     else if (j < 5) {
       document.getElementById("intro1").style.opacity = 1. - 1./Math.exp(7 * counter/fps);
       document.getElementById("intro2").style.opacity = 1. - 1./Math.exp(7 * counter/fps);
       document.getElementById("subt").style.opacity = 1. - 1./Math.exp(4 * counter/fps);
-    }
+    } // End animation
     else {
-      clearInterval(id1); // fix
+      clearInterval(id1);
     }
     
     counter += 1; 
