@@ -13,13 +13,10 @@ body {
     background-color: #fffff7;
 }
 
-/*
-canvas {
-    position: relative;
-    z-index: -3 !important;
-    mask: radial-gradient(circle, #0000 5%, rgba(0, 0, 0, 0.9) 100%);
-    backdrop-filter:blur(8px);
-} */
+.alphas {
+    display: inline-block;
+    width:15%;
+}
 
 /* Style for hyperlinks */
 a {
@@ -71,8 +68,9 @@ a {
 }
 
 #span1 {
-    position: fixed;
+    /* position: fixed; */
     color: #fffff7;
+    text-align: center;
 }
 
 /* Style for website index links */
