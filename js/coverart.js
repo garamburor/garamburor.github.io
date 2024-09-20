@@ -55,86 +55,81 @@ function sphereAnim() {
 
 /* Adjust to window size  dynamically */
 function windowResized() {
-    // make sure position is correct
-    //canvas.position(-34,3.25);
+    // Get element that holds O in title
     var el = document.getElementById('span1');
+    // Get dimensions
     const rect = el.getBoundingClientRect();
+    // Compute radius of logo based on font size of O
     r = 44 / 128 * parseInt(window.getComputedStyle(el).fontSize);
-    resizeCanvas(2*r, 2*r);
-    canvas.position(rect.left + r * 0.14, rect.top + r * 0.88);
+    resizeCanvas(3*r, 3*r);
+    translate(1.5*r, 1.5*r);
+    // Make Logo follow the O position
+    canvas.position(rect.left - r * 0.38, rect.top + r * 0.4);
 }
 
 function textChange() {
-    if (counter >= fps) {
-      switch(j) {
-        case 0: // Motif intro
-          document.getElementById("intro1").textContent = '';
-          document.getElementById("intro2").textContent = "";
-          document.getElementById("subt").textContent = '';
-          child = document.getElementById("span1").getBoundingClientRect();
-          parent = document.getElementById("title").getBoundingClientRect();
-          document.getElementById("span1").left = parent.width * 0.5 - child.width * 0.5;
-          windowResized();
-          break;
-        case 1: // greeting
-          document.getElementById("intro1").textContent = 'H';
-          document.getElementById("intro2").textContent = "LA";
-          document.getElementById("subt").textContent = '';
-          document.getElementById("intro1").style.width = '12%';
-          document.getElementById("intro2").style.width = '12%';
-          child = document.getElementById("span1").getBoundingClientRect();
-          parent = document.getElementById("title").getBoundingClientRect();
-          child.left = parent.width * 0.5 - child.width * 0.5;
-          windowResized();
-          break;
-        case 2: // I'm
-          document.getElementById("intro1").textContent = 'S';
-          document.getElementById("intro2").textContent = "Y";
-          document.getElementById("subt").textContent = '';
-          document.getElementById("intro1").style.width = '10%';
-          document.getElementById("intro2").style.width = '10%';
-          child = document.getElementById("span1").getBoundingClientRect();
-          parent = document.getElementById("title").getBoundingClientRect();
-          document.getElementById("span1").left = parent.width * 0.5 - child.width * 0.5;
-          windowResized();
-          break;
-        case 3: // Cover
-          document.getElementById('span1').style.position = "sticky";
-          document.getElementById("intro1").textContent = 'GUILLERM';
-          document.getElementById("intro2").textContent = "";
-          document.getElementById("intro1").style.width = 'auto';
-          document.getElementById("intro2").style.width = 'auto';
-          document.getElementById("subt").style.opacity = 0;
-          document.getElementById("subt").textContent = 'ARAMBURO RODRIGUEZ';
-          windowResized();
-          break;
-        default:
-          break;
-      }
-      j += 1;
-      counter = 0;
-    }
-
-    if (j < 4) {
-      textFadeInNOut();
-    } // Final fade in
-    else if (j < 5) {
-      document.getElementById("intro1").style.opacity = 1. - 1./Math.exp(7 * counter/fps);
-      document.getElementById("intro2").style.opacity = 1. - 1./Math.exp(7 * counter/fps);
-      document.getElementById("subt").style.opacity = 1. - 1./Math.exp(4 * counter/fps);
-    } // End animation
-    else {
+  switch(j) {
+    case 0: // greeting
+      document.getElementById("intro1").classList.toggle('hi');
+      document.getElementById("intro2").classList.toggle('hi');
+      // Set new title
+      document.getElementById("intro1").textContent = 'H';
+      document.getElementById("intro2").textContent = "LA";
+      // Adjust centering
+      document.getElementById("intro1").style.width = '12%';
+      document.getElementById("intro2").style.width = '12%';
+      child = document.getElementById("span1").getBoundingClientRect();
+      parent = document.getElementById("title").getBoundingClientRect();
+      child.left = parent.width * 0.5 - child.width * 0.5;
+      windowResized();
+      break;
+    case 1: // I'm
+      // Set new title
+      document.getElementById("intro1").textContent = 'S';
+      document.getElementById("intro2").textContent = "Y";
+      // Adjust centering
+      document.getElementById("intro1").style.width = '10%';
+      document.getElementById("intro2").style.width = '10%';
+      child = document.getElementById("span1").getBoundingClientRect();
+      parent = document.getElementById("title").getBoundingClientRect();
+      document.getElementById("span1").left = parent.width * 0.5 - child.width * 0.5;
+      windowResized();
+      break;
+    case 2: // Cover
+      steadyCover();
       clearInterval(id1);
-    }
-    
-    counter += 1; 
+      break;
+    default:
+      break;
+  }
+  j += 1;
 }
 
-function textFadeInNOut() {
-  document.getElementById("intro1").style.opacity = Math.tanh(2 * Math.sin(Math.PI * counter/fps));
-  document.getElementById("intro2").style.opacity = Math.tanh(2 * Math.sin(Math.PI * counter/fps));
+// Hover effect for navigation menu
+function menuHover(id) {
+  let text = document.getElementById(id).textContent;
+  let splitText = text.split("O");
+  document.getElementById("subt").classList.remove("fade");
+  document.getElementById("intro1").textContent = splitText[0];
+  document.getElementById("intro2").textContent = splitText[1];
+  document.getElementById("intro1").style.width = 'auto';
+  document.getElementById("intro2").style.width = 'auto';
+  windowResized();
 }
 
+// Steady state of home page
+function steadyCover() {
+  document.getElementById("subt").classList.add("fade");
+  document.getElementById('span1').style.position = "sticky";
+  document.getElementById("intro1").textContent = 'GUILLERM';
+  document.getElementById("intro2").textContent = "";
+  document.getElementById("intro1").style.width = 'auto';
+  document.getElementById("intro2").style.width = 'auto';
+  document.getElementById("subt").textContent = 'ARAMBURO RODRIGUEZ';
+  windowResized();
+}
+
+// Intro animation
 let id1 = null;
 clearInterval(id1);
-id1 = setInterval(textChange, 1000/fps);
+id1 = setInterval(textChange, 900);
