@@ -14,18 +14,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="js/coverart.js"></script>
     <script src="js/wave.js"></script>
-    <script src="js/intro.js"></script>
   </head>
 
   <body>
-    <div class="topnav">
-      <div class="menu">
-        <span><a id="bout" onmousemove="menuHover(this.id)" onmouseout="steadyCover()" href="">ABOUT</a></span>
-        <span><a id="tact" onmousemove="menuHover(this.id)" onmouseout="steadyCover()" href="">CONTACT</a></span>
-        <span><a id="wrk" onmousemove="menuHover(this.id)" onmouseout="steadyCover()" href="">WORK</a></span>
+    <div class="topnav" id="nav">
+      <div class="menu" id="menu">
+        <span><a id="bout" onmouseenter="menuHover(this.id)" onmouseout="steadyCover()" href="">ABOUT</a></span>
+        <span><a id="tact" onmouseenter="menuHover(this.id)" onmouseout="steadyCover()" href="">CONTACT</a></span>
+        <span><a id="wrk" onmouseenter="menuHover(this.id)" onmouseout="steadyCover()" href="">WORK</a></span>
       </div>
       <div class="home">
-        <span><a id="hme" onmousemove="menuHover(this.id)" onmouseout="steadyCover()" href="">HOME</a></span>
+        <span><a id="hme" onmouseenter="menuHover(this.id)" onmouseout="steadyCover()" href=""></a></span>
       </div>
     </div>
 
@@ -34,7 +33,7 @@
       <div class="cover">
         <div class="title" id="title">
           <span class="alphas" id="intro1"></span>
-          <span id="span1">O</span>
+          <span id="logo"></span>
           <span class="alphas" id="intro2"></span>
         </div>
         <div class="subtitle" id="subt">
