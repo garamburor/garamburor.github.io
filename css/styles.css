@@ -17,17 +17,49 @@ body {
     display: inline-block;
     width:15%;
     transition: all 900ms;
-    opacity: 0;
+    opacity: 1;
+    overflow: hidden;
 }
 
-#intro1.hi {
-    content: "H";
+.fade {
     opacity: 1;
 }
 
-#intro2.hi {
-    content: "OLA";
-    opacity: 1;
+/* Opacity animation for intro */
+@keyframes fadeInNOut {
+    0%   {opacity: 0;}
+    25%  {opacity: 0.75;}
+    50%  {opacity: 1;}
+    75%  {opacity: 0.75;}
+    100% {opacity: 0;}
+}
+
+@keyframes fadeIn {
+    from   {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeOut {
+    from   {opacity: 1;}
+    to {opacity: 0;}
+}
+
+@keyframes widthOut {
+    from   {width: 0%;}
+    to {width: 100%;}
+}
+
+@keyframes widthIn {
+    from   {width: 100%;}
+    to {width: 0%;}
+}
+
+/* Class to to fade-in-n-out */
+.hi {
+    content: "";
+    animation-name: fadeInNOut;
+    animation-duration: 900ms;
+    animation-iteration-count: 2;
 }
 
 /* Style for hyperlinks */
@@ -40,7 +72,7 @@ a {
 .center {
     margin: 0;
     position: relative;
-    top:40%;
+    top: 40%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -58,8 +90,9 @@ a {
 /* Style for cover title */
 .title {
     display: flex;
-    margin: auto;
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -77,26 +110,24 @@ a {
     font-family: 'Lexend';
     font-weight: 400;
     color: blue;
-    transition: opacity 0.4s;
+    transition: opacity 0.6s;
     opacity: 0;
 }
 
-#subt.fade {
-    opacity: 1;
-}
-
-#span1 {
+#logo {
     /* position: fixed; */
-    color: #fffff7;
+    opacity: 1;
     text-align: center;
 }
 
+/* TOP BAR */
 /* Style for website index links */
 .topnav {
     display: block;
     overflow: hidden;
     padding: 15px;
     word-spacing: 15px;
+    transition: all 1s;
 }
 
 .topnav a {
@@ -106,10 +137,13 @@ a {
     color: blue;
 }
 
-.menu { 
-    float: right;
+.home {
+    float: left;
+    opacity: 0;
 }
 
-.home { 
-    float: left;
+.menu { 
+    float: right;
+    opacity: 0;
+    transition: all 1s;
 }
