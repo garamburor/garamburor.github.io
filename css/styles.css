@@ -13,6 +13,19 @@ body {
     background-color: #fffff7;
 }
 
+.knob {
+    display: inline-block;
+    transition: font-size 900ms;
+    transition-property: font-size, opacity;
+    opacity: 1;
+    position: sticky;
+    overflow: hidden;
+    transform: rotate(0);
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
 .alphas {
     display: inline-block;
     width:15%;
@@ -60,7 +73,6 @@ body {
     50% {width: 0%;}
     100% {width: 100%;}
 }
-
 
 /* Class to to fade-in-n-out */
 .hi {
