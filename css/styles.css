@@ -17,6 +17,7 @@ body {
     display: inline-block;
     width:15%;
     transition: all 900ms;
+    transition-property: font-size, opacity;
     opacity: 1;
     overflow: hidden;
 }
