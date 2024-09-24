@@ -16,7 +16,12 @@ class Wave {
       let amplitude = r * sqrt(1- pow((x/r), 2));
       // Plot each point of the sine with the corresponding phase shift
       let y = amplitude*sin((i - this.angle + this.shift*this.movement)*this.period);
-      vertex(x, y);
+      if (gameMode == 0) {
+        vertex(x, y);
+      }
+      else {
+        ellipse(x, y, 1, 1);
+      }
     }
     endShape(); 
     
