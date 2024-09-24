@@ -17,6 +17,7 @@ let counter = 0;
 let j = 0;
 let id1 = null;
 let id2 = null;
+let id3 = null;
 clearInterval(id1);
 id1 = setInterval(textChange, 900);
 
@@ -88,8 +89,9 @@ function textChange() {
       document.getElementById("intro1").textContent = 'H';
       document.getElementById("intro2").textContent = "LA";
       // Adjust centering
-      document.getElementById("intro1").style.width = '20%';
-      document.getElementById("intro2").style.width = '20%';
+      document.getElementById("intro1").style.width = '12%';
+      document.getElementById("intro2").style.width = '12%';
+      document.getElementById("intro2").style.overflow = 'visible';
       break;
     case 1: // I'm
       // Set new title
@@ -102,6 +104,8 @@ function textChange() {
     case 2: // Cover
       document.getElementById("intro1").classList.remove('hi');
       document.getElementById("intro2").classList.remove('hi');
+      document.getElementById("intro1").style.overflow = 'hidden';
+      document.getElementById("intro2").style.overflow = 'hidden';
       document.getElementById("menu").style.opacity = 1;
       steadyCover();
       clearInterval(id1);
@@ -113,61 +117,33 @@ function textChange() {
 }
 
 // Hover effect for navigation menu
-function menuHover(id) {
-  // Set width to adjust on its own
-  document.getElementById("intro1").style.width = 'auto';
-  document.getElementById("intro2").style.width = 'auto';
-  
-  // Desactivate overflow hidden when not using hover fancy transition
-  // Animation can be simplified use clas toggle width transition, change values
-
+function menuHoverIn(id) {
+  // Don't go to menu if you hover back inside
+  clearInterval(id2);
+  clearInterval(id3);
+  document.getElementById("intro1").style.overflow = 'hidden';
+  document.getElementById("intro2").style.overflow = 'hidden';
   // Obtain text to be set
   let text = document.getElementById(id).textContent;
   // Split where O is
   let splitText = text.split("O");
   // Add text word by word
-  clearInterval(id2);
-  id2 = setInterval( function() {
-    if (hoverState == 0) {
-      document.getElementById("intro1").style.animation = 'fadeOut 1s';
-      document.getElementById("intro2").style.animation = 'fadeOut 1s';
-      document.getElementById("title").style.animation = 'widthIn 1s ease-out';
-      removeByLetter('intro1');
-      removeByLetter('intro2');
-      if (document.getElementById("intro1").textContent == '') {
-        if (document.getElementById("intro2").textContent == '') {hoverState = 1;};
-      }
-    }
-    else {
-      document.getElementById("intro1").style.animation = 'fadeIn 1s';
-      document.getElementById("intro2").style.animation = 'fadeIn 1s';
-      document.getElementById("title").style.animation = 'widthOut 0.5s ease-in';
-      addByLetter('intro1', splitText[0]);
-      addByLetter('intro2', splitText[1]);
-      if (document.getElementById("intro1").textContent == splitText[0]) {
-        if (document.getElementById("intro2").textContent == splitText[1]) {hoverState = 0;
-          clearInterval(id2);
-        };
-      }
-    }}, 40);
+  document.getElementById("title").style.animation = "curtain 1s linear";
+  id2 = setTimeout(function() {
+    document.getElementById("intro1").textContent = splitText[0];
+    document.getElementById("intro2").textContent = splitText[1];
+    document.getElementById("title").style.width = 1;
+  }, 500);
+  
   // Remove subtitle
   document.getElementById("subt").style.opacity = 0;
 }
 
-function addByLetter(id, newText) {
-  let oldText = document.getElementById(id).textContent;
-  // Add letter by letter
-  if(oldText.length < newText.length) {
-    document.getElementById(id).textContent = newText.slice(0, oldText.length + 1); 
-  }
-}
-
-function removeByLetter(id) {
-  let oldText = document.getElementById(id).textContent;
-  if (oldText.length > 0) {
-    oldText = oldText.slice(0,-1);
-    document.getElementById(id).textContent = oldText; 
-  }
+function menuHoverOut() {
+  clearInterval(id2);
+  clearInterval(id3);
+  document.getElementById("title").style.animation = "widthIn 500ms linear";
+  id2 = setTimeout(steadyCover, 490);
 }
 
 /* Steady state of home page */
@@ -175,18 +151,18 @@ function steadyCover() {
   // Make logo adjust to text
   document.getElementById('logo').style.position = "sticky";
   // Update cover text
-  clearInterval(id2);
-  id2 = setInterval( function() { addByLetter("intro1", 'GUILLERM');
-    removeByLetter("intro2");
-    if ( document.getElementById("intro1").textContent == 'GUILLERM') {
-      clearInterval(id2); } }, 40);
-  document.getElementById("intro1").style.animation = 'fadeIn 1s';
-  document.getElementById("intro2").style.animation = 'fadeIn 1s';
-  document.getElementById("title").style.animation = 'widthOut 1s ease-in';
+  document.getElementById("title").style.animation = "widthOut 500ms linear"
+  document.getElementById("intro1").textContent = 'GUILLERM';
+  document.getElementById("intro2").textContent = '';
+  document.getElementById("title").style.width = 1;
   // Update cover width
   document.getElementById("intro1").style.width = 'auto';
   document.getElementById("intro2").style.width = 'auto';
   // Show subtitles
   document.getElementById("subt").style.opacity = 1;
   document.getElementById("subt").textContent = 'ARAMBURO RODRIGUEZ';
+  id3 = setTimeout(function() {
+    document.getElementById("intro1").style.overflow = 'visible';
+    document.getElementById("intro2").style.overflow = 'visible';
+  }, 600);
 }
