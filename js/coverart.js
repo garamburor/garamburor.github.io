@@ -1,4 +1,5 @@
 // frame rate
+let canvas;
 let fps = 35;
 
 /* Sphere animation */
@@ -14,17 +15,24 @@ let step = 30;
 /* Intro animation */
 let counter = 0;
 let j = 0;
-let child = 0
-let parent = 0;
+let id1 = null;
+let id2 = null;
+clearInterval(id1);
+id1 = setInterval(textChange, 900);
+
+/* Intro animation */
+let hoverState = 0;
 
 // p5js setup
 function setup() {
-  // Set canvas size
-  canvas = createCanvas(windowWidth, windowHeight);
+  // Update size of logo based on font size
+  sphereSize();
+  // Set canvas size to diameter of circle
+  canvas = createCanvas(2.1*r, 2.1*r);
+  // Set canvas inside span1
+  canvas.parent('logo');
   // Set frame rate
   frameRate(fps);
-  // Refresh variables that depend on window size
-  windowResized();
   // Set color of strokes
   stroke(0, 0, 255);
   // Set angle with degrees instead of radians
@@ -37,8 +45,9 @@ function setup() {
 
 /* Main loop */
 function draw() {
-  translate(width/2, height/2);
   canvas.clear();
+  // Center drawing in canvas
+  translate(width * 0.5, height * 0.5);
   // Sphere Animation
   sphereAnim();
 }
@@ -46,42 +55,41 @@ function draw() {
 /* Sphere animation loop */
 function sphereAnim() {
   noFill();
-  strokeWeight(1);
+  strokeWeight(2);
   for (let i=0; i<num; i++) {
     waves[i].display();
     waves[i].move();
   }
 }
 
-/* Adjust to window size  dynamically */
-function windowResized() {
-    // Get element that holds O in title
-    var el = document.getElementById('span1');
-    // Get dimensions
-    const rect = el.getBoundingClientRect();
-    // Compute radius of logo based on font size of O
-    r = 44 / 128 * parseInt(window.getComputedStyle(el).fontSize);
-    resizeCanvas(3*r, 3*r);
-    translate(1.5*r, 1.5*r);
-    // Make Logo follow the O position
-    canvas.position(rect.left - r * 0.38, rect.top + r * 0.4);
+/* Update logo size to match font size */
+function sphereSize() {
+  // Get element that holds O in title
+  let el = document.getElementById('logo');
+  const rect = el.getBoundingClientRect();
+  // Compute radius of logo based on font size of O
+  r = 44 / 128 * parseInt(window.getComputedStyle(el).fontSize);
 }
 
+/* Adjust to window size  dynamically */
+function windowResized() {
+  // Update size of logo based on font size
+  sphereSize();
+  resizeCanvas(2.1*r, 2.1*r);
+}
+
+/* Intro text animation seuqence */
 function textChange() {
   switch(j) {
     case 0: // greeting
-      document.getElementById("intro1").classList.toggle('hi');
-      document.getElementById("intro2").classList.toggle('hi');
+      document.getElementById("intro1").classList.add('hi');
+      document.getElementById("intro2").classList.add('hi');
       // Set new title
       document.getElementById("intro1").textContent = 'H';
       document.getElementById("intro2").textContent = "LA";
       // Adjust centering
-      document.getElementById("intro1").style.width = '12%';
-      document.getElementById("intro2").style.width = '12%';
-      child = document.getElementById("span1").getBoundingClientRect();
-      parent = document.getElementById("title").getBoundingClientRect();
-      child.left = parent.width * 0.5 - child.width * 0.5;
-      windowResized();
+      document.getElementById("intro1").style.width = '20%';
+      document.getElementById("intro2").style.width = '20%';
       break;
     case 1: // I'm
       // Set new title
@@ -90,12 +98,11 @@ function textChange() {
       // Adjust centering
       document.getElementById("intro1").style.width = '10%';
       document.getElementById("intro2").style.width = '10%';
-      child = document.getElementById("span1").getBoundingClientRect();
-      parent = document.getElementById("title").getBoundingClientRect();
-      document.getElementById("span1").left = parent.width * 0.5 - child.width * 0.5;
-      windowResized();
       break;
     case 2: // Cover
+      document.getElementById("intro1").classList.remove('hi');
+      document.getElementById("intro2").classList.remove('hi');
+      document.getElementById("menu").style.opacity = 1;
       steadyCover();
       clearInterval(id1);
       break;
@@ -107,29 +114,79 @@ function textChange() {
 
 // Hover effect for navigation menu
 function menuHover(id) {
+  // Set width to adjust on its own
+  document.getElementById("intro1").style.width = 'auto';
+  document.getElementById("intro2").style.width = 'auto';
+  
+  // Desactivate overflow hidden when not using hover fancy transition
+  // Animation can be simplified use clas toggle width transition, change values
+
+  // Obtain text to be set
   let text = document.getElementById(id).textContent;
+  // Split where O is
   let splitText = text.split("O");
-  document.getElementById("subt").classList.remove("fade");
-  document.getElementById("intro1").textContent = splitText[0];
-  document.getElementById("intro2").textContent = splitText[1];
-  document.getElementById("intro1").style.width = 'auto';
-  document.getElementById("intro2").style.width = 'auto';
-  windowResized();
+  // Add text word by word
+  clearInterval(id2);
+  id2 = setInterval( function() {
+    if (hoverState == 0) {
+      document.getElementById("intro1").style.animation = 'fadeOut 1s';
+      document.getElementById("intro2").style.animation = 'fadeOut 1s';
+      document.getElementById("title").style.animation = 'widthIn 1s ease-out';
+      removeByLetter('intro1');
+      removeByLetter('intro2');
+      if (document.getElementById("intro1").textContent == '') {
+        if (document.getElementById("intro2").textContent == '') {hoverState = 1;};
+      }
+    }
+    else {
+      document.getElementById("intro1").style.animation = 'fadeIn 1s';
+      document.getElementById("intro2").style.animation = 'fadeIn 1s';
+      document.getElementById("title").style.animation = 'widthOut 0.5s ease-in';
+      addByLetter('intro1', splitText[0]);
+      addByLetter('intro2', splitText[1]);
+      if (document.getElementById("intro1").textContent == splitText[0]) {
+        if (document.getElementById("intro2").textContent == splitText[1]) {hoverState = 0;
+          clearInterval(id2);
+        };
+      }
+    }}, 40);
+  // Remove subtitle
+  document.getElementById("subt").style.opacity = 0;
 }
 
-// Steady state of home page
+function addByLetter(id, newText) {
+  let oldText = document.getElementById(id).textContent;
+  // Add letter by letter
+  if(oldText.length < newText.length) {
+    document.getElementById(id).textContent = newText.slice(0, oldText.length + 1); 
+  }
+}
+
+function removeByLetter(id) {
+  let oldText = document.getElementById(id).textContent;
+  if (oldText.length > 0) {
+    oldText = oldText.slice(0,-1);
+    document.getElementById(id).textContent = oldText; 
+  }
+}
+
+/* Steady state of home page */
 function steadyCover() {
-  document.getElementById("subt").classList.add("fade");
-  document.getElementById('span1').style.position = "sticky";
-  document.getElementById("intro1").textContent = 'GUILLERM';
-  document.getElementById("intro2").textContent = "";
+  // Make logo adjust to text
+  document.getElementById('logo').style.position = "sticky";
+  // Update cover text
+  clearInterval(id2);
+  id2 = setInterval( function() { addByLetter("intro1", 'GUILLERM');
+    removeByLetter("intro2");
+    if ( document.getElementById("intro1").textContent == 'GUILLERM') {
+      clearInterval(id2); } }, 40);
+  document.getElementById("intro1").style.animation = 'fadeIn 1s';
+  document.getElementById("intro2").style.animation = 'fadeIn 1s';
+  document.getElementById("title").style.animation = 'widthOut 1s ease-in';
+  // Update cover width
   document.getElementById("intro1").style.width = 'auto';
   document.getElementById("intro2").style.width = 'auto';
+  // Show subtitles
+  document.getElementById("subt").style.opacity = 1;
   document.getElementById("subt").textContent = 'ARAMBURO RODRIGUEZ';
-  windowResized();
 }
-
-// Intro animation
-let id1 = null;
-clearInterval(id1);
-id1 = setInterval(textChange, 900);
