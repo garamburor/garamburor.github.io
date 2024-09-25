@@ -45,6 +45,13 @@ function setup() {
   for (let i=0; i<num; i++) {
     waves[i] = new Wave(i*step);
   }
+
+  document.body.addEventListener("mousemove", rotateKnob);
+  document.body.addEventListener("touchmove", rotateKnob);
+  document.body.addEventListener("mouseup", mouseUp);
+  document.body.addEventListener("touchend", mouseUp);
+  document.getElementById("Gknob").addEventListener("mousedown", mouseDown);
+  document.getElementById("Gknob").addEventListener("touchstart", mouseDown);
 }
 
 /* Main loop */
@@ -191,29 +198,31 @@ function steadyCover() {
 
 let clicked = 0;
 function rotateKnob(event) {
-    if (clicked == 1) {
-      let el = document.getElementById("Gknob")
-      const rect = el.getBoundingClientRect();
-      let targetAngle;
-      let str1 = "rotate("
-      let str2 = "deg)"
-      // Calculate angle
-      targetAngle = Math.atan2(event.clientY - rect.top - (rect.bottom - rect.top) * 0.5, event.clientX - rect.left - (rect.right - rect.left) * 0.5);
-      targetAngle = Math.round(targetAngle * 180 / Math.PI);
-      targetAngle += 180;
-      targetAngle = (targetAngle + 90) % 360;
-      if (targetAngle >= 320) {targetAngle = 320};
-      if (targetAngle <= 30) {targetAngle = 30};
-      let fun = (targetAngle - 30) / 320;
-      for (let i=0; i<num; i++) {
-        waves[i].increment = map(fun, 0, 1, 60, 1);
-      }
-      targetAngle -= 270;
-      el.style.transform = str1.concat(targetAngle.toString(), str2);
+  event.preventDefault();
+  if (clicked == 1) {
+    let el = document.getElementById("Gknob")
+    const rect = el.getBoundingClientRect();
+    let targetAngle;
+    let str1 = "rotate("
+    let str2 = "deg)"
+    // Calculate angle
+    targetAngle = Math.atan2(event.clientY - rect.top - (rect.bottom - rect.top) * 0.5, event.clientX - rect.left - (rect.right - rect.left) * 0.5);
+    targetAngle = Math.round(targetAngle * 180 / Math.PI);
+    targetAngle += 180;
+    targetAngle = (targetAngle + 90) % 360;
+    if (targetAngle >= 320) {targetAngle = 320};
+    if (targetAngle <= 30) {targetAngle = 30};
+    let fun = (targetAngle - 30) / 320;
+    for (let i=0; i<num; i++) {
+      waves[i].increment = map(fun, 0, 1, 60, 1);
+    }
+    targetAngle -= 270;
+    el.style.transform = str1.concat(targetAngle.toString(), str2);
   }
 }
 
-function mouseUp() {
+function mouseUp(evt) {
+  evt.preventDefault();
   clicked = 0;
   
   id1 = setTimeout(function() {gameMode = 0;
@@ -226,7 +235,8 @@ function mouseUp() {
   
 }
 
-function mouseDown() {
+function mouseDown(evt) {
+  evt.preventDefault();
   document.getElementById("Gknob").style.transitionProperty = "font-size, opacity";
   gameMode = 1;
   clicked = 1;
