@@ -16,7 +16,7 @@
     <script src="js/wave.js"></script>
   </head>
 
-  <body onmousemove="rotateKnob(event)"  onmouseup="mouseUp()">
+  <body>
     <div class="topnav" id="nav">
       <div class="menu" id="menu">
         <span><a id="bout" onmouseenter="menuHoverIn(this.id)" onmouseout="menuHoverOut()" href="">ABOUT</a></span>
@@ -32,7 +32,7 @@
     <div class="center">
       <div class="cover">
         <div class="title" id="title">
-          <span class="knob" id="Gknob" onmouseup="mouseUp()" onmousedown="mouseDown()"></span><span class="alphas" id="intro1"></span>
+          <span class="knob" id="Gknob" onmouseup="mouseUp()" onmousedown="mouseDown()" onmousemove="rotateKnob(event)"  onmouseup="mouseUp()"></span><span class="alphas" id="intro1"></span>
           <span id="logo"></span>
           <span class="alphas" id="intro2"></span>
         </div>
