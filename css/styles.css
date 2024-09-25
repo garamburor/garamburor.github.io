@@ -21,6 +21,7 @@ body {
     position: sticky;
     overflow: hidden;
     transform: rotate(0);
+    user-select: none; /* Standard syntax */
 }
 
 .alphas {
