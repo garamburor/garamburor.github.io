@@ -2,6 +2,17 @@ let clicked = 0;
 let gameMode = 0;
 let easterEggTimer = null;
 
+function easterEggSetup() {
+  // For easter egg
+  document.body.addEventListener("mousemove", rotateKnob);
+  document.body.addEventListener("touchmove", touchKnob, {passive: false});
+  document.body.addEventListener("mouseup", mouseUp);
+  document.body.addEventListener("touchend", mouseUp);
+  document.body.addEventListener("touchcancel", mouseUp);
+  document.getElementById("Gknob").addEventListener("mousedown", mouseDown);
+  document.getElementById("Gknob").addEventListener("touchstart", mouseDown);
+}
+
 function touchKnob(event) {
   event.preventDefault();
   if (clicked == 1) {
@@ -40,7 +51,7 @@ function rotateKnob(event) {
     targetAngle += 180;
     targetAngle = (targetAngle + 90) % 360;
     if (targetAngle >= 320) {targetAngle = 320};
-    if (targetAngle <= 30) {targetAngle = 30};
+    if (targetAngle <= 40) {targetAngle = 40};
     let fun = (targetAngle - 30) / 320;
     for (let i=0; i<num; i++) {
       waves[i].increment = map(fun, 0, 1, 60, 1);

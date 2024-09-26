@@ -2,13 +2,8 @@
 let counter = 0;
 let j = 0;
 let id1 = null;
-let id2 = null;
-let id3 = null;
 clearInterval(id1);
 id1 = setInterval(textChange, 900);
-
-/* Intro animation */
-let hoverState = 0;
 
 /* Intro text animation seuqence */
 function textChange() {

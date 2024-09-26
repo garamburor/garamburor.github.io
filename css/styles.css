@@ -18,10 +18,12 @@ body {
     transition: font-size 900ms;
     transition-property: font-size, opacity;
     opacity: 1;
-    position: sticky;
+    position: relative;
     overflow: hidden;
     transform: rotate(0);
     user-select: none; /* Standard syntax */
+    word-wrap: normal;
+    word-break: normal;
 }
 
 .alphas {
@@ -56,20 +58,14 @@ body {
     to {opacity: 0;}
 }
 
-@keyframes widthOut {
+@keyframes widthOpen {
     from   {width: 0%;}
     to {width: 100%;}
 }
 
-@keyframes widthIn {
+@keyframes widthClose {
     from   {width: 100%;}
     to {width: 0%;}
-}
-
-@keyframes curtain {
-    0%   {width: 100%;}
-    50% {width: 0%;}
-    100% {width: 100%;}
 }
 
 /* Class to to fade-in-n-out */
