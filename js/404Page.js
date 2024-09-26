@@ -8,14 +8,22 @@ function setup() {
     }
     logoSetup();
     menuSetup();
-    document.getElementsByClassName('home')[0].style.opacity = 1;
-    document.getElementById('subt').style.opacity = 1;
-    document.getElementById('subt').style.justifyContent = 'center';
-    document.getElementById('subt').style.textAlign = 'center';
-    document.getElementById('subt').style.alignItems = 'center';
-    document.getElementById('subt').style.float = 'none';
-    document.getElementById('subt').style.padding = 'auto';
-    document.getElementById('subt').style.width = 1;
+
+    // Add features of home navigation
+    let home = document.getElementsByClassName('home')[0];
+    home.style.opacity = 1;
+    home.addEventListener('click', goHome);
+
+    // Format subtitles
+    let subt =  document.getElementById('subt');
+    subt.style.opacity = 1;
+    subt.style.justifyContent = 'center';
+    subt.style.textAlign = 'center';
+    subt.style.alignItems = 'center';
+    subt.style.float = 'none';
+    subt.style.padding = 'auto';
+    subt.style.width = 1;
+    // Show cover
     steadyCover();
   }
   
@@ -34,13 +42,11 @@ function setup() {
     intro1.textContent = '4';
     intro2.textContent = '4';
     title.style.width = 1;
-  
     // Update cover width
     intro1.style.width = 'auto';
     intro2.style.width = 'auto';
-    
+    // Show subtitles
     document.getElementById('subt').style.opacity = 1;
-
     // Remove previous animation listeners
     title.removeEventListener("animationend", enableSmoothTransition);
     title.removeEventListener("animationend", steadyCover);

@@ -80,6 +80,7 @@ function menuHoverOut() {
   title.addEventListener("animationend", steadyCover);
 }
 
+/* Home click event */
 function goHome(evt) {
   // Don't go to link yet
   evt.preventDefault();
@@ -95,6 +96,7 @@ function goHome(evt) {
   title.addEventListener("animationend", toHome);
 }
 
+/* Needed to send link after transition */
 function toHome() {
   window.location.href="/";
   title.style.animation = "";
