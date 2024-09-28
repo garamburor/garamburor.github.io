@@ -13,9 +13,8 @@ function setup() {
     let home = document.getElementsByClassName('home')[0];
     home.style.opacity = 1;
     home.addEventListener('click', goHome);
-
     // Format subtitles
-    let subt =  document.getElementById('subt');
+    let subt = document.getElementById('subt');
     subt.style.opacity = 1;
     subt.style.justifyContent = 'center';
     subt.style.textAlign = 'center';

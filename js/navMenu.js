@@ -1,4 +1,5 @@
 let titleText = null;
+var lastMove = [0, 0];
 
 // Setup required for nav menu
 function menuSetup(id) {
@@ -12,9 +13,34 @@ function menuSetup(id) {
 function menuEvent(id) {
   document.getElementById(id).addEventListener("mouseenter", menuHoverIn);
   document.getElementById(id).addEventListener("touchstart", menuHoverIn);
-  document.getElementById(id).addEventListener("touchend", function(e) {e.preventDefault(); window.location = e.currentTarget.href });
-  document.getElementById(id).addEventListener("touchcancel", menuHoverOut);
+  document.getElementById(id).addEventListener("touchmove", saveTouch, false);
+  document.getElementById(id).addEventListener("touchend", handleTouchEnd);
+  document.getElementById(id).addEventListener("touchcancel", handleTouchEnd);
   document.getElementById(id).addEventListener("mouseout", menuHoverOut);
+}
+
+/* Store last touch position */
+function saveTouch(evt) {
+  evt.preventDefault();
+  lastMove[0] = evt.touches[0].clientX;
+  lastMove[1] = evt.touches[0].clientY;
+}
+
+/* If finger is inside element, go to link, otherwise cancel */
+function handleTouchEnd(e) {
+  e.preventDefault();
+  const rect = document.getElementById(e.target.id).getBoundingClientRect();
+  if (lastMove[0] >= rect.x && lastMove[0] <= rect.right) {
+    if (lastMove[1] >= rect.y && lastMove[1] <= rect.bottom) {
+      window.location = e.currentTarget.href;
+    }
+    else {
+      menuHoverOut();
+    }
+  }
+  else {
+    menuHoverOut();
+  } 
 }
 
 /* When mouse hovers nav element */
@@ -27,6 +53,9 @@ function menuHoverIn(evt) {
   let subt = document.getElementById("subt");
   // For touch devices
   evt.preventDefault();
+  // Save coordinate for hover-like effect with touchscreens
+  lastMove[0] = evt.touches[0].clientX;
+  lastMove[1] = evt.touches[0].clientY;
   // Hide elements that don't fit width
   intro1.style.overflow = 'hidden';
   intro2.style.overflow = 'hidden';
@@ -84,20 +113,29 @@ function menuHoverOut() {
 function goHome(evt) {
   // Don't go to link yet
   evt.preventDefault();
-  let title = document.getElementById("title");
+  // Remove hover effect
+  let home = document.getElementsByClassName('home')[0];
+  home.removeEventListener("mouseenter", menuHoverIn);
+  home.removeEventListener("mouseout", menuHoverOut);
   // Make sure there are no events for prev animations
+  let title = document.getElementById("title");
   title.removeEventListener("animationend", enableSmoothTransition);
   title.removeEventListener("animationend", setTitle);
   title.removeEventListener("animationend", steadyCover);
   title.removeEventListener("animationend", toHome);
-  // Set animation for hiding text
   title.style.animation = "widthClose 500ms linear";
-  // Once its done call the main cover
-  title.addEventListener("animationend", toHome);
+  title.style.fontSize = 'min(13vw, 128px)';
+  title.style.width = 0;
+  subt.innerText = "";
+  let logo = document.getElementById('logo');
+  logo.style.fontSize = 'min(13vw, 128px)';
+  sphereSize();
+  title.addEventListener("transitionend", toHome);
+  return false;
 }
 
 /* Needed to send link after transition */
 function toHome() {
-  window.location.href="/";
-  title.style.animation = "";
+  window.location.href = "/";
+  return false;
 }
