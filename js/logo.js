@@ -28,40 +28,51 @@ function logoSetup() {
   // Create wave objects
   for (let i=0; i<num; i++) {
     waves[i] = new Wave(i*step);
+    if(localStorage.hasOwnProperty('logo' + toString(i))) {
+      waves[i].angle = JSON.parse(localStorage.getItem('logo' + toString(i)));
+    }
   }
+  localStorage.clear();
 }
 
 /* Main loop */
 function draw() {
-    canvas.clear();
-    // Center drawing in canvas
-    translate(width * 0.5, height * 0.5);
-    // Sphere Animation
-    sphereAnim();
-  }
+  canvas.clear();
+  // Center drawing in canvas
+  translate(width * 0.5, height * 0.5);
+  // Sphere Animation
+  sphereAnim();
+}
   
-  /* Sphere animation loop */
-  function sphereAnim() {
-    noFill();
-    strokeWeight(2);
-    for (let i=0; i<num; i++) {
-      waves[i].display();
-      waves[i].move();
-    }
+/* Sphere animation loop */
+function sphereAnim() {
+  noFill();
+  strokeWeight(2);
+  for (let i=0; i<num; i++) {
+    waves[i].display();
+    waves[i].move();
   }
+}
   
-  /* Update logo size to match font size */
-  function sphereSize() {
-    // Get element that holds O in title
-    let el = document.getElementById('logo');
-    const rect = el.getBoundingClientRect();
-    // Compute radius of logo based on font size of O
-    r = 44 / 128 * parseInt(window.getComputedStyle(el).fontSize);
-  }
+/* Update logo size to match font size */
+function sphereSize() {
+  // Get element that holds O in title
+  let el = document.getElementById('logo');
+  const rect = el.getBoundingClientRect();
+  // Compute radius of logo based on font size of O
+  r = 44 / 128 * parseInt(window.getComputedStyle(el).fontSize);
+}
   
-  /* Adjust to window size  dynamically */
-  function windowResized() {
-    // Update size of logo based on font size
-    sphereSize();
-    resizeCanvas(2.1*r, 2.1*r);
+/* Adjust to window size  dynamically */
+function windowResized() {
+  // Update size of logo based on font size
+  sphereSize();
+  resizeCanvas(2.1*r, 2.1*r);
+}
+
+/* Save states of logo before leaving */
+window.onbeforeunload = function() { 
+  for (let i=0; i<num; i++) {
+    localStorage.setItem('logo' + toString(i),  JSON.stringify(waves[i].angle));
   }
+}
