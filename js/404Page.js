@@ -12,7 +12,6 @@ function setup() {
     // Add features of home navigation
     let home = document.getElementsByClassName('home')[0];
     home.style.opacity = 1;
-    home.addEventListener('click', goHome);
     // Format subtitles
     let subt = document.getElementById('subt');
     subt.style.opacity = 1;
