@@ -1,7 +1,7 @@
 # [Personal website](https://garamburor.github.io/)
-Work in progress...
+Work in progress... (only home page currently)
 
 ## TO DO:
-- [ ] Add logo state for between pages.
-- [ ] Use touchmove to better mimick hover/click interactions.
-- [ ] Correct id calling in navMenu.js, title id is not valid for elements.
+- [ ] Use transitions for intro animation instead of setInterval + animations.
+- [ ] Make nav menu unaccessible during intro animation
+- [ ] Use iframes to have smooth transition between pages.
