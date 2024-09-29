@@ -9,6 +9,9 @@ id1 = setInterval(textChange, 900);
 function textChange() {
   switch(j) {
     case 0: // greeting
+      document.getElementById("about").textContent = "";
+      document.getElementById("contact").textContent = "";
+      document.getElementById("work").textContent = "";
       document.getElementById("intro1").classList.add('hi');
       document.getElementById("intro2").classList.add('hi');
       // Set new title
@@ -32,6 +35,9 @@ function textChange() {
       document.getElementById("intro2").classList.remove('hi');
       document.getElementById("intro1").style.overflow = 'hidden';
       document.getElementById("intro2").style.overflow = 'hidden';
+      document.getElementById("about").textContent = "ABOUT";
+      document.getElementById("contact").textContent = "CONTACT";
+      document.getElementById("work").textContent = "WORK";
       document.getElementById("menu").style.opacity = 1;
       steadyCover();
       clearInterval(id1);
