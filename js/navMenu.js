@@ -32,7 +32,7 @@ function handleTouchEnd(e) {
   const rect = document.getElementById(e.target.id).getBoundingClientRect();
   if (lastMove[0] >= rect.x && lastMove[0] <= rect.right) {
     if (lastMove[1] >= rect.y && lastMove[1] <= rect.bottom) {
-      window.location = e.currentTarget.href;
+      e.target.click();
     }
     else {
       menuHoverOut();
