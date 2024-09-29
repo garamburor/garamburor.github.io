@@ -1,5 +1,8 @@
 // p5js setup
 function setup() {
+  // Show title
+  document.getElementById("intro1").style.opacity = 1;
+  document.getElementById("intro2").style.opacity = 1;
   // Bigger font
   let elements = document.getElementsByClassName('title');
   for(let i = 0; i < elements.length; i++)
@@ -8,7 +11,7 @@ function setup() {
   }
   logoSetup();
   menuSetup();
-
+  
   // Add features of home navigation
   let home = document.getElementsByClassName('home')[0];
   home.style.opacity = 1;

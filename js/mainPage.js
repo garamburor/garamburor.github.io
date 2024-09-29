@@ -2,7 +2,9 @@
 function setup() {
   logoSetup();
   easterEggSetup();
-  menuSetup();
+  // Trigger animation
+  textChange(0);
+  document.getElementById('intro1').addEventListener("transitionend", trigFrame);
 }
 
 function steadyCover() {
