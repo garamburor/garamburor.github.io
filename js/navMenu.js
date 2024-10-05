@@ -1,12 +1,27 @@
 let titleText = null;
+// Coordinates for "touch hover"
 var lastMove = [0, 0];
+// State to wait before link redirect
+let linkState = 0;
 
 // Setup required for nav menu
 function menuSetup(id) {
   menuEvent("about");
   menuEvent("contact");
   menuEvent("work");
-  menuEvent("hme");
+}
+
+/* Add home nav features */
+function homeSetup() {
+  let home = document.getElementsByClassName('home')[0];
+  home.addEventListener("mouseenter", menuHoverIn);
+  home.addEventListener("touchstart", handleTouchStart);
+  home.addEventListener("touchmove", saveTouch, false);
+  home.addEventListener("touchend", handleTouchEnd);
+  home.addEventListener("touchcancel", handleTouchEnd);
+  home.addEventListener("mouseout", menuHoverOut);
+  home.style.opacity = 1;
+  home.addEventListener('click', homeClick);
 }
 
 // Listeners to add for menu elements
@@ -17,6 +32,7 @@ function menuEvent(id) {
   document.getElementById(id).addEventListener("touchend", handleTouchEnd);
   document.getElementById(id).addEventListener("touchcancel", handleTouchEnd);
   document.getElementById(id).addEventListener("mouseout", menuHoverOut);
+  document.getElementById(id).addEventListener("click", menuClick);
 }
 
 /* Store last touch position */
@@ -52,6 +68,7 @@ function handleTouchStart(evt) {
 
 /* When mouse hovers nav element */
 function menuHoverIn(evt) {
+  linkState = 0;
   // For touch devices
   evt.preventDefault();
   // Needed elements
@@ -95,11 +112,13 @@ function setTitle() {
   {
     // set text to be revealed
     elements[i].style.animation = "widthOpen 500ms linear"
-  } 
+  }
+  setTimeout(function() { linkState = 1; }, 200);
 }
 
 /* Makes overflow visible for prettier window size changes */
 function enableSmoothTransition()  {
+  linkState = 0;
   document.getElementById("intro1").style.overflow = 'visible';
   document.getElementById("intro2").style.overflow = 'visible';
   document.getElementById("Gknob").style.overflow = 'visible';
@@ -107,6 +126,7 @@ function enableSmoothTransition()  {
 
 /* When mouse leaves nav element */
 function menuHoverOut() {
+  linkState = 0;
   let elements = document.getElementsByClassName('title');
   for(let i = 0; i < elements.length; i++)
   {
@@ -118,4 +138,60 @@ function menuHoverOut() {
     // Once its done call the main cover
     elements[i].addEventListener("animationend", steadyCover);
   } 
+}
+
+function homeClick(evt) {
+  evt.preventDefault();
+  let elements = document.getElementsByClassName('title');
+  for(let i = 0; i < elements.length; i++)
+  {
+    // Make sure there are no events for prev animations
+    elements[i].removeEventListener("animationend", enableSmoothTransition);
+    elements[i].removeEventListener("animationend", setTitle);
+    // Set animation for hiding text
+    elements[i].style.animation = "widthClose 500ms linear";
+    // Once its done call the main cover
+    elements[i].addEventListener("animationend", function() { 
+      elements[i].textContent = ""
+      window.location = "/" ;
+    });
+  }
+}
+
+/* Disable element in nav menu */
+function removeTab(id) {
+  let el = document.getElementById(id);
+  el.style.filter = "blur(3px)";
+  el.style.userSelect = "none";
+  el.style.pointerEvents = "none";
+  el.style.cursor = "pointer";
+}
+
+/* Handle nav click */
+function menuClick(evt) {
+  evt.preventDefault();
+  let elements = document.getElementsByClassName('title');
+  for(let i = 0; i < elements.length; i++)
+  {
+    // Remove all mouse events
+    evt.target.removeEventListener("mouseenter", menuHoverIn);
+    evt.target.removeEventListener("touchstart", handleTouchStart);
+    evt.target.removeEventListener("touchmove", saveTouch, false);
+    evt.target.removeEventListener("touchend", handleTouchEnd);
+    evt.target.removeEventListener("touchcancel", handleTouchEnd);
+    evt.target.removeEventListener("mouseout", menuHoverOut);
+    // Once title is shown redirect
+    // If title is loaded, redirect instantly
+    if (linkState == 1) {
+      window.location = evt.target.href;
+    }
+    // Otherwise, wait for animation to end
+    else {
+      elements[i].addEventListener("animationend", function() {
+        if (linkState == 1) {
+          window.location = evt.target.href;
+        }
+      });
+    }
+  }
 }

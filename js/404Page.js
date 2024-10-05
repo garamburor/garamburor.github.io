@@ -11,11 +11,8 @@ function setup() {
   }
   logoSetup();
   menuSetup();
+  homeSetup();
   
-  // Add features of home navigation
-  let home = document.getElementsByClassName('home')[0];
-  home.style.opacity = 1;
-  home.addEventListener('click', homeClick);
   /*
   // Format subtitles
   let subt = document.getElementById('subt');
@@ -58,20 +55,3 @@ function steadyCover() {
   title.addEventListener("animationend", enableSmoothTransition);
 }
 
-function homeClick(evt) {
-  evt.preventDefault();
-  let elements = document.getElementsByClassName('title');
-  for(let i = 0; i < elements.length; i++)
-  {
-    // Make sure there are no events for prev animations
-    elements[i].removeEventListener("animationend", enableSmoothTransition);
-    elements[i].removeEventListener("animationend", setTitle);
-    // Set animation for hiding text
-    elements[i].style.animation = "widthClose 500ms linear";
-    // Once its done call the main cover
-    elements[i].addEventListener("animationend", function() { 
-      elements[i].textContent = ""
-      window.location = "/" ;
-    });
-  }
-}
