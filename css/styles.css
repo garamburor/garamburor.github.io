@@ -2,7 +2,9 @@
 @font-face {
     font-family: "Lexend";
     src: url("Lexend-VariableFont_wght.ttf");
-    text-rendering: optimizeLegibility; 
+    text-rendering: optimizeLegibility;
+    font-weight: normal;
+    font-style: normal;
 }
 
 html,
