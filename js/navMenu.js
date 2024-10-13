@@ -95,7 +95,7 @@ function menuHoverIn(evt) {
     elements[i].addEventListener("animationend", setTitle);
   }
 
-  evt.target.style.textDecoration = "var(--main-color) wavy underline";
+  evt.target.style.textDecoration = "blue wavy underline";
 }
 
 /* Set main title text */
