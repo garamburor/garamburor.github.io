@@ -141,6 +141,8 @@ a {
     font-weight: 600;
     font-size: min(2.5vw, 15px);
     color: blue;
+    text-decoration: transparent wavy underline;
+    -webkit-text-decoration: transparent wavy underline;
     transition: all 0.7s;
 }
 
