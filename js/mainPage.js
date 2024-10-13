@@ -31,7 +31,7 @@ function steadyCover() {
 
   // Show subtitles
   subt.style.opacity = 1;
-  subt.textContent = 'ARAMBURO RODRIGUEZ';
+  subt.textContent = 'ARÁMBURO RODRÍGUEZ';
   // Remove previous animation listeners
   title.removeEventListener("animationend", enableSmoothTransition);
   title.removeEventListener("animationend", steadyCover);

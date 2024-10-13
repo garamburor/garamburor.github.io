@@ -2,7 +2,11 @@
 @font-face {
     font-family: "Lexend";
     src: url("Lexend-VariableFont_wght.ttf");
-  }
+}
+
+:root {
+    --main-color: blue;
+}
 
 html,
 body { 
@@ -10,7 +14,7 @@ body {
     height: 100%;
     overflow: hidden;
     margin: 0;
-    background-color: #fffff7;
+    background-color: #fffef1;
 }
 
 .knob {
@@ -105,7 +109,7 @@ a {
     font-size: min(13vw, 128px);
     font-family: 'Lexend';
     font-weight: 400;
-    color: blue;
+    color: var(--main-color);
 }
 
 /* Subtitle */
@@ -115,7 +119,7 @@ a {
     font-size: min(4vw, 50px);
     font-family: 'Lexend';
     font-weight: 400;
-    color: blue;
+    color: var(--main-color);
     transition: opacity 0.6s;
     opacity: 0;
 }
@@ -140,7 +144,8 @@ a {
     font-family: 'Lexend';
     font-weight: 600;
     font-size: min(2.5vw, 15px);
-    color: blue;
+    color: var(--main-color);
+    transition: text-decoration 0.5s;
 }
 
 .home {

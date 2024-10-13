@@ -51,11 +51,11 @@ function handleTouchEnd(e) {
       e.target.click();
     }
     else {
-      menuHoverOut();
+      menuHoverOut(e);
     }
   }
   else {
-    menuHoverOut();
+    menuHoverOut(e);
   } 
 }
 
@@ -86,14 +86,16 @@ function menuHoverIn(evt) {
   // While letters are hidden, set new text and then open back
   titleText = evt.target.innerText;
   for(let i = 0; i < elements.length; i++)
-    {
-      // Hide letters by reducing width
-      elements[i].style.animation = "widthClose 500ms linear";
-      // Remove previous listeners
-      elements[i].removeEventListener("animationend", enableSmoothTransition);
-      elements[i].removeEventListener("animationend", steadyCover);
-      elements[i].addEventListener("animationend", setTitle);
-    }
+  {
+    // Hide letters by reducing width
+    elements[i].style.animation = "widthClose 500ms linear";
+    // Remove previous listeners
+    elements[i].removeEventListener("animationend", enableSmoothTransition);
+    elements[i].removeEventListener("animationend", steadyCover);
+    elements[i].addEventListener("animationend", setTitle);
+  }
+
+  evt.target.style.textDecoration = "var(--main-color) wavy underline";
 }
 
 /* Set main title text */
@@ -113,7 +115,7 @@ function setTitle() {
     // set text to be revealed
     elements[i].style.animation = "widthOpen 500ms linear"
   }
-  setTimeout(function() { linkState = 1; }, 200);
+  setTimeout(function() { linkState = 1; }, 70);
 }
 
 /* Makes overflow visible for prettier window size changes */
@@ -125,7 +127,8 @@ function enableSmoothTransition()  {
 };
 
 /* When mouse leaves nav element */
-function menuHoverOut() {
+function menuHoverOut(evt) {
+  evt.target.style.textDecoration = "transparent wavy underline";
   linkState = 0;
   let elements = document.getElementsByClassName('title');
   for(let i = 0; i < elements.length; i++)
@@ -137,7 +140,8 @@ function menuHoverOut() {
     elements[i].style.animation = "widthClose 500ms linear";
     // Once its done call the main cover
     elements[i].addEventListener("animationend", steadyCover);
-  } 
+  }
+  
 }
 
 function homeClick(evt) {

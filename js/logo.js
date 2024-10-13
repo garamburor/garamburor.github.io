@@ -21,6 +21,7 @@ function logoSetup() {
   canvas.parent('logo');
   // Set frame rate
   frameRate(fps);
+  pixelDensity(2);
   // Set color of strokes
   stroke(0, 0, 255);
   // Set angle with degrees instead of radians
