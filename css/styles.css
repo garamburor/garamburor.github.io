@@ -141,7 +141,7 @@ a {
     font-weight: 600;
     font-size: min(2.5vw, 15px);
     color: blue;
-    transition: text-decoration 0.5s;
+    transition: all 0.7s;
 }
 
 .home {

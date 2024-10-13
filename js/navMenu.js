@@ -94,8 +94,8 @@ function menuHoverIn(evt) {
     elements[i].removeEventListener("animationend", steadyCover);
     elements[i].addEventListener("animationend", setTitle);
   }
-
   evt.target.style.textDecoration = "blue wavy underline";
+  evt.target.style.webkitTextDecoration = "blue wavy underline";
 }
 
 /* Set main title text */
@@ -129,6 +129,7 @@ function enableSmoothTransition()  {
 /* When mouse leaves nav element */
 function menuHoverOut(evt) {
   evt.target.style.textDecoration = "transparent wavy underline";
+  evt.target.style.webkitTextDecoration = "transparent wavy underline";
   linkState = 0;
   let elements = document.getElementsByClassName('title');
   for(let i = 0; i < elements.length; i++)
