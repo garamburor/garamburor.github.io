@@ -2,6 +2,8 @@
 @font-face {
     font-family: "Lexend";
     src: url("Lexend-VariableFont_wght.ttf");
+    text-rendering: optimizeLegibility; 
+    -webkit-font-smoothing: antialiased;
 }
 
 html,
