@@ -3,7 +3,6 @@
     font-family: "Lexend";
     src: url("Lexend-VariableFont_wght.ttf");
     text-rendering: optimizeLegibility; 
-    -webkit-font-smoothing: antialiased;
 }
 
 html,
@@ -13,6 +12,7 @@ body {
     overflow: hidden;
     margin: 0;
     background-color: #fffef1;
+    -webkit-font-smoothing: subpixel-antialiased;
 }
 
 .knob {
@@ -146,6 +146,7 @@ a {
     text-decoration: transparent wavy underline;
     -webkit-text-decoration: transparent wavy underline;
     transition: all 0.7s;
+    -webkit-text-stroke: 0.5px;
 }
 
 .home {
