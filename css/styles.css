@@ -80,12 +80,10 @@ a {
 .center {
     margin: 0;
     position: relative;
-    top: 40%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    
-  }
+    top: 35%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
 
 /* Style for cover section */
 .cover {
@@ -132,6 +130,7 @@ a {
 /* Style for website index links */
 .topnav {
     display: block;
+    height: 10vh;
     overflow: hidden;
     padding: 15px;
     word-spacing: 15px;
@@ -146,7 +145,6 @@ a {
     text-decoration: transparent wavy underline;
     -webkit-text-decoration: transparent wavy underline;
     transition: all 0.7s;
-    -webkit-text-stroke: 0.5px;
 }
 
 .home {
