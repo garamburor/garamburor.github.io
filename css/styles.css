@@ -151,6 +151,9 @@ a {
 
 .home {
     float: left;
+}
+
+#hme {
     opacity: 0;
 }
 

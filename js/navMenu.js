@@ -13,7 +13,7 @@ function menuSetup(id) {
 
 /* Add home nav features */
 function homeSetup() {
-  let home = document.getElementsByClassName('home')[0];
+  let home = document.getElementById('hme');
   home.addEventListener("mouseenter", menuHoverIn);
   home.addEventListener("touchstart", handleTouchStart);
   home.addEventListener("touchmove", saveTouch, false);
