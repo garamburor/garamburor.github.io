@@ -7,7 +7,7 @@ function setup() {
     removeTab("about");
     // Add features of home navigation
     homeSetup();
-    
+
     let intro1 = document.getElementById("intro1");
     let intro2 = document.getElementById("intro2");
     // Update cover width
