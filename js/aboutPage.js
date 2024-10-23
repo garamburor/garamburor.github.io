@@ -1,8 +1,5 @@
 // p5js setup
 function setup() {
-    logoSetup();
-    document.getElementById("menu").style.opacity = 1;
-    menuSetup();
     // Disable current page in nav
     removeTab("about");
     // Add features of home navigation
@@ -17,14 +14,16 @@ function setup() {
     intro2.style.opacity = 1;
     let knob = document.getElementById("Gknob");
     let title = document.getElementById("title");
+    let subt = document.getElementById("subt");
 
     // Make logo adjust to text
     document.getElementById('logo').style.position = "sticky";
-    title.style.animation = ""
+    title.style.animation = "";
     knob.style.overflow = 'hidden';
     knob.textContent = '';
     intro1.textContent = 'AB';
     intro2.textContent = 'UT';
+    subt.textContent = '';
   }
   
 function steadyCover() {

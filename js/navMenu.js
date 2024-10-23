@@ -1,8 +1,13 @@
 let titleText = null;
+let tempTitle = titleText;
 // Coordinates for "touch hover"
 var lastMove = [0, 0];
 // State to wait before link redirect
 let linkState = 0;
+// Page state
+let currentPage = 'home';
+
+let subtState = 1;
 
 // Setup required for nav menu
 function menuSetup(id) {
@@ -13,7 +18,7 @@ function menuSetup(id) {
 
 /* Add home nav features */
 function homeSetup() {
-  let home = document.getElementById('hme');
+  let home = document.getElementById("home");
   home.addEventListener("mouseenter", menuHoverIn);
   home.addEventListener("touchstart", handleTouchStart);
   home.addEventListener("touchmove", saveTouch, false);
@@ -84,18 +89,33 @@ function menuHoverIn(evt) {
   // Remove subtitle
   subt.style.opacity = 0;
   // While letters are hidden, set new text and then open back
-  titleText = evt.target.innerText;
+  tempTitle = evt.target.innerText;
   for(let i = 0; i < elements.length; i++)
   {
     // Hide letters by reducing width
     elements[i].style.animation = "widthClose 500ms linear";
-    // Remove previous listeners
-    elements[i].removeEventListener("animationend", enableSmoothTransition);
     elements[i].removeEventListener("animationend", steadyCover);
     elements[i].addEventListener("animationend", setTitle);
   }
   evt.target.style.textDecoration = "blue wavy underline";
   evt.target.style.webkitTextDecoration = "blue wavy underline";
+}
+
+/* When mouse leaves nav element */
+function menuHoverOut(evt) {
+  evt.target.style.textDecoration = "transparent wavy underline";
+  evt.target.style.webkitTextDecoration = "transparent wavy underline";
+  linkState = 0;
+  let elements = document.getElementsByClassName('title');
+  for(let i = 0; i < elements.length; i++)
+  {
+    // Set animation for hiding text
+    elements[i].style.animation = "widthClose 500ms linear";
+    // Once its done call the main cover
+    elements[i].removeEventListener("animationend", setTitle);
+    elements[i].removeEventListener("animationend", enableSmoothTransition);
+    elements[i].addEventListener("animationend", steadyCover);
+  }
 }
 
 /* Set main title text */
@@ -107,15 +127,16 @@ function setTitle() {
   // Make sure G is not there
   document.getElementById("Gknob").textContent = "";
   // Split text where O is
-  let splitText = titleText.split("O");
+  let splitText = tempTitle.split("O");
   intro1.textContent = splitText[0];
   intro2.textContent = splitText[1];
   for(let i = 0; i < elements.length; i++)
   {
     // set text to be revealed
     elements[i].style.animation = "widthOpen 500ms linear"
+    elements[i].removeEventListener("animationend", setTitle);
   }
-  setTimeout(function() { linkState = 1; }, 70);
+  setTimeout(function() { linkState = 1; }, 200);
 }
 
 /* Makes overflow visible for prettier window size changes */
@@ -124,43 +145,42 @@ function enableSmoothTransition()  {
   document.getElementById("intro1").style.overflow = 'visible';
   document.getElementById("intro2").style.overflow = 'visible';
   document.getElementById("Gknob").style.overflow = 'visible';
-};
-
-/* When mouse leaves nav element */
-function menuHoverOut(evt) {
-  evt.target.style.textDecoration = "transparent wavy underline";
-  evt.target.style.webkitTextDecoration = "transparent wavy underline";
-  linkState = 0;
   let elements = document.getElementsByClassName('title');
   for(let i = 0; i < elements.length; i++)
   {
-    // Make sure there are no events for prev animations
     elements[i].removeEventListener("animationend", enableSmoothTransition);
-    elements[i].removeEventListener("animationend", setTitle);
-    // Set animation for hiding text
-    elements[i].style.animation = "widthClose 500ms linear";
-    // Once its done call the main cover
-    elements[i].addEventListener("animationend", steadyCover);
   }
-  
-}
+};
 
 function homeClick(evt) {
   evt.preventDefault();
   let elements = document.getElementsByClassName('title');
-  for(let i = 0; i < elements.length; i++)
-  {
-    // Make sure there are no events for prev animations
-    elements[i].removeEventListener("animationend", enableSmoothTransition);
-    elements[i].removeEventListener("animationend", setTitle);
-    // Set animation for hiding text
-    elements[i].style.animation = "widthClose 500ms linear";
-    // Once its done call the main cover
-    elements[i].addEventListener("animationend", function() { 
-      elements[i].textContent = ""
-      window.location = "/" ;
-    });
-  }
+  // Remove underline
+  evt.target.style.textDecoration = "transparent wavy underline";
+  evt.target.style.webkitTextDecoration = "transparent wavy underline";
+  // Remove features of home navigation
+  home.style.opacity = 0;
+  home.addEventListener('transitionend', function byeTitle() {
+    home.textContent = '';
+    home.removeEventListener('transitionend', byeTitle);
+  })
+  enableTab(currentPage);
+  // Set new page url & title
+  document.title = 'Guillermo A. R.';
+  history.pushState({}, null, '/');
+  // Display main cover with subs
+  subtState = 1;
+}
+
+/* Enable element in nav menu */
+function enableTab(id) {
+  let el = document.getElementById(id);
+  el.style.filter = "none";
+  el.style.userSelect = "auto";
+  el.style.pointerEvents = "auto";
+  el.style.cursor = "auto";
+  // Enable all mouse events
+  menuEvent(id);
 }
 
 /* Disable element in nav menu */
@@ -170,33 +190,34 @@ function removeTab(id) {
   el.style.userSelect = "none";
   el.style.pointerEvents = "none";
   el.style.cursor = "pointer";
+  // Remove all mouse events
+  el.removeEventListener("mouseenter", menuHoverIn);
+  el.removeEventListener("touchstart", handleTouchStart);
+  el.removeEventListener("touchmove", saveTouch, false);
+  el.removeEventListener("touchend", handleTouchEnd);
+  el.removeEventListener("touchcancel", handleTouchEnd);
+  el.removeEventListener("mouseout", menuHoverOut);
 }
 
 /* Handle nav click */
 function menuClick(evt) {
   evt.preventDefault();
   let elements = document.getElementsByClassName('title');
-  for(let i = 0; i < elements.length; i++)
-  {
-    // Remove all mouse events
-    evt.target.removeEventListener("mouseenter", menuHoverIn);
-    evt.target.removeEventListener("touchstart", handleTouchStart);
-    evt.target.removeEventListener("touchmove", saveTouch, false);
-    evt.target.removeEventListener("touchend", handleTouchEnd);
-    evt.target.removeEventListener("touchcancel", handleTouchEnd);
-    evt.target.removeEventListener("mouseout", menuHoverOut);
-    // Once title is shown redirect
-    // If title is loaded, redirect instantly
-    if (linkState == 1) {
-      window.location = evt.target.href;
-    }
-    // Otherwise, wait for animation to end
-    else {
-      elements[i].addEventListener("animationend", function() {
-        if (linkState == 1) {
-          window.location = evt.target.href;
-        }
-      });
-    }
-  }
+  // Remove underline
+  evt.target.style.textDecoration = "transparent wavy underline";
+  evt.target.style.webkitTextDecoration = "transparent wavy underline";
+  enableTab(currentPage);
+  currentPage = evt.target.id;
+  // Disable current page in nav
+  removeTab(evt.target.id);
+  // Add features of home navigation
+  document.getElementById("home").textContent = "HOME";
+  homeSetup();
+  // Set new page cover
+  document.title = evt.target.id.toUpperCase() + ' - Guillermo A. R.';
+  history.pushState({}, 'ABOUT - Guillermo A. R.', '/' + evt.target.id);
+  // Set new title
+  titleText = evt.target.id.toUpperCase();
+  // Remove subtitles
+  subtState = 0;
 }

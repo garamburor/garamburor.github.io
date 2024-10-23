@@ -149,11 +149,9 @@ a {
     transition: all 0.7s;
 }
 
-.home {
+#home {
     float: left;
-}
-
-#hme {
+    transition: all 0.7s;
     opacity: 0;
 }
 
