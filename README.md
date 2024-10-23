@@ -2,5 +2,6 @@
 Work in progress... (only home page currently)
 
 ## TO DO:
-- [ ] Use iframes to have smooth transition between pages?
-- [ ] Logo state memory doesn't work for iOS.
+- [ ] Correct individual HTML pages.
+- [ ] Add closing animation to home button.
+- [ ] Add favicon.
