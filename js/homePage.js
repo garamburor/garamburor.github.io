@@ -40,16 +40,19 @@ function steadyCover() {
 
   // Make logo adjust to text
   document.getElementById('logo').style.position = "sticky";
-  // Update cover text
   
+  // Show subtitles
+  subt.style.opacity = subtState;
   if (subtState == 1) {
     knob.style.overflow = 'hidden';
     knob.textContent = 'G';
     intro1.textContent = 'UILLERM';
     intro2.textContent = '';
+    subt.textContent = 'ARÁMBURO RODRÍGUEZ';
   }
   else {
     knob.textContent = '';
+    subt.textContent = '';
     let splitText = titleText.split("O");
     intro1.textContent = splitText[0];
     intro2.textContent = splitText[1];
@@ -67,14 +70,6 @@ function steadyCover() {
     elements[i].removeEventListener("transitionend", steadyCover);
     // When animation is done, set overflow to visible for prettier window size changes
     elements[i].addEventListener("transitionend", enableSmoothTransition);
-  }
-  // Show subtitles
-  subt.style.opacity = subtState;
-  if (subtState == 1) {
-    subt.textContent = 'ARÁMBURO RODRÍGUEZ';
-  }
-  else {
-    subt.textContent = '';
   }
   
 }

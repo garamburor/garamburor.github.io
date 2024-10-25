@@ -2,8 +2,6 @@ let titleText = null;
 let tempTitle = titleText;
 // Coordinates for "touch hover"
 var lastMove = [0, 0];
-// State to wait before link redirect
-let linkState = 0;
 // Page state
 let currentPage = 'home';
 let subtState = 1;
@@ -91,6 +89,12 @@ function menuHoverIn(evt) {
   knob.style.overflow = 'hidden';
   // Remove subtitle
   subt.style.opacity = 0;
+  subt.addEventListener('transitionend', function byeSubs() {
+    if (subtState == 0) {
+      document.getElementById('subt').textContent = '';
+    }
+    document.getElementById('subt').removeEventListener('transitionend', byeSubs);
+  })
   // While letters are hidden, set new text and then open back
   tempTitle = evt.target.innerText;
   for(let i = 0; i < elements.length; i++)
@@ -109,7 +113,6 @@ function menuHoverIn(evt) {
 function menuHoverOut(evt) {
   evt.target.style.textDecoration = "transparent wavy underline";
   evt.target.style.webkitTextDecoration = "transparent wavy underline";
-  linkState = 0;
   let elements = document.getElementsByClassName('title');
   for(let i = 0; i < elements.length; i++)
   {
@@ -140,7 +143,6 @@ function setTitle() {
     elements[i].style.width = "100%";
     elements[i].removeEventListener("transitionend", setTitle);
   }
-  setTimeout(function() { linkState = 1; }, 200);
 }
 
 /* Makes overflow visible for prettier window size changes */
@@ -226,7 +228,6 @@ function removeTab(id) {
 /* Handle nav click */
 function menuClick(evt) {
   evt.preventDefault();
-  let elements = document.getElementsByClassName('title');
   // Remove underline
   evt.target.style.textDecoration = "transparent wavy underline";
   evt.target.style.webkitTextDecoration = "transparent wavy underline";
@@ -237,9 +238,9 @@ function menuClick(evt) {
   // Add features of home navigation
   document.getElementById("home").textContent = "HOME";
   homeSetup();
+  // Remove subtitles
+  subtState = 0;
   // Set new page cover
   document.title = evt.target.id.toUpperCase() + ' - Guillermo A. R.';
   history.pushState({}, 'ABOUT - Guillermo A. R.', '/' + evt.target.id);
-  // Remove subtitles
-  subtState = 0;
 }
