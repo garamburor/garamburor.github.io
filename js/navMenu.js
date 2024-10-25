@@ -200,6 +200,7 @@ function enableTab(id) {
   el.style.cursor = "auto";
   // Enable all mouse events
   menuEvent(id);
+  el.style.fontSize = "min(2.5vw, 15px)";
 }
 
 /* Disable element in nav menu */
@@ -218,6 +219,8 @@ function removeTab(id) {
   el.removeEventListener("touchend", handleTouchEnd);
   el.removeEventListener("touchcancel", handleTouchEnd);
   el.removeEventListener("mouseout", menuHoverOut);
+  // Make text a bit smaller
+  el.style.fontSize = "min(2.3vw, 12px)";
 }
 
 /* Handle nav click */
