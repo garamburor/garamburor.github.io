@@ -93,9 +93,10 @@ function menuHoverIn(evt) {
   for(let i = 0; i < elements.length; i++)
   {
     // Hide letters by reducing width
-    elements[i].style.animation = "widthClose 500ms linear";
-    elements[i].removeEventListener("animationend", steadyCover);
-    elements[i].addEventListener("animationend", setTitle);
+    elements[i].style.width = 0;
+    elements[i].removeEventListener("transitionend", enableSmoothTransition);
+    elements[i].removeEventListener("transitionend", steadyCover);
+    elements[i].addEventListener("transitionend", setTitle);
   }
   evt.target.style.textDecoration = "blue wavy underline";
   evt.target.style.webkitTextDecoration = "blue wavy underline";
@@ -110,11 +111,11 @@ function menuHoverOut(evt) {
   for(let i = 0; i < elements.length; i++)
   {
     // Set animation for hiding text
-    elements[i].style.animation = "widthClose 500ms linear";
+    elements[i].style.width = 0;
     // Once its done call the main cover
-    elements[i].removeEventListener("animationend", setTitle);
-    elements[i].removeEventListener("animationend", enableSmoothTransition);
-    elements[i].addEventListener("animationend", steadyCover);
+    elements[i].removeEventListener("transitionend", enableSmoothTransition);
+    elements[i].removeEventListener("transitionend", setTitle);
+    elements[i].addEventListener("transitionend", steadyCover);
   }
 }
 
@@ -133,8 +134,8 @@ function setTitle() {
   for(let i = 0; i < elements.length; i++)
   {
     // set text to be revealed
-    elements[i].style.animation = "widthOpen 500ms linear"
-    elements[i].removeEventListener("animationend", setTitle);
+    elements[i].style.width = "100%";
+    elements[i].removeEventListener("transitionend", setTitle);
   }
   setTimeout(function() { linkState = 1; }, 200);
 }
@@ -148,13 +149,13 @@ function enableSmoothTransition()  {
   let elements = document.getElementsByClassName('title');
   for(let i = 0; i < elements.length; i++)
   {
-    elements[i].removeEventListener("animationend", enableSmoothTransition);
+    elements[i].removeEventListener("transitionend", enableSmoothTransition);
   }
 };
 
 function homeClick(evt) {
+  // Prevent normal click
   evt.preventDefault();
-  let elements = document.getElementsByClassName('title');
   // Remove underline
   evt.target.style.textDecoration = "transparent wavy underline";
   evt.target.style.webkitTextDecoration = "transparent wavy underline";
@@ -164,6 +165,15 @@ function homeClick(evt) {
     home.textContent = '';
     home.removeEventListener('transitionend', byeTitle);
   })
+  // Trigger default home text
+  let elements = document.getElementsByClassName('title');
+  for(let i = 0; i < elements.length; i++)
+  {
+    // Set animation for hiding text
+    elements[i].style.width = 0;
+    elements[i].addEventListener("transitionend", steadyCover);
+  }
+  // Enable previous tab
   enableTab(currentPage);
   // Set new page url & title
   document.title = 'Guillermo A. R.';
