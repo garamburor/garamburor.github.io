@@ -2,9 +2,14 @@
 function setup() {
   logoSetup();
   easterEggSetup();
-  // Trigger animation
-  textChange(0);
-  document.getElementById('intro1').addEventListener("transitionend", trigFrame);
+  // Trigger animation if home is selected
+  if (subtState == 1) {
+    textChange(0);
+    document.getElementById('intro1').addEventListener("transitionend", trigFrame);
+  }
+  else {
+    menuSetup();
+  }
 }
 
 function steadyCover() {
@@ -40,12 +45,10 @@ function steadyCover() {
   for(let i = 0; i < elements.length; i++)
   {
     // Set animation for hiding text
-    elements[i].style.animation = "widthOpen 500ms linear"
-    // Once its done call the main cover
-    elements[i].style.width = 1;
-    elements[i].removeEventListener("animationend", steadyCover);
+    elements[i].style.width = "100%"
+    elements[i].removeEventListener("transitionend", steadyCover);
     // When animation is done, set overflow to visible for prettier window size changes
-    elements[i].addEventListener("animationend", enableSmoothTransition);
+    elements[i].addEventListener("transitionend", enableSmoothTransition);
   }
   // Show subtitles
   subt.style.opacity = subtState;
