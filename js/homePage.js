@@ -15,6 +15,9 @@ function setup() {
     //steadyCover();
     let intro1 = document.getElementById("intro1");
     let intro2 = document.getElementById("intro2");
+    let splitText = titleText.split("O");
+    intro1.textContent = splitText[0];
+    intro2.textContent = splitText[1];
     // Update cover width
     intro1.style.width = 'auto';
     intro2.style.width = 'auto';
