@@ -9,6 +9,17 @@ function setup() {
   }
   else {
     menuSetup();
+    document.getElementById("menu").style.opacity = 1;
+    removeTab(currentPage);
+    homeSetup();
+    //steadyCover();
+    let intro1 = document.getElementById("intro1");
+    let intro2 = document.getElementById("intro2");
+    // Update cover width
+    intro1.style.width = 'auto';
+    intro2.style.width = 'auto';
+    intro1.style.opacity = 1;
+    intro2.style.opacity = 1;
   }
 }
 
@@ -36,7 +47,6 @@ function steadyCover() {
     intro2.textContent = splitText[1];
   }
   
-
   // Update cover width
   intro1.style.width = 'auto';
   intro2.style.width = 'auto';

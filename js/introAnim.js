@@ -7,72 +7,83 @@ function trigFrame() {
 
 /* Intro text animation sequence */
 function textChange(j) {
+  let about = document.getElementById("about");
+  let contact = document.getElementById("contact");
+  let work = document.getElementById("work");
+  let intro1 = document.getElementById("intro1");
+  let intro2 = document.getElementById("intro2");
+  let knob = document.getElementById("Gknob");
+  let subt = document.getElementById("subt");
+
   switch(j) {
     case 0: // greeting
       // disable href links
-      document.getElementById("about").style.pointerEvents = "none";
-      document.getElementById("contact").style.pointerEvents = "none";
-      document.getElementById("work").style.pointerEvents = "none";
+      about.style.pointerEvents = "none";
+      contact.style.pointerEvents = "none";
+      work.style.pointerEvents = "none";
       // make text not selectable
-      document.getElementById("about").style.userSelect = "none";
-      document.getElementById("contact").style.userSelect = "none";
-      document.getElementById("work").style.userSelect = "none";
+      about.style.userSelect = "none";
+      contact.style.userSelect = "none";
+      work.style.userSelect = "none";
       // keep the same pointer always
-      document.getElementById("about").style.cursor = "pointer";
-      document.getElementById("contact").style.cursor = "pointer";
-      document.getElementById("work").style.cursor = "pointer";
+      about.style.cursor = "pointer";
+      contact.style.cursor = "pointer";
+      work.style.cursor = "pointer";
       // Set new title
-      document.getElementById("intro1").style.opacity = 1;
-      document.getElementById("intro2").style.opacity = 1;
-      document.getElementById("intro1").textContent = 'H';
-      document.getElementById("intro2").textContent = "LA";
+      intro1.style.opacity = 1;
+      intro2.style.opacity = 1;
+      intro1.textContent = 'H';
+      intro2.textContent = "LA";
       // Adjust centering
-      document.getElementById("intro1").style.width = '12%';
-      document.getElementById("intro2").style.width = '12%';
-      document.getElementById("intro2").style.overflow = 'visible';
+      intro1.style.width = '12%';
+      intro2.style.width = '12%';
+      intro2.style.overflow = 'visible';
       break;
     case 1:
       // Hide
-      document.getElementById("intro1").style.opacity = 0;
-      document.getElementById("intro2").style.opacity = 0;
+      intro1.style.opacity = 0;
+      intro2.style.opacity = 0;
       break;
     case 2: // I'm
       // Set new title
-      document.getElementById("intro1").style.opacity = 1;
-      document.getElementById("intro2").style.opacity = 1;
-      document.getElementById("intro1").textContent = 'S';
-      document.getElementById("intro2").textContent = "Y";
+      intro1.style.opacity = 1;
+      intro2.style.opacity = 1;
+      intro1.textContent = 'S';
+      intro2.textContent = "Y";
       // Adjust centering
-      document.getElementById("intro1").style.width = '10%';
-      document.getElementById("intro2").style.width = '10%';
+      intro1.style.width = '10%';
+      intro2.style.width = '10%';
       break;
     case 3:
       // Hide
-      document.getElementById("intro1").style.opacity = 0;
-      document.getElementById("intro2").style.opacity = 0;
+      intro1.style.opacity = 0;
+      intro2.style.opacity = 0;
       break;
     case 4: // Cover
       // Remove animation listener
-      document.getElementById('intro1').removeEventListener("transitionend", trigFrame);
+      intro1.removeEventListener("transitionend", trigFrame);
       // Show last title
-      document.getElementById("intro1").style.opacity = 1;
-      document.getElementById("intro2").style.opacity = 1;
-      document.getElementById("intro1").style.overflow = 'hidden';
-      document.getElementById("intro2").style.overflow = 'hidden';
+      intro1.style.opacity = 1;
+      intro2.style.opacity = 1;
+      intro1.style.overflow = 'hidden';
+      intro2.style.overflow = 'hidden';
+      knob.style.overflow = 'hidden';
       // enable hyperlinks
-      document.getElementById("about").style.pointerEvents = "auto";
-      document.getElementById("contact").style.pointerEvents = "auto";
-      document.getElementById("work").style.pointerEvents = "auto";
+      about.style.pointerEvents = "auto";
+      contact.style.pointerEvents = "auto";
+      work.style.pointerEvents = "auto";
       // make text selectable
-      document.getElementById("about").style.userSelect = "auto";
-      document.getElementById("contact").style.userSelect = "auto";
-      document.getElementById("work").style.userSelect = "auto";
+      about.style.userSelect = "auto";
+      contact.style.userSelect = "auto";
+      work.style.userSelect = "auto";
       // pointer back to default
-      document.getElementById("about").style.cursor = "default";
-      document.getElementById("contact").style.cursor = "default";
-      document.getElementById("work").style.cursor = "default";
+      about.style.cursor = "default";
+      contact.style.cursor = "default";
+      work.style.cursor = "default";
+      // Enable menu
       menuSetup();
       document.getElementById("menu").style.opacity = 1;
+      // Set new title
       steadyCover();
       break;
     default:

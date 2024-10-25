@@ -6,7 +6,6 @@ var lastMove = [0, 0];
 let linkState = 0;
 // Page state
 let currentPage = 'home';
-
 let subtState = 1;
 
 // Setup required for nav menu
@@ -27,6 +26,10 @@ function homeSetup() {
   home.addEventListener("mouseout", menuHoverOut);
   home.style.opacity = 1;
   home.addEventListener('click', homeClick);
+  home.style.filter = "none";
+  home.style.userSelect = "auto";
+  home.style.pointerEvents = "auto";
+  home.style.cursor = "auto";
 }
 
 // Listeners to add for menu elements
@@ -154,6 +157,7 @@ function enableSmoothTransition()  {
 };
 
 function homeClick(evt) {
+  let home = document.getElementById("home");
   // Prevent normal click
   evt.preventDefault();
   // Remove underline
@@ -161,6 +165,9 @@ function homeClick(evt) {
   evt.target.style.webkitTextDecoration = "transparent wavy underline";
   // Remove features of home navigation
   home.style.opacity = 0;
+  removeTab('home');
+  home.removeEventListener('click', homeClick);
+  // remove tab text
   home.addEventListener('transitionend', function byeTitle() {
     home.textContent = '';
     home.removeEventListener('transitionend', byeTitle);
@@ -195,6 +202,8 @@ function enableTab(id) {
 
 /* Disable element in nav menu */
 function removeTab(id) {
+  // Set new title
+  titleText = id.toUpperCase();
   let el = document.getElementById(id);
   el.style.filter = "blur(3px)";
   el.style.userSelect = "none";
@@ -226,8 +235,6 @@ function menuClick(evt) {
   // Set new page cover
   document.title = evt.target.id.toUpperCase() + ' - Guillermo A. R.';
   history.pushState({}, 'ABOUT - Guillermo A. R.', '/' + evt.target.id);
-  // Set new title
-  titleText = evt.target.id.toUpperCase();
   // Remove subtitles
   subtState = 0;
 }

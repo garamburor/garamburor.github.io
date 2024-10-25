@@ -33,7 +33,7 @@ body {
 .alphas {
     display: inline-block;
     width:15%;
-    transition: all 400ms;
+    transition: all 500ms ease-in-out;
     transition-property: font-size, opacity;
     opacity: 0;
     overflow: hidden;
@@ -108,6 +108,7 @@ a {
     font-family: 'Lexend';
     font-weight: 400;
     color: blue;
+    transition: width 450ms ease-in-out;
 }
 
 /* Subtitle */
