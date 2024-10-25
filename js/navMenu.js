@@ -28,6 +28,7 @@ function homeSetup() {
   home.style.userSelect = "auto";
   home.style.pointerEvents = "auto";
   home.style.cursor = "auto";
+  home.style.fontSize = "min(2.5vw, 15px)";
 }
 
 // Listeners to add for menu elements
