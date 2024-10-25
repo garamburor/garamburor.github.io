@@ -19,7 +19,7 @@ body {
 
 .knob {
     display: inline-block;
-    transition: font-size 400ms;
+    transition: font-size 450ms;
     transition-property: font-size, opacity;
     opacity: 1;
     position: relative;
@@ -108,7 +108,7 @@ a {
     font-family: 'Lexend';
     font-weight: 400;
     color: blue;
-    transition: width 450ms ease-in-out;
+    /* transition: width 450ms ease-in-out; */
 }
 
 /* Subtitle */
@@ -152,7 +152,7 @@ a {
 
 #home {
     float: left;
-    transition: all 0.4s;
+    transition: all 0.5s;
     opacity: 0;
 }
 

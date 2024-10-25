@@ -15,6 +15,8 @@ function textChange(j) {
   let knob = document.getElementById("Gknob");
   let subt = document.getElementById("subt");
 
+  knob.style.transform = "rotate(45deg)";
+  knob.style.transitionProperty = "font-size, opacity, transform";
   switch(j) {
     case 0: // greeting
       // disable href links
@@ -68,6 +70,16 @@ function textChange(j) {
       intro1.style.overflow = 'hidden';
       intro2.style.overflow = 'hidden';
       knob.style.overflow = 'hidden';
+
+      let elements = document.getElementsByClassName('title');
+      for(let i = 0; i < elements.length; i++)
+      {
+        // Hide letters by reducing width
+        elements[i].style.width = 0;
+        elements[i].style.transition = "width 450ms ease-in-out";
+        elements[i].style.animation = "widthOpen 450ms linear";
+      }
+      setTimeout(steadyCover, 10);
       // enable hyperlinks
       about.style.pointerEvents = "auto";
       contact.style.pointerEvents = "auto";
@@ -83,8 +95,6 @@ function textChange(j) {
       // Enable menu
       menuSetup();
       document.getElementById("menu").style.opacity = 1;
-      // Set new title
-      steadyCover();
       break;
     default:
       break;

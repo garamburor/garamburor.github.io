@@ -23,6 +23,11 @@ function setup() {
     intro2.style.width = 'auto';
     intro1.style.opacity = 1;
     intro2.style.opacity = 1;
+    let elements = document.getElementsByClassName('title');
+    for(let i = 0; i < elements.length; i++)
+    {
+      elements[i].style.transition = "width 450ms ease-in-out";
+    }
   }
 }
 

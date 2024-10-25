@@ -148,7 +148,9 @@ function enableSmoothTransition()  {
   linkState = 0;
   document.getElementById("intro1").style.overflow = 'visible';
   document.getElementById("intro2").style.overflow = 'visible';
-  document.getElementById("Gknob").style.overflow = 'visible';
+  let knob = document.getElementById("Gknob");
+  knob.style.overflow = 'visible';
+  knob.style.transform = "rotate(0deg)";
   let elements = document.getElementsByClassName('title');
   for(let i = 0; i < elements.length; i++)
   {
@@ -171,17 +173,17 @@ function homeClick(evt) {
   subtState = 1;
   // remove tab text
   home.addEventListener('transitionend', function byeTitle() {
+  home.removeEventListener('transitionend', byeTitle);
+  // Trigger default home text
+  let elements = document.getElementsByClassName('title');
+  for(let i = 0; i < elements.length; i++)
+  {
     home.textContent = '';
-    home.removeEventListener('transitionend', byeTitle);
-    // Trigger default home text
-    let elements = document.getElementsByClassName('title');
-    for(let i = 0; i < elements.length; i++)
-    {
-      // Set animation for hiding text
-      elements[i].style.width = 0;
-      elements[i].addEventListener("transitionend", steadyCover);
-    }
-  })
+    // Set animation for hiding text
+    elements[i].style.width = 0;
+    elements[i].addEventListener("transitionend", steadyCover);
+  }
+})
   // Enable previous tab
   enableTab(currentPage);
   // Set new page url & title
