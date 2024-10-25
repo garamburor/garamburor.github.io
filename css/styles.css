@@ -152,7 +152,7 @@ a {
 
 #home {
     float: left;
-    transition: all 0.7s;
+    transition: all 0.4s;
     opacity: 0;
 }
 

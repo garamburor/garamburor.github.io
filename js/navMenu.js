@@ -160,33 +160,33 @@ function homeClick(evt) {
   let home = document.getElementById("home");
   // Prevent normal click
   evt.preventDefault();
+  // Remove features of home navigation
+  removeTab('home');
   // Remove underline
   evt.target.style.textDecoration = "transparent wavy underline";
   evt.target.style.webkitTextDecoration = "transparent wavy underline";
-  // Remove features of home navigation
   home.style.opacity = 0;
-  removeTab('home');
   home.removeEventListener('click', homeClick);
+  // Display main cover with subs
+  subtState = 1;
   // remove tab text
   home.addEventListener('transitionend', function byeTitle() {
     home.textContent = '';
     home.removeEventListener('transitionend', byeTitle);
+    // Trigger default home text
+    let elements = document.getElementsByClassName('title');
+    for(let i = 0; i < elements.length; i++)
+    {
+      // Set animation for hiding text
+      elements[i].style.width = 0;
+      elements[i].addEventListener("transitionend", steadyCover);
+    }
   })
-  // Trigger default home text
-  let elements = document.getElementsByClassName('title');
-  for(let i = 0; i < elements.length; i++)
-  {
-    // Set animation for hiding text
-    elements[i].style.width = 0;
-    elements[i].addEventListener("transitionend", steadyCover);
-  }
   // Enable previous tab
   enableTab(currentPage);
   // Set new page url & title
   document.title = 'Guillermo A. R.';
   history.pushState({}, null, '/');
-  // Display main cover with subs
-  subtState = 1;
 }
 
 /* Enable element in nav menu */
