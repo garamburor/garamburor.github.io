@@ -1,6 +1,8 @@
 let clicked = 0;
 let gameMode = 0;
 let easterEggTimer = null;
+let knobLock1 = 0;
+let knobLock2 = 0;
 
 function easterEggSetup() {
   // For easter egg
@@ -26,13 +28,16 @@ function touchKnob(event) {
     targetAngle = Math.round(targetAngle * 180 / Math.PI);
     targetAngle += 180;
     targetAngle = (targetAngle + 90) % 360;
-    if (targetAngle >= 320) {targetAngle = 320};
-    if (targetAngle <= 30) {targetAngle = 30};
+    // Clip angle
+    if (targetAngle >= 315) {targetAngle = 315};
+    if (targetAngle <= 45) {targetAngle = 45};
+    // Map it to points of logo
     let fun = (targetAngle - 30) / 320;
     for (let i=0; i<num; i++) {
       waves[i].increment = map(fun, 0, 1, 60, 1);
       waves[i].period = map(fun, 0, 1, 1, 8);
     }
+    // Rotate G
     targetAngle -= 270;
     el.style.transform = str1.concat(targetAngle.toString(), str2);
   }
@@ -50,13 +55,18 @@ function rotateKnob(event) {
     targetAngle = Math.round(targetAngle * 180 / Math.PI);
     targetAngle += 180;
     targetAngle = (targetAngle + 90) % 360;
-    if (targetAngle >= 320) {targetAngle = 320};
-    if (targetAngle <= 40) {targetAngle = 40};
+    // Clip angle
+    if (targetAngle >= 315) 
+      {targetAngle = 315};
+    if (targetAngle <= 45) 
+      {targetAngle = 45};
+    // Map it to points of logo
     let fun = (targetAngle - 30) / 320;
     for (let i=0; i<num; i++) {
       waves[i].increment = map(fun, 0, 1, 60, 1);
       waves[i].period = map(fun, 0, 1, 0.7, 4.1);
     }
+    // Rotate G
     targetAngle -= 270;
     el.style.transform = str1.concat(targetAngle.toString(), str2);
   }
