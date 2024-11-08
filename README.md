@@ -1,7 +1,6 @@
-# [Personal website](https://garamburor.github.io/)
+# [Personal website](https://guillermo.works)
 Work in progress... (only home page currently)
 
 ## TO DO:
-- [ ] Correct individual HTML pages.
-- [ ] Add closing animation to home button.
-- [ ] Add favicon.
+- [ ] Create About page layout
+- [ ] Restructure site using CSS Grid
