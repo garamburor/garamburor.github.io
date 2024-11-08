@@ -211,7 +211,7 @@ function removeTab(id) {
   // Set new title
   titleText = id.toUpperCase();
   let el = document.getElementById(id);
-  el.style.filter = "blur(3px)";
+  el.style.filter = "blur(1.5px)";
   el.style.userSelect = "none";
   el.style.pointerEvents = "none";
   el.style.cursor = "pointer";
@@ -223,7 +223,7 @@ function removeTab(id) {
   el.removeEventListener("touchcancel", handleTouchEnd);
   el.removeEventListener("mouseout", menuHoverOut);
   // Make text a bit smaller
-  el.style.fontSize = "min(2.3vw, 12px)";
+  el.style.fontSize = "min(2.4vw, 13px)";
 }
 
 /* Handle nav click */
