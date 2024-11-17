@@ -37,8 +37,8 @@ function textChange(j) {
       intro1.textContent = 'H';
       intro2.textContent = "LA";
       // Adjust centering
-      intro1.style.width = '12%';
-      intro2.style.width = '12%';
+      intro1.style.width = '10%';
+      intro2.style.width = '10%';
       intro2.style.overflow = 'visible';
       break;
     case 1:
