@@ -34,11 +34,11 @@ function scrollListener(evt) {
   let intro1 = document.getElementById("intro1");
   let intro2 = document.getElementById("intro2");
   let knob = document.getElementById("Gknob");
-  intro1.style.maxWidth = ((1. - Math.sin(Math.PI * normH)) * 100).toString() + "vw";
-  intro2.style.maxWidth = ((1. - Math.sin(Math.PI * normH)) * 100).toString() + "vw";
-  knob.style.maxWidth = ((1. - Math.sin(Math.PI * normH)) * 100).toString() + "vw";
+  // intro1.style.maxWidth = ((1. - Math.sin(Math.PI * normH)) * 100).toString() + "vw";
+  // intro2.style.maxWidth = ((1. - Math.sin(Math.PI * normH)) * 100).toString() + "vw";
+  // knob.style.maxWidth = ((1. - Math.sin(Math.PI * normH)) * 100).toString() + "vw";
 
-  if(normH <= 0.5) {
+  if(normH < 0.5) {
     // Enable subtitles
     subt.style.opacity = 1;
     // Show main title
@@ -50,11 +50,21 @@ function scrollListener(evt) {
     // Disable home in nav
     home.style.opacity = 0;
     removeTab("home");
+    enableTab("about");
+    intro1.style.maxWidth = '100vw';
+    intro2.style.maxWidth = '100vw';
+    knob.style.maxWidth = '100vw';
   }
-  else {
+  if (normH == 0.5) {
+    intro1.style.maxWidth = 0;
+    intro2.style.maxWidth = 0;
+    knob.style.maxWidth = 0;
+  }
+  if (normH > 0.5) {
     // Activate home in nav
     home.style.opacity = 1;
     enableTab("home");
+    removeTab("about");
     // Remove knob
     knob.textContent = '';
     // Write new title
@@ -62,6 +72,9 @@ function scrollListener(evt) {
     let splitText1 = titleText.split("O");
     intro1.textContent = splitText1[0];
     intro2.textContent = splitText1[1];
+    intro1.style.maxWidth = '100vw';
+    intro2.style.maxWidth = '100vw';
+    knob.style.maxWidth = '100vw';
   }
 }
 

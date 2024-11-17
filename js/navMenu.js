@@ -67,9 +67,9 @@ function menuHoverIn(evt) {
   let knob = document.getElementById("Gknob");
   let subt = document.getElementById("subt");
   // enable transition of width
-  intro1.style.transitionProperty = 'font-size, opacity, width, max-width';
-  intro2.style.transitionProperty = 'font-size, opacity, width, max-width';
-  knob.style.transitionProperty = 'font-size, opacity, width, max-width, transform';
+  //intro1.style.transitionProperty = 'font-size, opacity, width, max-width';
+  //intro2.style.transitionProperty = 'font-size, opacity, width, max-width';
+  //knob.style.transitionProperty = 'font-size, opacity, width, max-width, transform';
   // Hide elements that don't fit width
   intro1.style.overflow = 'hidden';
   intro2.style.overflow = 'hidden';
@@ -138,10 +138,10 @@ function enableSmoothTransition()  {
   // rotate knob to normal
   knob.style.transform = "rotate(0deg)";
   // disable width transition
-  intro1.style.transitionProperty = 'font-size, opacity';
-  intro2.style.transitionProperty = 'font-size, opacity';
-  knob.style.transitionProperty = 'font-size, opacity, transform';
-  intro1.removeEventListener("transitionend", enableSmoothTransition);
+  // intro1.style.transitionProperty = 'font-size, opacity';
+  // intro2.style.transitionProperty = 'font-size, opacity';
+  // knob.style.transitionProperty = 'font-size, opacity, transform';
+  // intro1.removeEventListener("transitionend", enableSmoothTransition);
 };
 
 /* Enable element in nav menu */
@@ -170,12 +170,12 @@ function removeTab(id) {
 /* Handle nav click */
 function menuClick(evt) {
   evt.preventDefault();
-  let intro1 = document.getElementById("intro1");
-  let intro2 = document.getElementById("intro2");
-  let knob = document.getElementById("Gknob");
-  intro1.style.transitionProperty = 'font-size, opacity';
-  intro2.style.transitionProperty = 'font-size, opacity';
-  knob.style.transitionProperty = 'font-size, opacity, transform';
+  // let intro1 = document.getElementById("intro1");
+  // let intro2 = document.getElementById("intro2");
+  // let knob = document.getElementById("Gknob");
+  // intro1.style.transitionProperty = 'font-size, opacity';
+  // intro2.style.transitionProperty = 'font-size, opacity';
+  // knob.style.transitionProperty = 'font-size, opacity, transform';
   // Remove underline
   evt.target.style.textDecoration = "transparent wavy underline";
   evt.target.style.webkitTextDecoration = "transparent wavy underline";
