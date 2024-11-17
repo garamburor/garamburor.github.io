@@ -65,8 +65,11 @@ function menuHoverIn(evt) {
   let intro1 = document.getElementById("intro1");
   let intro2 = document.getElementById("intro2");
   let knob = document.getElementById("Gknob");
-  let elements = document.getElementsByClassName('title');
   let subt = document.getElementById("subt");
+  // enable transition of width
+  intro1.style.transitionProperty = 'font-size, opacity, width, max-width';
+  intro2.style.transitionProperty = 'font-size, opacity, width, max-width';
+  knob.style.transitionProperty = 'font-size, opacity, width, max-width, transform';
   // Hide elements that don't fit width
   intro1.style.overflow = 'hidden';
   intro2.style.overflow = 'hidden';
@@ -75,32 +78,36 @@ function menuHoverIn(evt) {
   subt.style.opacity = 0;
   // While letters are hidden, set new text and then open back
   tempTitle = evt.target.innerText;
-  for(let i = 0; i < elements.length; i++)
-  {
-    // Hide letters by reducing width
-    elements[i].style.width = 0;
-    elements[i].removeEventListener("transitionend", enableSmoothTransition);
-    elements[i].removeEventListener("transitionend", steadyCover);
-    elements[i].addEventListener("transitionend", setTitle);
-  }
-  evt.target.style.textDecoration = "blue wavy underline";
-  evt.target.style.webkitTextDecoration = "blue wavy underline";
+  
+  intro1.style.maxWidth = 0;
+  intro2.style.maxWidth = 0;
+  knob.style.maxWidth = 0;
+
+  intro1.removeEventListener("transitionend", enableSmoothTransition);
+  intro1.removeEventListener("transitionend", steadyCover);
+  intro1.addEventListener("transitionend", setTitle);
+
+  evt.target.style.textDecoration = "var(--font-color) wavy underline";
+  evt.target.style.webkitTextDecoration = "var(--font-color) wavy underline";
 }
 
 /* When mouse leaves nav element */
 function menuHoverOut(evt) {
   evt.target.style.textDecoration = "transparent wavy underline";
   evt.target.style.webkitTextDecoration = "transparent wavy underline";
-  let elements = document.getElementsByClassName('title');
-  for(let i = 0; i < elements.length; i++)
-  {
-    // Set animation for hiding text
-    elements[i].style.width = 0;
-    // Once its done call the main cover
-    elements[i].removeEventListener("transitionend", enableSmoothTransition);
-    elements[i].removeEventListener("transitionend", setTitle);
-    elements[i].addEventListener("transitionend", steadyCover);
-  }
+  
+  let intro1 = document.getElementById("intro1");
+  let intro2 = document.getElementById("intro2");
+  let knob = document.getElementById("Gknob");
+
+  // Set animation for hiding text
+  intro1.style.maxWidth = 0;
+  intro2.style.maxWidth = 0;
+  knob.style.maxWidth = 0;
+  // Once its done call the main cover
+  intro1.removeEventListener("transitionend", enableSmoothTransition);
+  intro1.removeEventListener("transitionend", setTitle);
+  intro1.addEventListener("transitionend", steadyCover);
 }
 
 /* Set main title text */
@@ -108,34 +115,33 @@ function setTitle() {
   // Needed elements
   let intro1 = document.getElementById("intro1");
   let intro2 = document.getElementById("intro2");
-  let elements = document.getElementsByClassName('title');
+  let knob = document.getElementById("Gknob");
   // Make sure G is not there
-  document.getElementById("Gknob").textContent = "";
+  knob.textContent = "";
   // Split text where O is
   let splitText = tempTitle.split("O");
   intro1.textContent = splitText[0];
   intro2.textContent = splitText[1];
-  for(let i = 0; i < elements.length; i++)
-  {
-    // set text to be revealed
-    elements[i].style.width = "100%";
-    elements[i].removeEventListener("transitionend", setTitle);
-  }
+  
+  intro1.style.maxWidth = '100vw';
+  intro2.style.maxWidth = '100vw';
+  knob.style.maxWidth = '100vw';
+  intro1.removeEventListener("transitionend", setTitle);
 }
 
 /* Makes overflow visible for prettier window size changes */
 function enableSmoothTransition()  {
   linkState = 0;
-  document.getElementById("intro1").style.overflow = 'visible';
-  document.getElementById("intro2").style.overflow = 'visible';
+  let intro1 = document.getElementById("intro1");
+  let intro2 = document.getElementById("intro2");
   let knob = document.getElementById("Gknob");
-  knob.style.overflow = 'visible';
+  // rotate knob to normal
   knob.style.transform = "rotate(0deg)";
-  let elements = document.getElementsByClassName('title');
-  for(let i = 0; i < elements.length; i++)
-  {
-    elements[i].removeEventListener("transitionend", enableSmoothTransition);
-  }
+  // disable width transition
+  intro1.style.transitionProperty = 'font-size, opacity';
+  intro2.style.transitionProperty = 'font-size, opacity';
+  knob.style.transitionProperty = 'font-size, opacity, transform';
+  intro1.removeEventListener("transitionend", enableSmoothTransition);
 };
 
 /* Enable element in nav menu */
@@ -164,6 +170,12 @@ function removeTab(id) {
 /* Handle nav click */
 function menuClick(evt) {
   evt.preventDefault();
+  let intro1 = document.getElementById("intro1");
+  let intro2 = document.getElementById("intro2");
+  let knob = document.getElementById("Gknob");
+  intro1.style.transitionProperty = 'font-size, opacity';
+  intro2.style.transitionProperty = 'font-size, opacity';
+  knob.style.transitionProperty = 'font-size, opacity, transform';
   // Remove underline
   evt.target.style.textDecoration = "transparent wavy underline";
   evt.target.style.webkitTextDecoration = "transparent wavy underline";
@@ -171,15 +183,20 @@ function menuClick(evt) {
   currentPage = evt.target.id;
   // Disable current page in nav
   removeTab(evt.target.id);
-  if (evt.target.id == "home") {
-    // Set new page cover
-    document.title = 'Guillermo A. R.';
-    history.pushState({}, 'Guillermo A. R.', '/');
+  // Handle page
+  switch (currentPage) {
+    case "home":
+        // Set new page cover
+      document.title = 'Guillermo A. R.';
+      history.pushState({}, 'Guillermo A. R.', '/');
+      // Scroll to home section
+      window.scrollTo({top: 0, behavior: 'smooth'});
+      break;
+    case "about":
+        // Set new page cover
+      document.title = evt.target.id.toUpperCase() + ' - Guillermo A. R.';
+      history.pushState({}, 'ABOUT - Guillermo A. R.', '/' + evt.target.id);
+      window.scrollTo({top: window.innerHeight, behavior: 'smooth'});
+      break;
   }
-  else {
-    // Set new page cover
-    document.title = evt.target.id.toUpperCase() + ' - Guillermo A. R.';
-    history.pushState({}, 'ABOUT - Guillermo A. R.', '/' + evt.target.id);
-  }
-  steadyCover();
 }

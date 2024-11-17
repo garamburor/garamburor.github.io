@@ -1,3 +1,10 @@
+:root {
+    --bg-color: #fffef1;
+    --font-color: blue;
+    --tau: 500ms;
+    --title-pos: 60vh;
+  }
+
 /* Import font */
 @font-face {
     font-family: "Lexend";
@@ -16,7 +23,11 @@ body {
     /* remove gap at top for nav bar */
     margin: 0;
     padding-top: 0;
-    background-color: #fffef1;
+    /* bg color + transition */
+    background-color: var(--bg-color);
+    -webkit-transition: background-color var(--tau) linear;
+    -ms-transition: background-color var(--tau) linear;
+    transition: background-color var(--tau) linear;
     /* help safari render font well */
     -webkit-font-smoothing: subpixel-antialiased;
 }
@@ -34,29 +45,29 @@ body {
     /* Add some space in between */
     padding: 15px;
     word-spacing: 15px;
-    transition: all 1s;
+    transition: all var(--tau);
 }
 
 .navigation-bar a {
     font-family: 'Lexend';
     font-weight: 600;
     font-size: min(2.5vw, 15px);
-    color: blue;
+    color: var(--font-color);
     text-decoration: transparent wavy underline;
     -webkit-text-decoration: transparent wavy underline;
-    transition: all 0.7s;
+    transition: all var(--tau);
 }
 
 #home {
     float: left;
-    transition: all 0.5s;
+    transition: all var(--tau);
     opacity: 0;
 }
 
 .menu { 
     float: right;
     opacity: 0;
-    transition: all 1s;
+    transition: all var(--tau);
 }
 
 /* COVER */
@@ -69,43 +80,46 @@ body {
     display: grid;
     /* prevent overlapping */
     position: relative;
-    color: blue;
+    color: var(--font-color);
     font-weight: 400;
     font-family: 'Lexend';
 }
 
 /* Style for cover title */
+#title-container {
+    height: var(--title-pos);
+}
+
 .title {
     display: flex;
-    width: 100%;
-    /* Center horizontally */
-    height: 50vh;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    right: 0;
     justify-content: center;
+    position: fixed;
+    z-index: 999;
     align-items: end;
     /* Font settings */
     text-align: center;
-    font-size: min(13vw, 128px);    
+    font-size: min(13vw, 128px);   
 }
 
 /* Subtitle */
 .subtitle {
-    display: block;
-    height: 50vh;
     font-size: min(4vw, 50px);
-    color: blue;
-    transition: opacity 0.6s;
+    color: var(--font-color);
+    transition: opacity var(--tau);
     transition-property: font-size, opacity;
     opacity: 0;
     text-align: right;
     margin-right: 8vw;
 }
 
-.alphas {
+.alphas {  
     display: inline-block;
     width:15%;
-    transition: all 500ms ease-in-out;
+    transition: all var(--tau) ease-in-out;
     transition-property: font-size, opacity;
     opacity: 0;
     overflow: hidden;
@@ -113,6 +127,7 @@ body {
 
 #intro1 {
     text-align: end;
+    margin: 0;
 }
 
 #intro2 {
@@ -121,11 +136,11 @@ body {
 
 .knob {
     display: inline-block;
-    transition: font-size 500ms ease-in-out;
-    transition-property: font-size, opacity;
-    opacity: 1;
-    position: relative;
+    transition: all var(--tau) ease-in-out;
+    transition-property: font-size, opacity, width;
     overflow: hidden;
+    opacity: 0;
+    position: relative;
     transform: rotate(0);
     user-select: none; /* Standard syntax */
     word-wrap: normal;
@@ -145,5 +160,5 @@ body {
 .about-page {
     height: 100vh;
     width: 100vw;
-    background-color: #fdfdfd;
+    /* background-color: #fdfdfd; */
 }

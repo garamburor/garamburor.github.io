@@ -59,23 +59,17 @@ function textChange(j) {
     case 4: // Cover
       // Remove animation listener
       intro1.removeEventListener("transitionend", trigFrame);
-      // Set transition for width
-      // set text to be revealed
-      let elements = document.getElementsByClassName('title');
-      for(let i = 0; i < elements.length; i++)
-      {
-        // Hide letters by reducing width
-        elements[i].style.width = 0;
-        elements[i].style.transition = "width 450ms ease-in-out";
-        elements[i].style.animation = "widthOpen 450ms linear";
-      }
-      intro1.style.opacity = 1;
-      intro2.style.opacity = 1;
-      knob.style.opacity = 1;
+
       intro1.style.overflow = 'hidden';
       intro2.style.overflow = 'hidden';
-      knob.style.overflow = 'hidden';
-      setTimeout(steadyCover, 10);
+
+      intro1.style.maxWidth = 0;
+      intro2.style.maxWidth = 0;
+      knob.style.maxWidth = 0;
+      intro1.style.width = 'auto';
+      intro2.style.width = 'auto';
+      knob.style.width = 'auto';
+
       // enable hyperlinks
       about.style.pointerEvents = "auto";
       contact.style.pointerEvents = "auto";
@@ -91,6 +85,17 @@ function textChange(j) {
       // Enable menu
       menuSetup();
       document.getElementById("menu").style.opacity = 1;
+
+      setTimeout(function() {
+        intro1.style.opacity = 1;
+        intro2.style.opacity = 1;
+        knob.style.opacity = 1;
+
+        intro1.style.transitionProperty = 'font-size, opacity, width, max-width';
+        intro2.style.transitionProperty = 'font-size, opacity, width, max-width';
+        knob.style.transitionProperty = 'font-size, opacity, width, max-width, transform';
+        steadyCover();
+      }, 10 );
       break;
     default:
       break;
