@@ -4,42 +4,25 @@ let tempTitle = titleText;
 var lastMove = [0, 0];
 // Page state
 let currentPage = 'home';
-let subtState = 1;
 
 // Setup required for nav menu
 function menuSetup(id) {
   menuEvent("about");
   menuEvent("contact");
   menuEvent("work");
-}
-
-/* Add home nav features */
-function homeSetup() {
-  let home = document.getElementById("home");
-  home.addEventListener("mouseenter", menuHoverIn);
-  home.addEventListener("touchstart", handleTouchStart);
-  home.addEventListener("touchmove", saveTouch, false);
-  home.addEventListener("touchend", handleTouchEnd);
-  home.addEventListener("touchcancel", handleTouchEnd);
-  home.addEventListener("mouseout", menuHoverOut);
-  home.style.opacity = 1;
-  home.addEventListener('click', homeClick);
-  home.style.filter = "none";
-  home.style.userSelect = "auto";
-  home.style.pointerEvents = "auto";
-  home.style.cursor = "auto";
-  home.style.fontSize = "min(2.5vw, 15px)";
+  menuEvent("home");
 }
 
 // Listeners to add for menu elements
 function menuEvent(id) {
-  document.getElementById(id).addEventListener("mouseenter", menuHoverIn);
-  document.getElementById(id).addEventListener("touchstart", handleTouchStart);
-  document.getElementById(id).addEventListener("touchmove", saveTouch, false);
-  document.getElementById(id).addEventListener("touchend", handleTouchEnd);
-  document.getElementById(id).addEventListener("touchcancel", handleTouchEnd);
-  document.getElementById(id).addEventListener("mouseout", menuHoverOut);
-  document.getElementById(id).addEventListener("click", menuClick);
+  el = document.getElementById(id);
+  el.addEventListener("mouseenter", menuHoverIn);
+  el.addEventListener("touchstart", handleTouchStart);
+  el.addEventListener("touchmove", saveTouch, false);
+  el.addEventListener("touchend", handleTouchEnd);
+  el.addEventListener("touchcancel", handleTouchEnd);
+  el.addEventListener("mouseout", menuHoverOut);
+  el.addEventListener("click", menuClick);
 }
 
 /* Store last touch position */
@@ -90,12 +73,6 @@ function menuHoverIn(evt) {
   knob.style.overflow = 'hidden';
   // Remove subtitle
   subt.style.opacity = 0;
-  subt.addEventListener('transitionend', function byeSubs() {
-    if (subtState == 0) {
-      document.getElementById('subt').textContent = '';
-    }
-    document.getElementById('subt').removeEventListener('transitionend', byeSubs);
-  })
   // While letters are hidden, set new text and then open back
   tempTitle = evt.target.innerText;
   for(let i = 0; i < elements.length; i++)
@@ -161,48 +138,13 @@ function enableSmoothTransition()  {
   }
 };
 
-function homeClick(evt) {
-  let home = document.getElementById("home");
-  // Prevent normal click
-  evt.preventDefault();
-  // Remove features of home navigation
-  removeTab('home');
-  // Remove underline
-  evt.target.style.textDecoration = "transparent wavy underline";
-  evt.target.style.webkitTextDecoration = "transparent wavy underline";
-  home.style.opacity = 0;
-  home.removeEventListener('click', homeClick);
-  // Display main cover with subs
-  subtState = 1;
-  // remove tab text
-  home.addEventListener('transitionend', function byeTitle() {
-  home.removeEventListener('transitionend', byeTitle);
-  // Trigger default home text
-  let elements = document.getElementsByClassName('title');
-  for(let i = 0; i < elements.length; i++)
-  {
-    home.textContent = '';
-    // Set animation for hiding text
-    elements[i].style.width = 0;
-    elements[i].addEventListener("transitionend", steadyCover);
-  }
-})
-  // Enable previous tab
-  enableTab(currentPage);
-  // Set new page url & title
-  document.title = 'Guillermo A. R.';
-  history.pushState({}, null, '/');
-}
-
 /* Enable element in nav menu */
 function enableTab(id) {
   let el = document.getElementById(id);
   el.style.filter = "none";
   el.style.userSelect = "auto";
   el.style.pointerEvents = "auto";
-  el.style.cursor = "auto";
-  // Enable all mouse events
-  menuEvent(id);
+  el.style.cursor = "pointer";
   el.style.fontSize = "min(2.5vw, 15px)";
 }
 
@@ -215,13 +157,6 @@ function removeTab(id) {
   el.style.userSelect = "none";
   el.style.pointerEvents = "none";
   el.style.cursor = "pointer";
-  // Remove all mouse events
-  el.removeEventListener("mouseenter", menuHoverIn);
-  el.removeEventListener("touchstart", handleTouchStart);
-  el.removeEventListener("touchmove", saveTouch, false);
-  el.removeEventListener("touchend", handleTouchEnd);
-  el.removeEventListener("touchcancel", handleTouchEnd);
-  el.removeEventListener("mouseout", menuHoverOut);
   // Make text a bit smaller
   el.style.fontSize = "min(2.4vw, 13px)";
 }
@@ -236,12 +171,15 @@ function menuClick(evt) {
   currentPage = evt.target.id;
   // Disable current page in nav
   removeTab(evt.target.id);
-  // Add features of home navigation
-  document.getElementById("home").textContent = "HOME";
-  homeSetup();
-  // Remove subtitles
-  subtState = 0;
-  // Set new page cover
-  document.title = evt.target.id.toUpperCase() + ' - Guillermo A. R.';
-  history.pushState({}, 'ABOUT - Guillermo A. R.', '/' + evt.target.id);
+  if (evt.target.id == "home") {
+    // Set new page cover
+    document.title = 'Guillermo A. R.';
+    history.pushState({}, 'Guillermo A. R.', '/');
+  }
+  else {
+    // Set new page cover
+    document.title = evt.target.id.toUpperCase() + ' - Guillermo A. R.';
+    history.pushState({}, 'ABOUT - Guillermo A. R.', '/' + evt.target.id);
+  }
+  steadyCover();
 }
