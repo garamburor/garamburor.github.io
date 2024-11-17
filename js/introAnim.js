@@ -16,7 +16,7 @@ function textChange(j) {
   let subt = document.getElementById("subt");
 
   knob.style.transform = "rotate(45deg)";
-  knob.style.transitionProperty = "font-size, opacity, transform";
+  knob.style.transitionProperty = "font-size, opacity, transform, width";
   switch(j) {
     case 0: // greeting
       // disable href links
@@ -37,8 +37,6 @@ function textChange(j) {
       intro1.textContent = 'H';
       intro2.textContent = "LA";
       // Adjust centering
-      intro1.style.width = '10%';
-      intro2.style.width = '10%';
       intro2.style.overflow = 'visible';
       break;
     case 1:
@@ -52,9 +50,6 @@ function textChange(j) {
       intro2.style.opacity = 1;
       intro1.textContent = 'S';
       intro2.textContent = "Y";
-      // Adjust centering
-      intro1.style.width = '10%';
-      intro2.style.width = '10%';
       break;
     case 3:
       // Hide
@@ -64,13 +59,8 @@ function textChange(j) {
     case 4: // Cover
       // Remove animation listener
       intro1.removeEventListener("transitionend", trigFrame);
-      // Show last title
-      intro1.style.opacity = 1;
-      intro2.style.opacity = 1;
-      intro1.style.overflow = 'hidden';
-      intro2.style.overflow = 'hidden';
-      knob.style.overflow = 'hidden';
-
+      // Set transition for width
+      // set text to be revealed
       let elements = document.getElementsByClassName('title');
       for(let i = 0; i < elements.length; i++)
       {
@@ -79,6 +69,12 @@ function textChange(j) {
         elements[i].style.transition = "width 450ms ease-in-out";
         elements[i].style.animation = "widthOpen 450ms linear";
       }
+      intro1.style.opacity = 1;
+      intro2.style.opacity = 1;
+      knob.style.opacity = 1;
+      intro1.style.overflow = 'hidden';
+      intro2.style.overflow = 'hidden';
+      knob.style.overflow = 'hidden';
       setTimeout(steadyCover, 10);
       // enable hyperlinks
       about.style.pointerEvents = "auto";
