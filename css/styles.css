@@ -21,6 +21,7 @@ body {
     height: 200vh;
     /* remove scrollbar */
     scrollbar-width: none;
+    overflow: visible;
     /* remove gap at top for nav bar */
     margin: 0;
     padding-top: 0;
