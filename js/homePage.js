@@ -32,7 +32,7 @@ function scrollListener(evt) {
   stroke(fontcol);
   
   // Change title pos from home to about
-  roo.style.setProperty('--title-pos', (60 + normH * 30).toString() + "vh");
+  roo.style.setProperty('--title-pos', (55 + normH * 35).toString() + "vh");
 
   // Reduce width
   let intro1 = document.getElementById("intro1");
