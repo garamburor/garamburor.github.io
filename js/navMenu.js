@@ -2,8 +2,6 @@ let titleText = null;
 let tempTitle = titleText;
 // Coordinates for "touch hover"
 var lastMove = [0, 0];
-// Page state
-let currentPage = 'home';
 
 // Setup required for nav menu
 function menuSetup(id) {
@@ -62,33 +60,31 @@ function menuHoverIn(evt) {
   // For touch devices
   evt.preventDefault();
   // Needed elements
-  let intro1 = document.getElementById("intro1");
-  let intro2 = document.getElementById("intro2");
-  let knob = document.getElementById("Gknob");
   let subt = document.getElementById("subt");
-  // enable transition of width
-  //intro1.style.transitionProperty = 'font-size, opacity, width, max-width';
-  //intro2.style.transitionProperty = 'font-size, opacity, width, max-width';
-  //knob.style.transitionProperty = 'font-size, opacity, width, max-width, transform';
-  // Hide elements that don't fit width
-  intro1.style.overflow = 'hidden';
-  intro2.style.overflow = 'hidden';
-  knob.style.overflow = 'hidden';
   // Remove subtitle
   subt.style.opacity = 0;
   // While letters are hidden, set new text and then open back
   tempTitle = evt.target.innerText;
-  
+  titleAnim()
+  evt.target.style.textDecoration = "var(--font-color) wavy underline";
+  evt.target.style.webkitTextDecoration = "var(--font-color) wavy underline";
+}
+
+function titleAnim() {
+  // Needed elements
+  let intro1 = document.getElementById("intro1");
+  let intro2 = document.getElementById("intro2");
+  let knob = document.getElementById("Gknob");
+  // Hide elements that don't fit width
+  intro1.style.overflow = 'hidden';
+  intro2.style.overflow = 'hidden';
+  knob.style.overflow = 'hidden';
+  // Set width to 0
   intro1.style.maxWidth = 0;
   intro2.style.maxWidth = 0;
   knob.style.maxWidth = 0;
 
-  intro1.removeEventListener("transitionend", enableSmoothTransition);
-  intro1.removeEventListener("transitionend", steadyCover);
-  intro1.addEventListener("transitionend", setTitle);
-
-  evt.target.style.textDecoration = "var(--font-color) wavy underline";
-  evt.target.style.webkitTextDecoration = "var(--font-color) wavy underline";
+  intro1.addEventListener("transitionend", setTitle, {once:true});
 }
 
 /* When mouse leaves nav element */
@@ -103,11 +99,9 @@ function menuHoverOut(evt) {
   // Set animation for hiding text
   intro1.style.maxWidth = 0;
   intro2.style.maxWidth = 0;
-  knob.style.maxWidth = 0;
+  // knob.style.maxWidth = 0;
   // Once its done call the main cover
-  intro1.removeEventListener("transitionend", enableSmoothTransition);
-  intro1.removeEventListener("transitionend", setTitle);
-  intro1.addEventListener("transitionend", steadyCover);
+  intro1.addEventListener("transitionend", pageState, {once:true});
 }
 
 /* Set main title text */
@@ -116,6 +110,7 @@ function setTitle() {
   let intro1 = document.getElementById("intro1");
   let intro2 = document.getElementById("intro2");
   let knob = document.getElementById("Gknob");
+  let subt = document.getElementById("subt");
   // Make sure G is not there
   knob.textContent = "";
   // Split text where O is
@@ -125,24 +120,9 @@ function setTitle() {
   
   intro1.style.maxWidth = '100vw';
   intro2.style.maxWidth = '100vw';
-  knob.style.maxWidth = '100vw';
-  intro1.removeEventListener("transitionend", setTitle);
+  // knob.style.maxWidth = '100vw';
+  subt.style.opacity = 0;
 }
-
-/* Makes overflow visible for prettier window size changes */
-function enableSmoothTransition()  {
-  linkState = 0;
-  let intro1 = document.getElementById("intro1");
-  let intro2 = document.getElementById("intro2");
-  let knob = document.getElementById("Gknob");
-  // rotate knob to normal
-  knob.style.transform = "rotate(0deg)";
-  // disable width transition
-  // intro1.style.transitionProperty = 'font-size, opacity';
-  // intro2.style.transitionProperty = 'font-size, opacity';
-  // knob.style.transitionProperty = 'font-size, opacity, transform';
-  // intro1.removeEventListener("transitionend", enableSmoothTransition);
-};
 
 /* Enable element in nav menu */
 function enableTab(id) {
@@ -170,12 +150,6 @@ function removeTab(id) {
 /* Handle nav click */
 function menuClick(evt) {
   evt.preventDefault();
-  // let intro1 = document.getElementById("intro1");
-  // let intro2 = document.getElementById("intro2");
-  // let knob = document.getElementById("Gknob");
-  // intro1.style.transitionProperty = 'font-size, opacity';
-  // intro2.style.transitionProperty = 'font-size, opacity';
-  // knob.style.transitionProperty = 'font-size, opacity, transform';
   // Remove underline
   evt.target.style.textDecoration = "transparent wavy underline";
   evt.target.style.webkitTextDecoration = "transparent wavy underline";

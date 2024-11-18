@@ -1,4 +1,8 @@
 // p5js setup
+// Page state
+let currentPage = 'home';
+let memory = currentPage;
+
 function setup() {
   logoSetup();
   easterEggSetup();
@@ -28,8 +32,8 @@ function scrollListener(evt) {
   stroke(fontcol);
   
   // Change title pos from home to about
-  let title = document.getElementById("title-container");
-  title.style.height = (60 + normH * 40).toString() + "vh";
+  roo.style.setProperty('--title-pos', (60 + normH * 30).toString() + "vh");
+
   // Reduce width
   let intro1 = document.getElementById("intro1");
   let intro2 = document.getElementById("intro2");
@@ -37,61 +41,60 @@ function scrollListener(evt) {
   // intro1.style.maxWidth = ((1. - Math.sin(Math.PI * normH)) * 100).toString() + "vw";
   // intro2.style.maxWidth = ((1. - Math.sin(Math.PI * normH)) * 100).toString() + "vw";
   // knob.style.maxWidth = ((1. - Math.sin(Math.PI * normH)) * 100).toString() + "vw";
-
-  if(normH < 0.5) {
-    // Enable subtitles
-    subt.style.opacity = 1;
-    // Show main title
-    knob.style.overflow = 'hidden';
-    knob.textContent = 'G';
-    intro1.textContent = 'UILLERM';
-    intro2.textContent = '';
-    // subt.textContent = 'ARÁMBURO RODRÍGUEZ';
-    // Disable home in nav
-    home.style.opacity = 0;
-    removeTab("home");
-    enableTab("about");
-    intro1.style.maxWidth = '100vw';
-    intro2.style.maxWidth = '100vw';
-    knob.style.maxWidth = '100vw';
-  }
-  if (normH == 0.5) {
+  if (normH < 0.5) {  currentPage = "home" };
+  if (normH >= 0.5) {  currentPage = "about" };
+  if (currentPage != memory) {
+    memory = currentPage;
     intro1.style.maxWidth = 0;
     intro2.style.maxWidth = 0;
     knob.style.maxWidth = 0;
-  }
-  if (normH > 0.5) {
-    // Activate home in nav
-    home.style.opacity = 1;
-    enableTab("home");
-    removeTab("about");
-    // Remove knob
-    knob.textContent = '';
-    // Write new title
-    titleText = "ABOUT"
-    let splitText1 = titleText.split("O");
-    intro1.textContent = splitText1[0];
-    intro2.textContent = splitText1[1];
-    intro1.style.maxWidth = '100vw';
-    intro2.style.maxWidth = '100vw';
-    knob.style.maxWidth = '100vw';
+    intro1.addEventListener("transitionend", pageState, {once:true});
   }
 }
 
-function steadyCover() {
-  // Needed elements
+function pageState() {
   let intro1 = document.getElementById("intro1");
   let intro2 = document.getElementById("intro2");
   let knob = document.getElementById("Gknob");
   let subt = document.getElementById("subt");
   let home = document.getElementById("home");
-  let roo = document.querySelector(':root');
-
   // Make logo adjust to text
-  document.getElementById('logo').style.position = "sticky";
+  // document.getElementById('logo').style.position = "sticky";
+  switch(currentPage) {
+    case "home":
+      // Enable subtitles
+      subt.textContent = "ARAMBURO RODRIGUEZ";
+      subt.style.opacity = 1;
+      // Show main title
+      knob.style.overflow = 'hidden';
+      knob.textContent = 'G';
+      intro1.textContent = 'UILLERM';
+      intro2.textContent = '';
+      knob.style.transform = "rotate(0deg)";
+      // subt.textContent = 'ARÁMBURO RODRÍGUEZ';
+      // Disable home in nav
+      home.style.opacity = 0;
+      removeTab("home");
+      enableTab("about");
+      break;
+    case "about":
+      // Activate home in nav
+      subt.style.opacity = 0;
+      home.style.opacity = 1;
+      enableTab("home");
+      removeTab("about");
+      // Remove knob
+      knob.textContent = '';
+      // Write new title
+      intro1.textContent = 'AB';
+      intro2.textContent = 'UT';
+      break;
+  }
 
+  /* subt.addEventListener('transitionend', function byeSubs() {
+    subt.textContent = '';
+  },{once: true}) */
   intro1.style.maxWidth = '100vw';
   intro2.style.maxWidth = '100vw';
   knob.style.maxWidth = '100vw';
-  intro1.addEventListener("transitionend", enableSmoothTransition);
 }

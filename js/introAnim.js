@@ -16,7 +16,6 @@ function textChange(j) {
   let subt = document.getElementById("subt");
 
   knob.style.transform = "rotate(45deg)";
-  knob.style.transitionProperty = "font-size, opacity, transform, width";
   switch(j) {
     case 0: // greeting
       // disable href links
@@ -94,10 +93,8 @@ function textChange(j) {
         intro1.style.transitionProperty = 'font-size, opacity, width, max-width';
         intro2.style.transitionProperty = 'font-size, opacity, width, max-width';
         knob.style.transitionProperty = 'font-size, opacity, width, max-width, transform';
-        steadyCover();
+        pageState();
       }, 10 );
-      break;
-    default:
       break;
   }
   j += 1;

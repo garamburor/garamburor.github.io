@@ -2,6 +2,7 @@
     --bg-color: #fffef1;
     --font-color: blue;
     --tau: 500ms;
+    --long-tau: 800ms;
     --title-pos: 60vh;
   }
 
@@ -107,12 +108,16 @@ body {
 
 /* Subtitle */
 .subtitle {
+    display: flex;
+    position: fixed;
+    top: var(--title-pos);
+    right: 0;
+    z-index: 1000;
     font-size: min(4vw, 50px);
     color: var(--font-color);
-    transition: opacity var(--tau);
+    transition: opacity var(--long-tau);
     transition-property: font-size, opacity;
     opacity: 0;
-    text-align: right;
     margin-right: 8vw;
 }
 
