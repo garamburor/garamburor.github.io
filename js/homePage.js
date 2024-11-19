@@ -14,7 +14,7 @@ function setup() {
     document.getElementById('intro1').addEventListener("transitionend", trigFrame);
   }
   else {
-    pageState();
+    textChange(4);
   }
 }
 /*
@@ -74,7 +74,7 @@ function pageState() {
       // Make sure G is not there
       knob.textContent = "";
       // Split text where O is
-      let splitText = tempTitle.split("O");
+      let splitText = titleText.split("O");
       intro1.textContent = splitText[0];
       intro2.textContent = splitText[1];
       subt.style.opacity = 0;
