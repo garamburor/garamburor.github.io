@@ -1,5 +1,8 @@
 let titleText = null;
 let tempTitle = titleText;
+let id1 = null;
+let id2 = null;
+let id3 = null;
 // Coordinates for "touch hover"
 var lastMove = [0, 0];
 
@@ -56,25 +59,20 @@ function handleTouchStart(evt) {
 
 /* When mouse hovers nav element */
 function menuHoverIn(evt) {
-  linkState = 0;
   // For touch devices
   evt.preventDefault();
-  // Needed elements
-  let subt = document.getElementById("subt");
-  // Remove subtitle
-  subt.style.opacity = 0;
-  // While letters are hidden, set new text and then open back
-  tempTitle = evt.target.innerText;
-  titleAnim()
-  evt.target.style.textDecoration = "var(--font-color) wavy underline";
-  evt.target.style.webkitTextDecoration = "var(--font-color) wavy underline";
-}
-
-function titleAnim() {
   // Needed elements
   let intro1 = document.getElementById("intro1");
   let intro2 = document.getElementById("intro2");
   let knob = document.getElementById("Gknob");
+  let subt = document.getElementById("subt");
+  // If text is already hidden, show title
+  clearTimeout(id1);
+  clearTimeout(id2);
+  // Remove subtitle
+  subt.style.opacity = 0;
+  // While letters are hidden, set new text and then open back
+  tempTitle = evt.target.innerText;
   // Hide elements that don't fit width
   intro1.style.overflow = 'hidden';
   intro2.style.overflow = 'hidden';
@@ -83,12 +81,17 @@ function titleAnim() {
   intro1.style.maxWidth = 0;
   intro2.style.maxWidth = 0;
   knob.style.maxWidth = 0;
-
-  intro1.addEventListener("transitionend", setTitle, {once:true});
+  // intro1.addEventListener("transitionend", setTitle, {once:true});
+  id1 = setTimeout(setTitle, 505);
+  evt.target.style.textDecoration = "var(--font-color) wavy underline";
+  evt.target.style.webkitTextDecoration = "var(--font-color) wavy underline";
 }
 
 /* When mouse leaves nav element */
 function menuHoverOut(evt) {
+  clearTimeout(id1);
+  clearTimeout(id2);
+
   evt.target.style.textDecoration = "transparent wavy underline";
   evt.target.style.webkitTextDecoration = "transparent wavy underline";
   
@@ -99,13 +102,17 @@ function menuHoverOut(evt) {
   // Set animation for hiding text
   intro1.style.maxWidth = 0;
   intro2.style.maxWidth = 0;
-  // knob.style.maxWidth = 0;
+  knob.style.maxWidth = 0;
   // Once its done call the main cover
-  intro1.addEventListener("transitionend", pageState, {once:true});
+  // intro1.addEventListener("transitionend", pageState, {once:true});
+  id2 = setTimeout(pageState, 505);
 }
 
 /* Set main title text */
 function setTitle() {
+  clearTimeout(id1);
+  clearTimeout(id2);
+
   // Needed elements
   let intro1 = document.getElementById("intro1");
   let intro2 = document.getElementById("intro2");
@@ -127,50 +134,65 @@ function setTitle() {
 /* Enable element in nav menu */
 function enableTab(id) {
   let el = document.getElementById(id);
+  // add listeners
+  menuEvent(id);
+  // edit style
   el.style.filter = "none";
   el.style.userSelect = "auto";
   el.style.pointerEvents = "auto";
   el.style.cursor = "pointer";
-  el.style.fontSize = "min(2.5vw, 15px)";
+  el.style.fontSize = "3.3vmin";
 }
 
 /* Disable element in nav menu */
 function removeTab(id) {
+  // remove listeners
+  el = document.getElementById(id);
+  el.removeEventListener("mouseenter", menuHoverIn);
+  el.removeEventListener("touchstart", handleTouchStart);
+  el.removeEventListener("touchmove", saveTouch, false);
+  el.removeEventListener("touchend", handleTouchEnd);
+  el.removeEventListener("touchcancel", handleTouchEnd);
+  el.removeEventListener("mouseout", menuHoverOut);
+  el.removeEventListener("click", menuClick);
   // Set new title
   titleText = id.toUpperCase();
-  let el = document.getElementById(id);
+  // Change style
   el.style.filter = "blur(1.5px)";
   el.style.userSelect = "none";
   el.style.pointerEvents = "none";
   el.style.cursor = "pointer";
+  // Disable home if returning home
+  if (id == "home") {
+    let home = document.getElementById("home");
+    home.style.opacity = 0;
+  }
   // Make text a bit smaller
-  el.style.fontSize = "min(2.4vw, 13px)";
+  el.style.fontSize = "2.8vmin";
 }
 
 /* Handle nav click */
 function menuClick(evt) {
   evt.preventDefault();
+  // Disable current page in nav
+  removeTab(evt.target.id);
   // Remove underline
   evt.target.style.textDecoration = "transparent wavy underline";
   evt.target.style.webkitTextDecoration = "transparent wavy underline";
   enableTab(currentPage);
   currentPage = evt.target.id;
-  // Disable current page in nav
-  removeTab(evt.target.id);
   // Handle page
-  switch (currentPage) {
-    case "home":
+  if (currentPage == "home") {
         // Set new page cover
       document.title = 'Guillermo A. R.';
       history.pushState({}, 'Guillermo A. R.', '/');
-      // Scroll to home section
-      window.scrollTo({top: 0, behavior: 'smooth'});
-      break;
-    case "about":
-        // Set new page cover
-      document.title = evt.target.id.toUpperCase() + ' - Guillermo A. R.';
-      history.pushState({}, 'ABOUT - Guillermo A. R.', '/' + evt.target.id);
-      window.scrollTo({top: window.innerHeight, behavior: 'smooth'});
-      break;
+      pageState();
+  } else {
+    // Set new page cover
+    document.title = evt.target.id.toUpperCase() + ' - Guillermo A. R.';
+    history.pushState({}, document.title, '/' + evt.target.id);
+    let home = document.getElementById("home");
+    home.style.opacity = 1;
+    pageState();
   }
 }

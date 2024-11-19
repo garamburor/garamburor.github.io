@@ -81,7 +81,7 @@ function mouseUp(evt) {
     waves[i].increment = 6;
     waves[i].period = 2.1;
   }
-  document.getElementById("Gknob").style.transitionProperty = "font-size, opacity, transform";
+  document.getElementById("Gknob").style.transitionProperty = "font-size, opacity, transform, max-width, width";
   document.getElementById("Gknob").style.transform = "rotate(0deg)";
   }, 2000);
   
@@ -89,7 +89,7 @@ function mouseUp(evt) {
 
 function mouseDown(evt) {
   evt.preventDefault();
-  document.getElementById("Gknob").style.transitionProperty = "font-size, opacity";
+  document.getElementById("Gknob").style.transitionProperty = "font-size, opacity, max-width, width";
   gameMode = 1;
   clicked = 1;
   clearInterval(easterEggTimer);

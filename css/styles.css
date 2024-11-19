@@ -1,9 +1,9 @@
 :root {
     --bg-color: #fffef1;
-    --font-color: blue;
+    --font-color:blue;
     --tau: 500ms;
     --long-tau: 800ms;
-    --title-pos: 60vh;
+    --title-pos: 56vh;
   }
 
 /* Import font */
@@ -18,10 +18,10 @@
 html,
 body { 
     width: 100vw;
-    height: 200vh;
+    height: 100vh;
     /* remove scrollbar */
     scrollbar-width: none;
-    overflow: visible;
+    /*overflow: visible;*/
     /* remove gap at top for nav bar */
     margin: 0;
     padding-top: 0;
@@ -39,21 +39,21 @@ body {
     /* Take the whole width */
     display: block;
     /* Height of nav bar */
-    height: 5vh;
+    height: 4vh;
     /* Make nav stick at top */
     z-index: 1000;
     top: 0%;
     position: sticky;
     /* Add some space in between */
-    padding: 15px;
-    word-spacing: 15px;
+    padding: 2.7vmin;
+    word-spacing: 3.7vmin;
     transition: all var(--tau);
 }
 
 .navigation-bar a {
     font-family: 'Lexend';
     font-weight: 600;
-    font-size: min(2.5vw, 15px);
+    font-size: 3.3vmin;/*min(2.5vw, 15px);*/
     color: var(--font-color);
     text-decoration: transparent wavy underline;
     -webkit-text-decoration: transparent wavy underline;
@@ -73,6 +73,14 @@ body {
 }
 
 /* COVER */
+.follow {
+    background-size: cover;
+    background-position: center;
+    max-width: 100%;
+    height: auto;
+    z-index: 0;
+}
+
 /* Style for cover section */
 .cover {
     margin: auto;
@@ -104,7 +112,7 @@ body {
     align-items: end;
     /* Font settings */
     text-align: center;
-    font-size: min(13vw, 128px);   
+    font-size: min(11vmax, 15vw);/*min(13vw, 128px);*/   
 }
 
 /* Subtitle */
@@ -114,12 +122,12 @@ body {
     top: var(--title-pos);
     right: 0;
     z-index: 1000;
-    font-size: min(4vw, 50px);
+    font-size: max(3.5vw, 5vmin);/*min(4vw, 50px); 4.8vw*/
     color: var(--font-color);
     transition: opacity var(--long-tau);
     transition-property: font-size, opacity;
     opacity: 0;
-    margin-right: 8vw;
+    margin-right: 4.5vmax;
 }
 
 .alphas {  
