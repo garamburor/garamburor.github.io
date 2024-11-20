@@ -36,7 +36,7 @@ function textChange(j) {
       intro1.textContent = 'H';
       intro2.textContent = "LA";
       // Adjust centering
-      intro2.style.overflowX = 'visible';
+      intro2.style.overflowX = 'hidden';
       break;
     case 1:
       // Hide
