@@ -2,6 +2,7 @@
 // Page state
 let currentPage = 'home';
 let memory = currentPage;
+let nbPages = 3 - 1.;
 
 function setup() {
   logoSetup();
@@ -14,7 +15,7 @@ function setup() {
   el.addEventListener("transitionend", function ouT() {
     hoverState = 0;
   });
-  // addEventListener('scroll', scrollListener);
+  addEventListener('scroll', scrollListener);
   // State machine?
   if (currentPage == "home") {
     textChange(0);
@@ -24,38 +25,40 @@ function setup() {
     textChange(4);
   }
 }
-/*
+
 function scrollListener(evt) {
   // Change color from home to about
   let roo = document.querySelector(':root');
   let normH = window.scrollY / window.innerHeight;
-  let fontcol = lerpColor(color(0,0,255), color(6,41,118), normH);
-  let bgcol = lerpColor(color(255,254,241), color(253,253,253), normH);
-  roo.style.setProperty('--font-color', fontcol.toString('#rrggbb'));
-  roo.style.setProperty('--bg-color', bgcol.toString('#rrggbb'));
-  stroke(fontcol);
-  
-  // Change title pos from home to about
-  roo.style.setProperty('--title-pos', (55 + normH * 35).toString() + "vh");
+  console.log(normH);
+  let fontcol;
+  let bgcol;
+  let e;
 
-  // Reduce width
-  let intro1 = document.getElementById("intro1");
-  let intro2 = document.getElementById("intro2");
-  let knob = document.getElementById("Gknob");
-  // intro1.style.maxWidth = ((1. - Math.sin(Math.PI * normH)) * 100).toString() + "vw";
-  // intro2.style.maxWidth = ((1. - Math.sin(Math.PI * normH)) * 100).toString() + "vw";
-  // knob.style.maxWidth = ((1. - Math.sin(Math.PI * normH)) * 100).toString() + "vw";
-  if (normH < 0.5) {  currentPage = "home" };
-  if (normH >= 0.5) {  currentPage = "about" };
-  if (currentPage != memory) {
-    memory = currentPage;
-    intro1.style.maxWidth = 0;
-    intro2.style.maxWidth = 0;
-    knob.style.maxWidth = 0;
-    intro1.addEventListener("transitionend", pageState, {once:true});
+  if (normH <= 1) {
+    let ho = document.getElementById("home");
+    e = new CustomEvent("click", { target:  ho});
+    ho.dispatchEvent(e);
+    fontcol = lerpColor(color(0,0,255), color(6,41,118), normH % 1.);
+    bgcol = lerpColor(color(255,254,241), color(253,253,253), normH % 1.);
+    roo.style.setProperty('--font-color', fontcol.toString('#rrggbb'));
+    roo.style.setProperty('--bg-color', bgcol.toString('#rrggbb'));
+    roo.style.setProperty('--title-pos', map(normH, 0, 1, 33, 66).toString() + "vh");
+    stroke(fontcol);
+  } else
+  if (normH > 1) {
+    let ab = document.getElementById("about");
+    e = new CustomEvent("click", { target:  ab});
+    ab.dispatchEvent(e);
+    fontcol = color(6,41,118);
+    bgcol = color(253,253,253);
+    roo.style.setProperty('--font-color', fontcol.toString('#rrggbb'));
+    roo.style.setProperty('--bg-color', bgcol.toString('#rrggbb'));
+    roo.style.setProperty('--title-pos', map(normH, 1, 2, 66, 0).toString() + "vh");
+    stroke(fontcol);
   }
 }
-*/
+
 function pageState() {
   clearTimeout(id1);
   clearTimeout(id2);
@@ -87,6 +90,7 @@ function pageState() {
       subt.style.opacity = 0;
       break;
   }
+  
   /* subt.addEventListener('transitionend', function byeSubs() {
     subt.textContent = '';
   },{once: true}) */

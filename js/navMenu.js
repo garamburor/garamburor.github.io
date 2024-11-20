@@ -179,7 +179,7 @@ function removeTab(id) {
     home.style.opacity = 0;
   }
   // Make text a bit smaller
-  el.style.fontSize = "2.8vmin";
+  //el.style.fontSize = "2.8vmin";
 }
 
 /* Handle nav click */
