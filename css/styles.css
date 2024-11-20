@@ -3,7 +3,7 @@
     --font-color:blue;
     --tau: 500ms;
     --long-tau: 800ms;
-    --title-pos: 60vmin;
+    --title-pos: 40vh;
   }
 
 /* Import font */
@@ -97,7 +97,7 @@ body {
 
 /* Style for cover title */
 #title-container {
-    height: var(--title-pos);
+    top: var(--title-pos);
 }
 
 .title {
@@ -109,20 +109,21 @@ body {
     justify-content: center;
     position: fixed;
     z-index: 999;
-    align-items: end;
+    align-items: center;
     /* Font settings */
     text-align: center;
-    font-size: min(11vmax, 15vw);/*min(13vw, 128px);*/   
+    font-size: min(11vmax, 15vw);  
 }
 
 /* Subtitle */
 .subtitle {
     display: flex;
     position: fixed;
+    margin-top: min(11vmax, 15vw);
     top: var(--title-pos);
     right: 0;
     z-index: 1000;
-    font-size: max(3.5vw, 5vmin);/*min(4vw, 50px); 4.8vw*/
+    font-size: max(3.5vw, 5vmin);
     color: var(--font-color);
     transition: opacity var(--long-tau);
     transition-property: font-size, opacity;
