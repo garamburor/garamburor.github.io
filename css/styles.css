@@ -36,22 +36,22 @@ body {
 
 /* TOP BAR */
 #nav {
-    top: 0%;
+    position: fixed;
+    display: inline-block;
+    left: 0;
+    right: 0;
+    top: 0;
     /* Add some space in between */
     padding: 2.7vmin;
     /*word-spacing: 3.7vmin;*/
+    /* Height of nav bar */
     height: 4vh;
-    align-items: center;
+    z-index: 1000;
 }
 
 .navigation-bar {
-    /* Take the whole width */
-    display: block;
-    /* Height of nav bar */
-    
     /* Make nav stick at top */
     z-index: 1000;
-    position: sticky;
     transition: all var(--tau);
 }
 
@@ -79,12 +79,10 @@ body {
 }
 
 #about {
-    margin-left: 4vw;
     float: left;
 }
 
 #contact {
-    width: 33%;
     margin: 0 auto;
 }
 
@@ -174,7 +172,7 @@ body {
 
 .alphas {  
     display: inline-block;
-    width:15%;
+    width:20%;
     transition: all var(--tau) ease-in-out;
     transition-property: font-size, opacity;
     opacity: 0;
