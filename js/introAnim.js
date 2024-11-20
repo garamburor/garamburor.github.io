@@ -36,7 +36,7 @@ function textChange(j) {
       intro1.textContent = 'H';
       intro2.textContent = "LA";
       // Adjust centering
-      intro2.style.overflow = 'visible';
+      intro2.style.overflowX = 'visible';
       break;
     case 1:
       // Hide
@@ -59,8 +59,8 @@ function textChange(j) {
       // Remove animation listener
       intro1.removeEventListener("transitionend", trigFrame);
 
-      intro1.style.overflow = 'hidden';
-      intro2.style.overflow = 'hidden';
+      intro1.style.overflowX = 'hidden';
+      intro2.style.overflowX = 'hidden';
 
       intro1.style.maxWidth = 0;
       intro2.style.maxWidth = 0;
@@ -89,7 +89,6 @@ function textChange(j) {
         intro1.style.opacity = 1;
         intro2.style.opacity = 1;
         knob.style.opacity = 1;
-
         intro1.style.transitionProperty = 'font-size, opacity, width, max-width';
         intro2.style.transitionProperty = 'font-size, opacity, width, max-width';
         knob.style.transitionProperty = 'font-size, opacity, width, max-width, transform';

@@ -16,7 +16,7 @@ function easterEggSetup() {
 }
 
 function touchKnob(event) {
-  event.preventDefault();
+  //event.preventDefault();
   if (clicked == 1) {
     let el = document.getElementById("Gknob")
     const rect = el.getBoundingClientRect();

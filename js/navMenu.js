@@ -31,7 +31,7 @@ function menuEvent(id) {
 
 /* Store last touch position */
 function saveTouch(evt) {
-  evt.preventDefault();
+  //evt.preventDefault();
   lastMove[0] = evt.touches[0].clientX;
   lastMove[1] = evt.touches[0].clientY;
 }
@@ -77,9 +77,9 @@ function menuHoverIn(evt) {
   // While letters are hidden, set new text and then open back
   tempTitle = evt.target.innerText;
   // Hide elements that don't fit width
-  intro1.style.overflow = 'hidden';
-  intro2.style.overflow = 'hidden';
-  knob.style.overflow = 'hidden';
+  intro1.style.overflowX = 'hidden';
+  intro2.style.overflowX = 'hidden';
+  knob.style.overflowX = 'hidden';
   
   // intro1.addEventListener("transitionend", setTitle, {once:true});
   if(intro1.style.maxWidth == "0px" && hoverState) {

@@ -7,6 +7,9 @@ let nbPages = 3 - 1.;
 function setup() {
   logoSetup();
   easterEggSetup();
+  document.addEventListener('touchmove',function (){
+    document.body.scrollTop = 0
+  })
 
   let el = document.getElementById("intro1");
   el.addEventListener("transitionstart", function inT() {
@@ -74,7 +77,7 @@ function pageState() {
       subt.textContent = "ARAMBURO RODRIGUEZ";
       subt.style.opacity = 1;
       // Show main title
-      knob.style.overflow = 'hidden';
+      knob.style.overflowX = 'hidden';
       knob.textContent = 'G';
       intro1.textContent = 'UILLERM';
       intro2.textContent = '';

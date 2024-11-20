@@ -73,9 +73,9 @@ function windowResized() {
   let intro1 = document.getElementById("intro1");
   let intro2 = document.getElementById("intro2");
   let knob = document.getElementById("Gknob");
-  intro1.style.overflow = 'visible';
-  intro2.style.overflow = 'visible';
-  knob.style.overflow = 'visible';
+  intro1.style.overflowX = 'visible';
+  intro2.style.overflowX = 'visible';
+  knob.style.overflowX = 'visible';
 }
 
 /* Save states of logo before leaving */
