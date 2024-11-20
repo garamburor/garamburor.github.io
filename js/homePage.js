@@ -6,7 +6,14 @@ let memory = currentPage;
 function setup() {
   logoSetup();
   easterEggSetup();
-  
+
+  let el = document.getElementById("intro1");
+  el.addEventListener("transitionstart", function inT() {
+    hoverState = 1;
+  });
+  el.addEventListener("transitionend", function ouT() {
+    hoverState = 0;
+  });
   // addEventListener('scroll', scrollListener);
   // State machine?
   if (currentPage == "home") {

@@ -1,5 +1,8 @@
 let titleText = null;
 let tempTitle = titleText;
+// Variable to check if title is on transition
+let hoverState = 0;
+// Variables for controlling timed transitions
 let id1 = null;
 let id2 = null;
 let id3 = null;
@@ -77,12 +80,21 @@ function menuHoverIn(evt) {
   intro1.style.overflow = 'hidden';
   intro2.style.overflow = 'hidden';
   knob.style.overflow = 'hidden';
-  // Set width to 0
-  intro1.style.maxWidth = 0;
-  intro2.style.maxWidth = 0;
-  knob.style.maxWidth = 0;
+  
   // intro1.addEventListener("transitionend", setTitle, {once:true});
-  id1 = setTimeout(setTitle, 505);
+  if(intro1.style.maxWidth == "0px" && hoverState) {
+    intro1.addEventListener("transitionend", setTitle, {once:true});
+  } else if (intro1.style.maxWidth == "0px" && !hoverState) {
+    setTitle();
+  }
+  else {
+      // Set width to 0
+    intro1.style.maxWidth = 0;
+    intro2.style.maxWidth = 0;
+    knob.style.maxWidth = 0;
+    id1 = setTimeout(setTitle, 505);
+  }
+  // add underline
   evt.target.style.textDecoration = "var(--font-color) wavy underline";
   evt.target.style.webkitTextDecoration = "var(--font-color) wavy underline";
 }
@@ -91,7 +103,7 @@ function menuHoverIn(evt) {
 function menuHoverOut(evt) {
   clearTimeout(id1);
   clearTimeout(id2);
-
+  // remove underline
   evt.target.style.textDecoration = "transparent wavy underline";
   evt.target.style.webkitTextDecoration = "transparent wavy underline";
   
@@ -104,15 +116,14 @@ function menuHoverOut(evt) {
   intro2.style.maxWidth = 0;
   knob.style.maxWidth = 0;
   // Once its done call the main cover
-  // intro1.addEventListener("transitionend", pageState, {once:true});
   id2 = setTimeout(pageState, 505);
 }
 
 /* Set main title text */
 function setTitle() {
+  // Stop transition events
   clearTimeout(id1);
   clearTimeout(id2);
-
   // Needed elements
   let intro1 = document.getElementById("intro1");
   let intro2 = document.getElementById("intro2");
@@ -124,7 +135,7 @@ function setTitle() {
   let splitText = tempTitle.split("O");
   intro1.textContent = splitText[0];
   intro2.textContent = splitText[1];
-  
+  // Set text display transition
   intro1.style.maxWidth = '100vw';
   intro2.style.maxWidth = '100vw';
   // knob.style.maxWidth = '100vw';
@@ -176,23 +187,39 @@ function menuClick(evt) {
   evt.preventDefault();
   // Disable current page in nav
   removeTab(evt.target.id);
+  // Stop any other transition
+  clearTimeout(id1);
+  clearTimeout(id2);
   // Remove underline
   evt.target.style.textDecoration = "transparent wavy underline";
   evt.target.style.webkitTextDecoration = "transparent wavy underline";
   enableTab(currentPage);
   currentPage = evt.target.id;
+  // Needed for home transition
+  let intro1 = document.getElementById("intro1");
+  let intro2 = document.getElementById("intro2");
+  let knob = document.getElementById("Gknob");
   // Handle page
   if (currentPage == "home") {
         // Set new page cover
       document.title = 'Guillermo A. R.';
       history.pushState({}, 'Guillermo A. R.', '/');
-      pageState();
+      // Set animation for hiding text
+      intro1.style.maxWidth = 0;
+      intro2.style.maxWidth = 0;
+      knob.style.maxWidth = 0;
   } else {
     // Set new page cover
     document.title = evt.target.id.toUpperCase() + ' - Guillermo A. R.';
     history.pushState({}, document.title, '/' + evt.target.id);
     let home = document.getElementById("home");
     home.style.opacity = 1;
+  }
+  // Trigger page when transitions stop
+  if (hoverState == 0) {
     pageState();
+  }
+  else {
+    intro1.addEventListener("transitionend", pageState, {once:true});
   }
 }
