@@ -21,7 +21,7 @@ body {
     height: 300vh;
     /* remove scrollbar */
     scrollbar-width: none;
-    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
     /* remove gap at top for nav bar */
     margin: 0;
     padding-top: 0;
