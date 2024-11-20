@@ -39,9 +39,11 @@ function scrollListener(evt) {
   let e;
 
   if (normH <= 1) {
+    /*
     let ho = document.getElementById("home");
     e = new CustomEvent("click", { target:  ho});
     ho.dispatchEvent(e);
+    */
     fontcol = lerpColor(color(0,0,255), color(6,41,118), normH % 1.);
     bgcol = lerpColor(color(255,254,241), color(253,253,253), normH % 1.);
     roo.style.setProperty('--font-color', fontcol.toString('#rrggbb'));
@@ -50,9 +52,6 @@ function scrollListener(evt) {
     stroke(fontcol);
   } else
   if (normH > 1) {
-    let ab = document.getElementById("about");
-    e = new CustomEvent("click", { target:  ab});
-    ab.dispatchEvent(e);
     fontcol = color(6,41,118);
     bgcol = color(253,253,253);
     roo.style.setProperty('--font-color', fontcol.toString('#rrggbb'));
