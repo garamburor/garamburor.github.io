@@ -4,12 +4,22 @@
     --tau: 500ms;
     --long-tau: 800ms;
     --title-pos: 33vh;
+    --portrait-pos: 0vh;
+    --show-portrait: 0;
   }
 
 /* Import font */
 @font-face {
     font-family: "Lexend";
     src: url("Lexend-VariableFont_wght.ttf");
+    text-rendering: optimizeLegibility;
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("Montserrat-VariableFont_wght.ttf");
     text-rendering: optimizeLegibility;
     font-weight: normal;
     font-style: normal;
@@ -30,8 +40,18 @@ body {
     -webkit-transition: background-color var(--tau) linear;
     -ms-transition: background-color var(--tau) linear;
     transition: background-color var(--tau) linear;
+    
+    font-size: 2vh; 
+    color: var(--font-color);
+    font-weight: 400;
+    font-family: 'Montserrat'; 
     /* help safari render font well */
     -webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
 }
 
 /* TOP BAR */
@@ -47,6 +67,7 @@ body {
     /* Height of nav bar */
     height: 4vh;
     z-index: 1000;
+    
 }
 
 .navigation-bar {
@@ -211,12 +232,13 @@ body {
     to {width: 100%;}
 }
 
-.about-page {
-    top: 100vh;
+#about-page {
+    top: 0vh;
     height: 100vh;
     width: 100%;
     left: 0;
-    position: absolute;
+    position: fixed;
+    z-index: 1;
     /*
     background-color: #fdfdfd;
     background-image: url('photo.png');
@@ -226,15 +248,32 @@ body {
 }
 
 #portrait-img {
+    transition: opacity var(--tau) ease-in-out;
+    opacity: var(--show-portrait);
     position: absolute;
     display: block;
     object-fit: cover;
-    width: 66vw;
-    top: 16vh;
-    bottom: 33vh;
-    margin: auto;
+    height: 50vh;
+    bottom: var(--portrait-pos);
+    margin-bottom: 0%;
+    margin-left: auto;
+    margin-right: auto;
     left: 0;
     right: 0;
+    z-index: 1;
+}
+
+#credits {
+    position: absolute;
+    transition: opacity, text-decoration var(--tau);
+    opacity: 0.25;
+    color: var(--font-color);
+    bottom: var(--portrait-pos);
+    z-index: 1;
+}
+
+#credits:hover {
+    opacity: 0.75;
 }
 
 #portrait-text {

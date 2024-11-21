@@ -73,7 +73,7 @@ function rotateKnob(event) {
 }
 
 function mouseUp(evt) {
-  evt.preventDefault();
+  // evt.preventDefault();
   clicked = 0;
   clearInterval(easterEggTimer);
   easterEggTimer = setTimeout(function() {gameMode = 0;
@@ -83,7 +83,7 @@ function mouseUp(evt) {
   }
   document.getElementById("Gknob").style.transitionProperty = "font-size, opacity, transform, max-width, width";
   document.getElementById("Gknob").style.transform = "rotate(0deg)";
-  }, 2000);
+  }, 1000);
   
 }
 

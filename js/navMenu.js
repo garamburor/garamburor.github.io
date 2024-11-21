@@ -76,11 +76,6 @@ function menuHoverIn(evt) {
   subt.style.opacity = 0;
   // While letters are hidden, set new text and then open back
   tempTitle = evt.target.innerText;
-  // Hide elements that don't fit width
-  intro1.style.overflowX = 'hidden';
-  intro2.style.overflowX = 'hidden';
-  knob.style.overflowX = 'hidden';
-  
   // intro1.addEventListener("transitionend", setTitle, {once:true});
   if(intro1.style.maxWidth == "0px" && hoverState) {
     intro1.addEventListener("transitionend", setTitle, {once:true});
@@ -116,7 +111,7 @@ function menuHoverOut(evt) {
   intro2.style.maxWidth = 0;
   knob.style.maxWidth = 0;
   // Once its done call the main cover
-  id2 = setTimeout(pageState, 505);
+  id2 = setTimeout(returnTitle, 505);
 }
 
 /* Set main title text */
@@ -217,9 +212,9 @@ function menuClick(evt) {
   }
   // Trigger page when transitions stop
   if (hoverState == 0) {
-    pageState();
+    returnTitle();
   }
   else {
-    intro1.addEventListener("transitionend", pageState, {once:true});
+    intro1.addEventListener("transitionend", returnTitle, {once:true});
   }
 }

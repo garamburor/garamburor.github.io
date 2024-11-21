@@ -35,8 +35,6 @@ function textChange(j) {
       intro2.style.opacity = 1;
       intro1.textContent = 'H';
       intro2.textContent = "LA";
-      // Adjust centering
-      intro2.style.overflowX = 'hidden';
       break;
     case 1:
       // Hide
@@ -58,9 +56,6 @@ function textChange(j) {
     case 4: // Cover
       // Remove animation listener
       intro1.removeEventListener("transitionend", trigFrame);
-
-      intro1.style.overflowX = 'hidden';
-      intro2.style.overflowX = 'hidden';
 
       intro1.style.maxWidth = 0;
       intro2.style.maxWidth = 0;
@@ -92,7 +87,7 @@ function textChange(j) {
         intro1.style.transitionProperty = 'font-size, opacity, width, max-width';
         intro2.style.transitionProperty = 'font-size, opacity, width, max-width';
         knob.style.transitionProperty = 'font-size, opacity, width, max-width, transform';
-        pageState();
+        returnTitle();
       }, 10 );
       break;
   }
