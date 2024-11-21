@@ -87,7 +87,7 @@ a {
 }
 
 #home {
-    width: 40vw; /*33vw*/
+    width: 20vw; /*33vw*/
     float: left;
     transition: all var(--tau);
     opacity: 0;
@@ -104,7 +104,7 @@ a {
 }
 
 #contact {
-    margin: 0 auto;
+    vertical-align:top;
 }
 
 #work {
