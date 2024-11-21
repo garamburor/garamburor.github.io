@@ -54,19 +54,7 @@ function scrollListener(evt) {
     // Static
     roo.style.setProperty('--show-portrait', 0);
   } else
-  if (normH > 0.5 && normH <= 0.7) {
-    // Static
-    currentPage = "home";
-    fontcol = color(6,41,118);
-    bgcol = color(253,253,253);
-    roo.style.setProperty('--font-color', fontcol.toString('#rrggbb'));
-    roo.style.setProperty('--bg-color', bgcol.toString('#rrggbb'));
-    stroke(fontcol);
-    roo.style.setProperty('--title-pos', "66vh");
-    roo.style.setProperty('--portrait-pos', "33vh");
-    roo.style.setProperty('--show-portrait', 1);
-  } else
-  if (normH > 0.7 && normH <= 0.8) {
+  if (normH > 0.5 && normH <= 1) {
     // Static
     currentPage = "about";
     fontcol = color(6,41,118);
@@ -78,7 +66,7 @@ function scrollListener(evt) {
     roo.style.setProperty('--portrait-pos', "33vh");
     roo.style.setProperty('--show-portrait', 1);
   } else
-  if (normH > 0.8 && normH <= 1.3) {
+  if (normH > 1 && normH <= 1.5) {
     // Static
     currentPage = "about";
     fontcol = color(6,41,118);
@@ -90,10 +78,10 @@ function scrollListener(evt) {
     stroke(fontcol);
     roo.style.setProperty('--show-portrait', 0);
     // Dynamic
-    roo.style.setProperty('--title-pos', map(normH, 0.8, 1.3, 66, 0).toString() + "vh");
-    roo.style.setProperty('--portrait-pos', map(normH, 0.8, 1.3, 33, 101).toString() + "vh");
+    roo.style.setProperty('--title-pos', map(normH, 1, 1.5, 66, 0).toString() + "vh");
+    roo.style.setProperty('--portrait-pos', map(normH, 1, 1.5, 33, 101).toString() + "vh");
   } else
-  if (normH > 1.3) {
+  if (normH > 1.5) {
     // Static
     currentPage = "about";
     fontcol = color(6,41,118);
@@ -114,18 +102,24 @@ function scrollListener(evt) {
 function pageState() {
   // if page changed
   if (currentPage != memory) {
+    let roo = document.querySelector(':root');
     memory = currentPage;
     let page;
     let e;
     switch (currentPage) {
       case "home":
+        hoverState = 1;
+        roo.style.setProperty('--title-width', "100vw");
         page = document.getElementById("home");
-        e = new CustomEvent("click", { target:  page});
+        e = new CustomEvent("click");
         page.dispatchEvent(e);
+
         break;
       case "about":
+        hoverState = 1;
+        roo.style.setProperty('--title-width', "0px");
         page = document.getElementById("about");
-        e = new CustomEvent("click", { target:  page});
+        e = new CustomEvent("click");
         page.dispatchEvent(e);
         break;
       case "contact":
@@ -173,7 +167,6 @@ function returnTitle() {
   /* subt.addEventListener('transitionend', function byeSubs() {
     subt.textContent = '';
   },{once: true}) */
-  intro1.style.maxWidth = '100vw';
-  intro2.style.maxWidth = '100vw';
-  knob.style.maxWidth = '100vw';
+  let roo = document.querySelector(':root');
+  roo.style.setProperty('--title-width', "100vw");
 }

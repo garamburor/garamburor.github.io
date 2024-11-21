@@ -57,9 +57,8 @@ function textChange(j) {
       // Remove animation listener
       intro1.removeEventListener("transitionend", trigFrame);
 
-      intro1.style.maxWidth = 0;
-      intro2.style.maxWidth = 0;
-      knob.style.maxWidth = 0;
+      let roo = document.querySelector(':root');
+      roo.style.setProperty('--title-width', "0px");
       intro1.style.width = 'auto';
       intro2.style.width = 'auto';
       knob.style.width = 'auto';

@@ -4,6 +4,7 @@
     --tau: 500ms;
     --long-tau: 800ms;
     --title-pos: 33vh;
+    --title-width: 100vw;
     --portrait-pos: 0vh;
     --show-portrait: 0;
   }
@@ -41,7 +42,7 @@ body {
     -ms-transition: background-color var(--tau) linear;
     transition: background-color var(--tau) linear;
     
-    font-size: 2vh; 
+    font-size: 1vmax; 
     color: var(--font-color);
     font-weight: 400;
     font-family: 'Montserrat'; 
@@ -87,7 +88,7 @@ a {
 }
 
 #home {
-    width: 20vw; /*33vw*/
+    width: 30vw; /*33vw*/
     float: left;
     transition: all var(--tau);
     opacity: 0;
@@ -202,17 +203,20 @@ a {
 
 #intro1 {
     text-align: end;
+    max-width: var(--title-width);
     margin: 0;
 }
 
 #intro2 {
     text-align: start;
+    max-width: var(--title-width);
 }
 
 .knob {
     display: inline-block;
     transition: all var(--tau) ease-in-out;
     transition-property: font-size, opacity, width;
+    max-width: var(--title-width);
     overflow: hidden;
     opacity: 0;
     position: relative;

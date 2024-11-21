@@ -10,7 +10,7 @@ let id3 = null;
 var lastMove = [0, 0];
 
 // Setup required for nav menu
-function menuSetup(id) {
+function menuSetup() {
   menuEvent("about");
   menuEvent("contact");
   menuEvent("work");
@@ -66,8 +66,8 @@ function menuHoverIn(evt) {
   evt.preventDefault();
   // Needed elements
   let intro1 = document.getElementById("intro1");
-  let intro2 = document.getElementById("intro2");
-  let knob = document.getElementById("Gknob");
+  let roo = document.querySelector(':root');
+  let maxWidth = roo.style.getPropertyValue('--title-width');
   let subt = document.getElementById("subt");
   // If text is already hidden, show title
   clearTimeout(id1);
@@ -77,16 +77,14 @@ function menuHoverIn(evt) {
   // While letters are hidden, set new text and then open back
   tempTitle = evt.target.innerText;
   // intro1.addEventListener("transitionend", setTitle, {once:true});
-  if(intro1.style.maxWidth == "0px" && hoverState) {
+  if(maxWidth == "0px" && hoverState) {
     intro1.addEventListener("transitionend", setTitle, {once:true});
-  } else if (intro1.style.maxWidth == "0px" && !hoverState) {
+  } else if (maxWidth == "0px" && !hoverState) {
     setTitle();
   }
   else {
-      // Set width to 0
-    intro1.style.maxWidth = 0;
-    intro2.style.maxWidth = 0;
-    knob.style.maxWidth = 0;
+    // Set width to 0
+    roo.style.setProperty('--title-width', "0px");
     id1 = setTimeout(setTitle, 505);
   }
   // add underline
@@ -102,14 +100,10 @@ function menuHoverOut(evt) {
   evt.target.style.textDecoration = "transparent wavy underline";
   evt.target.style.webkitTextDecoration = "transparent wavy underline";
   
-  let intro1 = document.getElementById("intro1");
-  let intro2 = document.getElementById("intro2");
-  let knob = document.getElementById("Gknob");
+  let roo = document.querySelector(':root');
 
   // Set animation for hiding text
-  intro1.style.maxWidth = 0;
-  intro2.style.maxWidth = 0;
-  knob.style.maxWidth = 0;
+  roo.style.setProperty('--title-width', "0px");
   // Once its done call the main cover
   id2 = setTimeout(returnTitle, 505);
 }
@@ -120,6 +114,7 @@ function setTitle() {
   clearTimeout(id1);
   clearTimeout(id2);
   // Needed elements
+  let roo = document.querySelector(':root');
   let intro1 = document.getElementById("intro1");
   let intro2 = document.getElementById("intro2");
   let knob = document.getElementById("Gknob");
@@ -131,9 +126,7 @@ function setTitle() {
   intro1.textContent = splitText[0];
   intro2.textContent = splitText[1];
   // Set text display transition
-  intro1.style.maxWidth = '100vw';
-  intro2.style.maxWidth = '100vw';
-  // knob.style.maxWidth = '100vw';
+  roo.style.setProperty('--title-width', "100vw");
   subt.style.opacity = 0;
 }
 
@@ -174,7 +167,7 @@ function removeTab(id) {
     home.style.opacity = 0;
   }
   // Make text a bit smaller
-  //el.style.fontSize = "2.8vmin";
+  el.style.fontSize = "3vmin";
 }
 
 /* Handle nav click */
@@ -192,17 +185,14 @@ function menuClick(evt) {
   currentPage = evt.target.id;
   // Needed for home transition
   let intro1 = document.getElementById("intro1");
-  let intro2 = document.getElementById("intro2");
-  let knob = document.getElementById("Gknob");
+  let roo = document.querySelector(':root');
   // Handle page
   if (currentPage == "home") {
         // Set new page cover
       document.title = 'Guillermo A. R.';
       history.pushState({}, 'Guillermo A. R.', '/');
       // Set animation for hiding text
-      intro1.style.maxWidth = 0;
-      intro2.style.maxWidth = 0;
-      knob.style.maxWidth = 0;
+      roo.style.setProperty('--title-width', "0px");
   } else {
     // Set new page cover
     document.title = evt.target.id.toUpperCase() + ' - Guillermo A. R.';
