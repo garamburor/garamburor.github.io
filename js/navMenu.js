@@ -85,7 +85,7 @@ function menuHoverIn(evt) {
   else {
     // Set width to 0
     roo.style.setProperty('--title-width', "0px");
-    id1 = setTimeout(setTitle, 505);
+    id1 = setTimeout(setTitle, 400);
   }
   // add underline
   evt.target.style.textDecoration = "var(--font-color) wavy underline";
@@ -173,38 +173,9 @@ function removeTab(id) {
 /* Handle nav click */
 function menuClick(evt) {
   evt.preventDefault();
-  // Disable current page in nav
-  removeTab(evt.target.id);
-  // Stop any other transition
-  clearTimeout(id1);
-  clearTimeout(id2);
   // Remove underline
   evt.target.style.textDecoration = "transparent wavy underline";
   evt.target.style.webkitTextDecoration = "transparent wavy underline";
-  enableTab(currentPage);
   currentPage = evt.target.id;
-  // Needed for home transition
-  let intro1 = document.getElementById("intro1");
-  let roo = document.querySelector(':root');
-  // Handle page
-  if (currentPage == "home") {
-        // Set new page cover
-      document.title = 'Guillermo A. R.';
-      history.pushState({}, 'Guillermo A. R.', '/');
-      // Set animation for hiding text
-      roo.style.setProperty('--title-width', "0px");
-  } else {
-    // Set new page cover
-    document.title = evt.target.id.toUpperCase() + ' - Guillermo A. R.';
-    history.pushState({}, document.title, '/' + evt.target.id);
-    let home = document.getElementById("home");
-    home.style.opacity = 1;
-  }
-  // Trigger page when transitions stop
-  if (hoverState == 0) {
-    returnTitle();
-  }
-  else {
-    intro1.addEventListener("transitionend", returnTitle, {once:true});
-  }
+  scrollPage();
 }

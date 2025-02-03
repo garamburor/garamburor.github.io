@@ -1,7 +1,8 @@
 :root {
     --bg-color: #fffef1;
     --font-color:blue;
-    --tau: 500ms;
+    --short-tau: 200ms;
+    --tau: 400ms;
     --long-tau: 800ms;
     --title-pos: 33vh;
     --title-width: 100vw;
@@ -26,13 +27,24 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "Gilda";
+    src: url("GildaDisplay-Regular.ttf");
+    text-rendering: optimizeLegibility;
+    font-weight: normal;
+    font-style: normal;
+}
+
 html,
-body { 
-    width: 100vw;
-    height: 300vh;
+body {
     /* remove scrollbar */
     scrollbar-width: none;
+    width: 100vw;
+    height:100vh;
     overflow-y: scroll;
+    scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
     /* remove gap at top for nav bar */
     margin: 0;
     padding-top: 0;
@@ -48,6 +60,449 @@ body {
     font-family: 'Montserrat'; 
     /* help safari render font well */
     -webkit-font-smoothing: subpixel-antialiased !important;
+
+    margin:0;
+    padding:0;
+}
+
+/* DIMENSIONS FOR PORTRAIT */
+@media screen and (max-aspect-ratio: 1/1) {
+    .title {
+        display: flex;
+        width: 100vw;
+        /*
+        top: 0;
+        left: 0;
+        right: 0;
+        */
+        justify-content: center;
+        position: fixed;
+        z-index: 999;
+        align-items: center;
+        /* Font settings */
+        text-align: center;
+        font-size: min(11vmax, 15vw); 
+        color: var(--font-color);
+        font-weight: 400;
+        font-family: 'Lexend'; 
+    }
+    
+    /* Subtitle */
+    .subtitle {
+        display: flex;
+        position: fixed;
+        margin-top: min(14vmax, 18vw);
+        order: 2;
+        /*top: var(--title-pos);*/
+        right: 0;
+        z-index: 1000;
+        font-size: max(4vw, 4vmin);
+        color: var(--font-color);
+        transition: opacity var(--long-tau);
+        transition-property: font-size, opacity;
+        opacity: 0;
+        margin-right: 2.8vmax;
+    }
+
+    /* TOP BAR */
+    #nav {
+        position: fixed;
+        display: inline-block;
+        left: 0;
+        right: 0;
+        top: 0;
+        /* Add some space in between */
+        padding: 2.7vmin;
+        /*word-spacing: 3.7vmin;*/
+        /* Height of nav bar */
+        height: 4vh;
+        z-index: 1000;
+    }
+
+    .navigation-bar a {
+        font-family: 'Lexend';
+        font-weight: 600;
+        font-size: 3.3vmin;/*min(2.5vw, 15px);*/
+        color: var(--font-color);
+        text-decoration: transparent wavy underline;
+        -webkit-text-decoration: transparent wavy underline;
+        transition: all var(--tau);
+    }
+
+    #menu {
+        width: 50vw; /*33vw*/
+        float: right;
+        text-align: center;
+    }
+
+    #about-p1 {
+        display: flex;
+        text-align: justify;
+        font-size: 5vw;
+        max-width: 70vw;
+        height: 100vh;
+        top: 33vh;
+        justify-content: center;
+        align-items: center;
+        margin-inline: auto;
+    }
+    
+    .about-p1 {
+        display: flex;
+        text-align: justify;
+        font-size: 5vw;
+        max-width: 70vw;
+        height: 100vh;
+        top: 33vh;
+        justify-content: center;
+        align-items: center;
+        margin-inline: auto;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    
+    .about-h1 {
+        font-family: 'Gilda';
+    }
+    
+    table {
+        position: relative;
+        top: 33vh;
+        width: 94.6vw;
+        padding-inline: 2.7vmin;
+        margin-left: auto;
+        margin-right: auto;
+        height: 40vh;
+        border-collapse: collapse;
+    }
+    
+    th {
+        font-family: 'Gilda';
+        font-size: 6vw;
+        font-weight: normal;
+        text-align: left;
+    }
+    
+    .jobmain {
+        font-family: 'Montserrat';
+        font-weight: bold;
+        font-size: 4.5vw;
+        vertical-align: bottom;
+        border-top: 0.5px solid var(--font-color);
+    }
+    
+    .jobdet {
+        font-family: 'Gilda';
+        font-size: 4.5vw;
+        vertical-align: top;
+    }
+
+    .jobref {
+        font-family: 'Montserrat';
+        font-weight: bold;
+        font-size: 4.5vw;
+        vertical-align: top;
+        opacity: 0.2;
+        transition: opacity var(--tau) ease-in-out;
+        border-top: 0.5px solid var(--font-color);
+    }
+}
+
+@media screen and (aspect-ratio: 1/1) {
+    .title {
+        display: flex;
+        width: 100vw;
+        /*
+        top: 0;
+        left: 0;
+        right: 0;
+        */
+        justify-content: center;
+        position: fixed;
+        z-index: 999;
+        align-items: center;
+        /* Font settings */
+        text-align: center;
+        font-size: min(11vmax, 15vw); 
+        color: var(--font-color);
+        font-weight: 400;
+        font-family: 'Lexend'; 
+    }
+    
+    /* Subtitle */
+    .subtitle {
+        display: flex;
+        position: fixed;
+        margin-top: min(14vmax, 18vw);
+        order: 2;
+        /*top: var(--title-pos);*/
+        right: 0;
+        z-index: 1000;
+        font-size: max(4vw, 4vmin);
+        color: var(--font-color);
+        transition: opacity var(--long-tau);
+        transition-property: font-size, opacity;
+        opacity: 0;
+        margin-right: 2.8vmax;
+    }
+
+    /* TOP BAR */
+    #nav {
+        position: fixed;
+        display: inline-block;
+        left: 0;
+        right: 0;
+        top: 0;
+        /* Add some space in between */
+        padding: 2.7vmin;
+        /*word-spacing: 3.7vmin;*/
+        /* Height of nav bar */
+        height: 4vh;
+        z-index: 1000;
+    }
+    
+    .navigation-bar a {
+        font-family: 'Lexend';
+        font-weight: 600;
+        font-size: 3.3vmin;/*min(2.5vw, 15px);*/
+        color: var(--font-color);
+        text-decoration: transparent wavy underline;
+        -webkit-text-decoration: transparent wavy underline;
+        transition: all var(--tau);
+    }
+
+    #menu {
+        width: 50vw; /*33vw*/
+        float: right;
+        text-align: center;
+    }
+
+    #about-p1 {
+        display: flex;
+        text-align: justify;
+        font-size: 5vw;
+        max-width: 70vw;
+        height: 100vh;
+        top: 33vh;
+        justify-content: center;
+        align-items: center;
+        margin-inline: auto;
+    }
+    
+    .about-p1 {
+        display: flex;
+        text-align: justify;
+        font-size: 5vw;
+        max-width: 70vw;
+        height: 100vh;
+        top: 33vh;
+        justify-content: center;
+        align-items: center;
+        margin-inline: auto;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    
+    .about-h1 {
+        font-family: 'Gilda';
+    }
+    
+    table {
+        position: relative;
+        top: 33vh;
+        width: 94.6vw;
+        padding-inline: 2.7vmin;
+        margin-left: auto;
+        margin-right: auto;
+        height: 40vh;
+        border-collapse: collapse;
+    }
+    
+    th {
+        font-family: 'Gilda';
+        font-size: 6vw;
+        font-weight: normal;
+        text-align: left;
+    }
+    
+    .jobmain {
+        font-family: 'Montserrat';
+        font-weight: bold;
+        font-size: 4.5vw;
+        vertical-align: bottom;
+        border-top: 0.5px solid var(--font-color);
+    }
+    
+    .jobdet {
+        font-family: 'Gilda';
+        font-size: 4.5vw;
+        vertical-align: top;
+    }
+
+    .jobref {
+        font-family: 'Montserrat';
+        font-weight: bold;
+        font-size: 4.5vw;
+        vertical-align: top;
+        opacity: 0.2;
+        transition: opacity var(--tau) ease-in-out;
+        border-top: 0.5px solid var(--font-color);
+    }
+}
+
+/* DIMENSIONS FOR LANDSCAPE */
+@media screen and (min-aspect-ratio: 1/1) {
+    .title {
+        display: flex;
+        width: 100vw;
+        /*
+        top: 0;
+        left: 0;
+        right: 0;
+        */
+        justify-content: center;
+        position: fixed;
+        z-index: 999;
+        align-items: center;
+        /* Font settings */
+        text-align: center;
+        font-size: 18vh; 
+        color: var(--font-color);
+        font-weight: 400;
+        font-family: 'Lexend'; 
+    }
+    
+    /* Subtitle */
+    .subtitle {
+        display: flex;
+        position: fixed;
+        margin-top: min(14vmax, 18vw);
+        order: 2;
+        /*top: var(--title-pos);*/
+        right: 0;
+        z-index: 1000;
+        font-size: 3vw;
+        color: var(--font-color);
+        transition: opacity var(--long-tau);
+        transition-property: font-size, opacity;
+        opacity: 0;
+        margin-right: 8vw;
+    }
+    
+    /* TOP BAR */
+    #nav {
+        position: fixed;
+        display: inline-block;
+        left: 0;
+        right: 0;
+        top: 0;
+        /* Add some space in between */
+        padding: 1.5vmin;
+        /*word-spacing: 3.7vmin;*/
+        /* Height of nav bar */
+        height: 4vh;
+        z-index: 1000;
+    }
+
+    .navigation-bar a {
+        font-family: 'Lexend';
+        font-weight: 600;
+        font-size: 3vmin;/*min(2.5vw, 15px);*/
+        color: var(--font-color);
+        text-decoration: transparent wavy underline;
+        -webkit-text-decoration: transparent wavy underline;
+        transition: all var(--tau);
+    }
+
+    #menu {
+        width: 33vw;
+        float: right;
+        text-align: center;
+    }
+
+    #about-p1 {
+        display: flex;
+        text-align: justify;
+        font-size: 3vw;
+        max-width: 70vw;
+        height: 100vh;
+        top: 33vh;
+        justify-content: center;
+        align-items: center;
+        margin-inline: auto;
+    }
+    
+    .about-p1 {
+        display: flex;
+        text-align: justify;
+        font-size: 3vw;
+        max-width: 70vw;
+        height: 100vh;
+        top: 33vh;
+        justify-content: center;
+        align-items: center;
+        margin-inline: auto;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    
+    .about-h1 {
+        font-family: 'Gilda';
+    }
+    
+    table {
+        position: relative;
+        top: 33vh;
+        width: 66vw;
+        padding-inline: 1.5vmin;
+        margin-left: auto;
+        margin-right: auto;
+        height: 40vh;
+        border-collapse: collapse;
+    }
+    
+    th {
+        font-family: 'Gilda';
+        font-size: 4vw;
+        font-weight: normal;
+        text-align: left;
+    }
+    
+    .jobmain {
+        font-family: 'Montserrat';
+        font-weight: bold;
+        font-size: 2.5vw;
+        vertical-align: bottom;
+        border-top: 0.5px solid var(--font-color);
+    }
+    
+    .jobdet {
+        font-family: 'Gilda';
+        font-size: 2.5vw;
+        vertical-align: top;
+    }
+
+    .jobref {
+        font-family: 'Montserrat';
+        font-weight: bold;
+        font-size: 2.5vw;
+        vertical-align: top;
+        opacity: 0.2;
+        transition: opacity var(--tau) ease-in-out;
+        border-top: 0.5px solid var(--font-color);
+    }
+}
+
+/* CONTAINER FOR SCROLL SNAP */
+.dumbtainer {
+    position:relative;
+    width:100vw;
+    height:100vh;
+    scrollbar-width: none;
+    overflow-x:hidden;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;  
+    scroll-snap-points-y: repeat(100vh);
 }
 
 a {
@@ -55,49 +510,10 @@ a {
     text-decoration: inherit;
 }
 
-/* TOP BAR */
-#nav {
-    position: fixed;
-    display: inline-block;
-    left: 0;
-    right: 0;
-    top: 0;
-    /* Add some space in between */
-    padding: 2.7vmin;
-    /*word-spacing: 3.7vmin;*/
-    /* Height of nav bar */
-    height: 4vh;
-    z-index: 1000;
-    
-}
-
 .navigation-bar {
     /* Make nav stick at top */
     z-index: 1000;
     transition: all var(--tau);
-}
-
-.navigation-bar a {
-    font-family: 'Lexend';
-    font-weight: 600;
-    font-size: 3.3vmin;/*min(2.5vw, 15px);*/
-    color: var(--font-color);
-    text-decoration: transparent wavy underline;
-    -webkit-text-decoration: transparent wavy underline;
-    transition: all var(--tau);
-}
-
-#home {
-    width: 30vw; /*33vw*/
-    float: left;
-    transition: all var(--tau);
-    opacity: 0;
-}
-
-#menu {
-    width: 50vw; /*33vw*/
-    float: right;
-    text-align: center;
 }
 
 #about {
@@ -136,7 +552,6 @@ a {
     z-index: 0;
     top: 0;
     left: 0;
-    position: absolute;
     margin: auto;
     width: 100vw;
     height: 100vh;
@@ -144,7 +559,6 @@ a {
     display: grid;
     /* prevent overlapping */
     /*position: relative;*/
-   
 }
 
 /* Style for cover title */
@@ -152,44 +566,6 @@ a {
     align-items: center;
     top: var(--title-pos);
     height: 33vh; /*50vh*/
-
-}
-
-.title {
-    display: flex;
-    width: 100vw;
-    /*
-    top: 0;
-    left: 0;
-    right: 0;
-    */
-    justify-content: center;
-    position: fixed;
-    z-index: 999;
-    align-items: center;
-    /* Font settings */
-    text-align: center;
-    font-size: min(11vmax, 15vw); 
-    color: var(--font-color);
-    font-weight: 400;
-    font-family: 'Lexend'; 
-}
-
-/* Subtitle */
-.subtitle {
-    display: flex;
-    position: fixed;
-    margin-top: min(11vmax, 18vw);
-    order: 2;
-    /*top: var(--title-pos);*/
-    right: 0;
-    z-index: 1000;
-    font-size: max(4.7vw, 4.7vmin);
-    color: var(--font-color);
-    transition: opacity var(--long-tau);
-    transition-property: font-size, opacity;
-    opacity: 0;
-    margin-right: 2.8vmax;
 }
 
 .alphas {  
@@ -237,12 +613,11 @@ a {
 }
 
 #about-page {
-    top: 0vh;
+    position: relative;
     height: 100vh;
     width: 100%;
     left: 0;
-    position: fixed;
-    z-index: 1;
+    display: grid;
     /*
     background-color: #fdfdfd;
     background-image: url('photo.png');
@@ -252,23 +627,18 @@ a {
 }
 
 #portrait-img {
-    transition: opacity var(--tau) ease-in-out;
+    position: relative;
+    /*transition: opacity var(--short-tau) ease-in-out;*/
     opacity: var(--show-portrait);
-    position: absolute;
-    display: block;
     object-fit: cover;
     height: 50vh;
-    bottom: var(--portrait-pos);
-    margin-bottom: 0%;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    z-index: 1;
+    top: 17%;
+    left: 50%; /* position the left edge of the element at the middle of the parent */
+    transform: translateX(-50%); /* This is a shorthand of
+                                         translateX(-50%) and translateY(-50%) */
 }
 
 #credits {
-    position: absolute;
     transition: opacity, text-decoration var(--tau);
     opacity: 0.25;
     color: var(--font-color);
@@ -281,5 +651,33 @@ a {
 }
 
 #portrait-text {
-    text-align: start;
+    text-align: center;
+}
+
+.jobtitle {
+    text-align: left;
+}
+
+.jobdate {
+    text-align: right;
+}
+
+.jobref:hover {
+    opacity: 1;
+}
+
+section {
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+    position: relative;
+}
+
+.grid {
+    background-image:
+        linear-gradient(to right, var(--font-color) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--font-color) 1px, transparent 1px);
+    background-size: 5vh 5vh;
+    background-position: center center;
 }
