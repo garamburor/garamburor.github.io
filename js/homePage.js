@@ -4,7 +4,32 @@ let currentPage = 'home';
 let memory = 'home';
 let nbPages = 3 - 1.;
 
+// Secret video
+var myVideo;
+
+// Click triggers video until next photo
+function videoPlay() {
+  myVideo.play();
+  // After 4s stop video
+  setTimeout(videoStop, 4430);
+}
+
+// Stop video func, if video is near end or beginning, reset
+function videoStop() {
+  myVideo.pause();
+  if (myVideo.currentTime >= 17.70 || myVideo.currentTime <= 0.05) {
+    myVideo.currentTime = 0;
+  }
+}
+
 function setup() {
+  // add video object
+  myVideo = document.getElementById("portrait-vid");
+  // add click event to play
+  myVideo.addEventListener("click", videoPlay);
+  // mute audio
+  myVideo.muted = true;
+
   logoSetup();
   easterEggSetup();
 
@@ -100,6 +125,8 @@ function pageState() {
         // Set animation for hiding text
         roo.style.setProperty('--title-width', "0px");
         home.style.opacity = 0;
+        myVideo.pause();
+        myVideo.currentTime = 0;
         break;
       case "about":
         // Set new page cover
@@ -108,6 +135,8 @@ function pageState() {
         home.style.opacity = 1;
         break;
       case "contact":
+        myVideo.pause();
+        myVideo.currentTime = 0;
         // Set new page cover
         document.title = currentPage.toUpperCase() + ' - Guillermo A. R.';
         history.pushState({}, document.title, '/' + currentPage);

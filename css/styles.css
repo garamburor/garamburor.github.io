@@ -206,6 +206,18 @@ body {
         transition: opacity var(--tau) ease-in-out;
         border-top: 0.5px solid var(--font-color);
     }
+
+    #portrait-vid {
+        position: relative;
+        border-radius: 1px;
+        object-fit: contain;
+        height: 60vh;
+        width: 80vw;
+        top: 11%;
+        left: 50%; /* position the left edge of the element at the middle of the parent */
+        transform: translateX(-50%); /* This is a shorthand of
+                                             translateX(-50%) and translateY(-50%) */
+    }
 }
 
 @media screen and (aspect-ratio: 1/1) {
@@ -347,6 +359,18 @@ body {
         opacity: 0.2;
         transition: opacity var(--tau) ease-in-out;
         border-top: 0.5px solid var(--font-color);
+    }
+
+    #portrait-vid {
+        position: relative;
+        border-radius: 1px;
+        object-fit: contain;
+        height: 60vh;
+        width: 80vw;
+        top: 11%;
+        left: 50%; /* position the left edge of the element at the middle of the parent */
+        transform: translateX(-50%); /* This is a shorthand of
+                                             translateX(-50%) and translateY(-50%) */
     }
 }
 
@@ -491,6 +515,18 @@ body {
         transition: opacity var(--tau) ease-in-out;
         border-top: 0.5px solid var(--font-color);
     }
+
+    #portrait-vid {
+        position: relative;
+        border-radius: 1px;
+        object-fit: contain;
+        height: 60vh;
+        width: 80vw;
+        top: 11%;
+        left: 50%; /* position the left edge of the element at the middle of the parent */
+        transform: translateX(-50%); /* This is a shorthand of
+                                             translateX(-50%) and translateY(-50%) */
+    }
 }
 
 /* CONTAINER FOR SCROLL SNAP */
@@ -597,7 +633,7 @@ a {
     opacity: 0;
     position: relative;
     transform: rotate(0);
-    user-select: none; /* Standard syntax */
+    user-select: auto; /* Standard syntax */
     word-wrap: normal;
     word-break: normal;
 }
