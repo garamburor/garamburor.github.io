@@ -209,15 +209,13 @@ body {
 
     #portrait-vid {
         position: relative;
-        opacity: var(--show-portrait);
         border-radius: 1px;
+        opacity: var(--show-portrait);
         object-fit: contain;
         height: 60vh;
-        width: 80vw;
+        width: 100vw;
         top: 11%;
-        left: 50%; /* position the left edge of the element at the middle of the parent */
-        transform: translateX(-50%); /* This is a shorthand of
-                                             translateX(-50%) and translateY(-50%) */
+        object-position: center bottom;
     }
 }
 
@@ -364,15 +362,13 @@ body {
 
     #portrait-vid {
         position: relative;
-        opacity: var(--show-portrait);
         border-radius: 1px;
+        opacity: var(--show-portrait);
         object-fit: contain;
         height: 60vh;
-        width: 80vw;
+        width: 100vw;
         top: 11%;
-        left: 50%; /* position the left edge of the element at the middle of the parent */
-        transform: translateX(-50%); /* This is a shorthand of
-                                             translateX(-50%) and translateY(-50%) */
+        object-position: center bottom;
     }
 }
 
@@ -524,9 +520,10 @@ body {
         opacity: var(--show-portrait);
         object-fit: contain;
         height: 60vh;
-        width: 80vw;
+        width: 100vw;
         top: 11%;
-        left: 50%; /* position the left edge of the element at the middle of the parent */
+        object-position: center bottom;
+        /*
         transform: translateX(-50%); /* This is a shorthand of
                                              translateX(-50%) and translateY(-50%) */
     }
@@ -678,12 +675,14 @@ a {
 }
 
 #credits {
-    transition: opacity, text-decoration var(--tau);
+    position: absolute;
     opacity: 0.25;
-    color: var(--font-color);
-    bottom: var(--portrait-pos);
-    z-index: 1;
-}
+    transition: opacity var(--short-tau);
+    bottom: 0%;
+    left: 0%;
+    font-size: 2vh;
+    z-index: 2000;
+} 
 
 #credits:hover {
     opacity: 0.75;
