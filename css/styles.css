@@ -209,6 +209,7 @@ body {
 
     #portrait-vid {
         position: relative;
+        opacity: var(--show-portrait);
         border-radius: 1px;
         object-fit: contain;
         height: 60vh;
@@ -363,6 +364,7 @@ body {
 
     #portrait-vid {
         position: relative;
+        opacity: var(--show-portrait);
         border-radius: 1px;
         object-fit: contain;
         height: 60vh;
@@ -519,6 +521,7 @@ body {
     #portrait-vid {
         position: relative;
         border-radius: 1px;
+        opacity: var(--show-portrait);
         object-fit: contain;
         height: 60vh;
         width: 80vw;

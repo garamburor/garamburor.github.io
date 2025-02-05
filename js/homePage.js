@@ -9,15 +9,17 @@ var myVideo;
 
 // Click triggers video until next photo
 function videoPlay() {
-  myVideo.play();
-  // After 4s stop video
-  setTimeout(videoStop, 4430);
+  if(myVideo.paused == true) {
+    myVideo.play();
+    // After 4s stop video
+    setTimeout(videoStop, 4430);
+  }
 }
 
 // Stop video func, if video is near end or beginning, reset
 function videoStop() {
   myVideo.pause();
-  if (myVideo.currentTime >= 17.70 || myVideo.currentTime <= 0.05) {
+  if (myVideo.currentTime >= 14) {
     myVideo.currentTime = 0;
   }
 }
@@ -57,7 +59,7 @@ function scrollListener(evt) {
   // Change color from home to about
   let roo = document.querySelector(':root');
   let normH = this.scrollTop / this.clientHeight;
-  console.log(normH);
+  // console.log(normH);
   let fontcol;
   let bgcol;
 
