@@ -20,6 +20,8 @@ function videoPlay(evt) {
 // Stop video func, if video is near end or beginning, reset
 function videoStop() {
   myVideo.pause();
+  // Bound video to pause in the photos
+  myVideo.currentTime = Math.round(myVideo.currentTime / 4.43) * 4.43;
   if (myVideo.currentTime >= 14) {
     myVideo.currentTime = 0;
   }
