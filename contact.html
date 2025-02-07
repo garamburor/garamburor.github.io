@@ -3,8 +3,9 @@
   <head>
     <!-- Website title -->
     <title>CONTACT - Guillermo A. R.</title>
-    <link rel="apple-touch-icon" href="images/logo.png" sizes="any" type="image/png">
-    <link rel="icon" href="images/logo.svg" type="image/svg">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" href="media/logo.png" sizes="any" type="image/png">
+    <link rel="icon" href="media/logo.svg" type="image/svg">
     <!-- Load p5.js libs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/addons/p5.sound.min.js"></script>
@@ -13,7 +14,7 @@
     <!-- Set char encoding -->
     <meta charset="UTF-8">
     <!-- Get device dimensions -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <script src="js/homePage.js"></script>
     <script src="js/wave.js"></script>
     <script src="js/logo.js"></script>
@@ -27,27 +28,96 @@
   </head>
 
   <body>
-    <!-- Navigation bar -->
-    <div class="navigation-bar" id="nav">
-      <div class="menu" id="menu">
-        <span><a id="about" href="about">ABOUT</a></span>
-        <span><a id="contact" href="contact">CONTACT</a></span>
-        <span><a id="work" href="work">WORK</a></span>
-      </div>
-        <div>
-          <span><a id="home" href="">HOME</a></span>
+    <div class="dumbtainer" id="main">
+      <!-- Navigation bar -->
+      <div class="navigation-bar" id="nav">
+        <div class="menu" id="menu">
+          <span><a id="about" href="about">ABOUT</a></span>
+          <span><a id="contact" href="contact">CONTACT</a></span>
+          <span><a id="work" href="work">WORK</a></span>
         </div>
-    </div>
-  
-    <!-- Cover page -->
-    <div class="cover">
+          <div>
+            <span><a id="home" href="">HOME</a></span>
+          </div>
+      </div>
+    
+      <!-- Cover page -->
       <div class="title" id="title-container">
         <span class="knob" id="Gknob"></span>
         <span class="alphas" id="intro1"></span>
         <span id="logo"></span>
         <span class="alphas" id="intro2"></span>
+        <div class="subtitle" id="subt"></div>
       </div>
-      <div class="subtitle" id="subt"></div>
+
+      <section class="cover" id="cover-page">
+      </section>
+
+      <section id="about-page-1">
+          <video id="portrait-vid">
+            <source src="media/portraits.mp4" autoplay="false" playsinline webkit-playsinline muted preload="auto">
+          </video>
+          <a id="credits" href="https://www.inesaramburo.com/" target="_blank" rel="noopener noreferrer">Photos: Inés Arámburo</a>
+          <!--<img src="media/portrait.jpg" id="portrait-img" alt="Portrait photo.">
+          <a id="credits" href="https://www.inesaramburo.com/">Photos: Inés Arámburo</a>
+          -->
+      </section>
+        
+      <section id="about-page-2">
+        <p class="about-p1">Thank you for visiting my website. 
+          I'm Guillermo, a DSP Engineer, specialized in audio. 
+          Currently based in Paris.</p>
+      </section>
+
+      <section id="about-page-3">
+        <table>
+          <th>EXPERIENCE</th>
+          <th> </th>
+          <tr class="jobmain">
+            <td class="jobtitle">DSP Engineer</td>
+            <td class="jobdate">Dec 2023 - Present</td>
+          </tr>
+          <tr class="jobdet">
+            <td class="jobtitle">L-ACOUSTICS</td>
+            <td class="jobdate">Marcoussis, France</td>
+          </tr>
+          <tr class="jobmain">
+            <td class="jobtitle">Internship - DSP</td>
+            <td class="jobdate">Feb 2023 - Aug 2023</td>
+          </tr>
+          <tr class="jobdet">
+            <td class="jobtitle">ARTURIA</td>
+            <td class="jobdate">Grenoble, France</td>
+          </tr>
+          <tr class="jobmain">
+            <td class="jobtitle">Internship - DSP</td>
+            <td class="jobdate">Jun 2022 - Sep 2022</td>
+          </tr>
+          <tr class="jobdet">
+            <td class="jobtitle">YAMAHA</td>
+            <td class="jobdate">Hamamatsu, Japan</td>
+          </tr>
+          <tr class="jobref">
+            <td class="jobtitle"><a href="media/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></td>
+            <td class="jobdate"><a href="https://www.linkedin.com/in/aramburog/" target="_blank" rel="noopener noreferrer">LinkedIn</a></td>
+          </tr>
+        </table>
+      </section>
+
+      <section id="about-page-4">
+        <p class="about-p1">I enjoy the process of
+          learning new things and there's always some new subject
+          I want to take a stab at. For example, this website. If you're
+          curious please have a look at the work section.</p>
+      </section>
+
+      <section id="contact-page">
+      
+      </section>
+
+      <section id="work-page" class="grid">
+      
+      </section>
     </div>
   </body>
 </html>
