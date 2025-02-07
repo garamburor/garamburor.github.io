@@ -529,6 +529,11 @@ body {
     }
 }
 
+video::-webkit-media-controls-panel {
+    display: none !important;
+    opacity: 1 !important;
+}
+
 /* CONTAINER FOR SCROLL SNAP */
 .dumbtainer {
     position:relative;
