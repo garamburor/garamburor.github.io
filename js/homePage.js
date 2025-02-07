@@ -51,6 +51,7 @@ function setup() {
   }
   else {
     textChange(4);
+    scrollPage();
   }
 }
 
