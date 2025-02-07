@@ -543,6 +543,7 @@ video::-webkit-media-controls-panel {
     overflow-x:hidden;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;  
+    -webkit-scroll-snap: y mandatory;
     scroll-snap-points-y: repeat(100vh);
 }
 
@@ -714,6 +715,7 @@ section {
     height: 100vh;
     width: 100vw;
     scroll-snap-align: start;
+    -webkit-scroll-snap-align: start;
     position: relative;
 }
 
