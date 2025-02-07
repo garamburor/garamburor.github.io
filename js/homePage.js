@@ -8,7 +8,8 @@ let nbPages = 3 - 1.;
 var myVideo;
 
 // Click triggers video until next photo
-function videoPlay() {
+function videoPlay(evt) {
+  evt.preventDefault();
   if(myVideo.paused == true) {
     myVideo.play();
     // After 4s stop video
