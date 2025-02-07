@@ -35,7 +35,6 @@ function setup() {
   myVideo.playsinline = true;
   myVideo.controls = false;
   myVideo.autoplay = false;
-  webview.allowsInlineMediaPlayback = YES;
 
   logoSetup();
   easterEggSetup();
