@@ -42,6 +42,7 @@ body {
     width: 100vw;
     height:100vh;
     overflow-y: scroll;
+    overflow-x: hidden;
     scroll-snap-type: mandatory;
     scroll-snap-points-y: repeat(100vh);
     scroll-snap-type: y mandatory;
@@ -67,16 +68,21 @@ body {
 
 /* DIMENSIONS FOR PORTRAIT */
 @media screen and (max-aspect-ratio: 1/1) {
+    #main-text {
+        display: grid;
+        position: sticky;
+        align-content: center;
+        width: 100vw;
+        height: 33vh;
+        margin-top: -33vh;
+        top: var(--title-pos);
+        z-index: 999;
+    }
     .title {
         display: flex;
         width: 100vw;
-        /*
-        top: 0;
-        left: 0;
-        right: 0;
-        */
         justify-content: center;
-        position: fixed;
+        position: sticky;
         z-index: 999;
         align-items: center;
         /* Font settings */
@@ -89,14 +95,13 @@ body {
     
     /* Subtitle */
     .subtitle {
-        display: flex;
-        position: fixed;
-        margin-top: min(14vmax, 18vw);
-        order: 2;
-        /*top: var(--title-pos);*/
-        right: 0;
+        display: inline-block;
+        position: sticky;
         z-index: 1000;
+        text-align: right;
         font-size: max(4vw, 4vmin);
+        font-weight: 400;
+        font-family: 'Lexend'; 
         color: var(--font-color);
         transition: opacity var(--long-tau);
         transition-property: font-size, opacity;
@@ -207,29 +212,40 @@ body {
         border-top: 0.5px solid var(--font-color);
     }
 
-    #portrait-vid {
+    #portrait-container {
         position: relative;
+        top: 6vh;
+        bottom: 66vh;
+        width: 100vw;
+    }
+    #portrait-vid {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
         border-radius: 1px;
         opacity: var(--show-portrait);
         object-fit: contain;
         height: 60vh;
-        width: 100vw;
-        top: 11%;
-        object-position: center bottom;
+        width: 75vw;
     }
 }
 
 @media screen and (aspect-ratio: 1/1) {
+    #main-text {
+        display: grid;
+        position: sticky;
+        align-content: center;
+        width: 100vw;
+        height: 33vh;
+        margin-top: -33vh;
+        top: var(--title-pos);
+        z-index: 999;
+    }
     .title {
         display: flex;
         width: 100vw;
-        /*
-        top: 0;
-        left: 0;
-        right: 0;
-        */
         justify-content: center;
-        position: fixed;
+        position: sticky;
         z-index: 999;
         align-items: center;
         /* Font settings */
@@ -242,14 +258,13 @@ body {
     
     /* Subtitle */
     .subtitle {
-        display: flex;
-        position: fixed;
-        margin-top: min(14vmax, 18vw);
-        order: 2;
-        /*top: var(--title-pos);*/
-        right: 0;
+        display: inline-block;
+        position: sticky;
         z-index: 1000;
+        text-align: right;
         font-size: max(4vw, 4vmin);
+        font-weight: 400;
+        font-family: 'Lexend'; 
         color: var(--font-color);
         transition: opacity var(--long-tau);
         transition-property: font-size, opacity;
@@ -360,30 +375,42 @@ body {
         border-top: 0.5px solid var(--font-color);
     }
 
-    #portrait-vid {
+    #portrait-container {
         position: relative;
+        top: 6vh;
+        bottom: 66vh;
+        width: 100vw;
+    }
+    #portrait-vid {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
         border-radius: 1px;
         opacity: var(--show-portrait);
         object-fit: contain;
         height: 60vh;
-        width: 100vw;
-        top: 11%;
-        object-position: center bottom;
+        width: 80vw;
     }
 }
 
 /* DIMENSIONS FOR LANDSCAPE */
 @media screen and (min-aspect-ratio: 1/1) {
+    #main-text {
+        display: grid;
+        position: sticky;
+        align-content: center;
+        width: 100vw;
+        height: 33vh;
+        margin-top: -33vh;
+        top: var(--title-pos);
+        z-index: 999;
+    }
+
     .title {
         display: flex;
         width: 100vw;
-        /*
-        top: 0;
-        left: 0;
-        right: 0;
-        */
         justify-content: center;
-        position: fixed;
+        position: sticky;
         z-index: 999;
         align-items: center;
         /* Font settings */
@@ -391,23 +418,22 @@ body {
         font-size: 18vh; 
         color: var(--font-color);
         font-weight: 400;
-        font-family: 'Lexend'; 
+        font-family: 'Lexend';
     }
     
     /* Subtitle */
     .subtitle {
-        display: flex;
-        position: fixed;
-        margin-top: min(14vmax, 18vw);
-        order: 2;
-        /*top: var(--title-pos);*/
-        right: 0;
+        display: inline-block;
+        position: sticky;
         z-index: 1000;
         font-size: 3vw;
+        font-weight: 400;
+        font-family: 'Lexend'; 
         color: var(--font-color);
         transition: opacity var(--long-tau);
         transition-property: font-size, opacity;
         opacity: 0;
+        text-align: right;
         margin-right: 8vw;
     }
     
@@ -514,18 +540,20 @@ body {
         border-top: 0.5px solid var(--font-color);
     }
 
-    #portrait-vid {
+    #portrait-container {
         position: relative;
+        top: 6vh;
+        bottom: 66vh;
+        width: 100vw;
+    }
+    #portrait-vid {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
         border-radius: 1px;
         opacity: var(--show-portrait);
         object-fit: contain;
         height: 60vh;
-        width: 100vw;
-        top: 11%;
-        object-position: center bottom;
-        /*
-        transform: translateX(-50%); /* This is a shorthand of
-                                             translateX(-50%) and translateY(-50%) */
     }
 }
 
@@ -585,7 +613,7 @@ a {
 }
 
 /* Style for cover section */
-.cover {
+#cover-page {
     /*
     background-image: url('cover.png');
     background-repeat: no-repeat;
@@ -594,7 +622,7 @@ a {
     z-index: 0;
     top: 0;
     left: 0;
-    margin: auto;
+    margin: 0;
     width: 100vw;
     height: 100vh;
     /* stack elements horizontally */
@@ -606,8 +634,7 @@ a {
 /* Style for cover title */
 #title-container {
     align-items: center;
-    top: var(--title-pos);
-    height: 33vh; /*50vh*/
+    margin-bottom: 0;
 }
 
 .alphas {  
