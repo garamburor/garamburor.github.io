@@ -35,6 +35,9 @@ function setup() {
   // mute audio
   myVideo.muted = true;
   myVideo.loop = false;
+  myVideo.autoplay = false;
+  myVideo.controls = false;
+  myVideo.playsinline = true;
 
   logoSetup();
   easterEggSetup();
