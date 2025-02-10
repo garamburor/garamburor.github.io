@@ -79,13 +79,13 @@ function scrollListener(evt) {
     roo.style.setProperty('--font-color', fontcol.toString('#rrggbb'));
     roo.style.setProperty('--bg-color', bgcol.toString('#rrggbb'));
     stroke(fontcol);
-    roo.style.setProperty('--title-pos', map(normH, 0, 1, 33, 66).toString() + "vh");
+    roo.style.setProperty('--title-pos', map(normH, 0, 1, 33.33, 66.66).toString() + "vh");
     roo.style.setProperty('--portrait-pos', map(normH, 0, 1, 0, 166).toString() + "vh");
     // Static
     roo.style.setProperty('--show-portrait', normH);
   }
   else if (normH < 2) {
-    roo.style.setProperty('--title-pos', map(normH, 1, 2, 66, 0).toString() + "vh");
+    roo.style.setProperty('--title-pos', map(normH, 1, 2, 66.66, 0).toString() + "vh");
     roo.style.setProperty('--show-portrait', map(normH, 1, 2, 1, 0));
     currentPage = "about";
   }

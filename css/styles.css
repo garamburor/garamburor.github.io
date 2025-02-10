@@ -73,8 +73,8 @@ body {
         position: sticky;
         align-content: center;
         width: 100vw;
-        height: 33vh;
-        margin-top: -33vh;
+        height: 33.33vh;
+        margin-top: -33.33vh;
         top: var(--title-pos);
         z-index: 999;
     }
@@ -214,9 +214,10 @@ body {
 
     #portrait-container {
         position: relative;
-        top: 6vh;
-        bottom: 66vh;
+        top: 10vh;
+        bottom: 75vh;
         width: 100vw;
+        align-content: center;
     }
     #portrait-vid {
         display: block;
@@ -236,8 +237,8 @@ body {
         position: sticky;
         align-content: center;
         width: 100vw;
-        height: 33vh;
-        margin-top: -33vh;
+        height: 33.33vh;
+        margin-top: -33.33vh;
         top: var(--title-pos);
         z-index: 999;
     }
@@ -377,9 +378,10 @@ body {
 
     #portrait-container {
         position: relative;
-        top: 6vh;
-        bottom: 66vh;
+        top: 10vh;
+        bottom: 75vh;
         width: 100vw;
+        align-content: center;
     }
     #portrait-vid {
         display: block;
@@ -389,7 +391,7 @@ body {
         opacity: var(--show-portrait);
         object-fit: contain;
         height: 60vh;
-        width: 80vw;
+        width: 75vw;
     }
 }
 
@@ -400,8 +402,8 @@ body {
         position: sticky;
         align-content: center;
         width: 100vw;
-        height: 33vh;
-        margin-top: -33vh;
+        height: 33.33vh;
+        margin-top: -33.33vh;
         top: var(--title-pos);
         z-index: 999;
     }
@@ -542,10 +544,12 @@ body {
 
     #portrait-container {
         position: relative;
-        top: 6vh;
-        bottom: 66vh;
+        top: 9vh;
+        bottom: 70vh;
         width: 100vw;
+        align-content: center;
     }
+
     #portrait-vid {
         display: block;
         margin-left: auto;
