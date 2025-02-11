@@ -81,7 +81,9 @@ function mouseUp(evt) {
     waves[i].increment = 6;
     waves[i].period = 2.1;
   }
-  document.getElementById("Gknob").style.transitionProperty = "font-size, opacity, transform, max-width, width";
+  document.getElementById("Gknob").style.transition = 'font-size var(--tau) ease-in-out, opacity ' + 
+  'var(--tau) ease-in-out, width var(--tau) ease-in-out, max-width var(--tau)' + 
+  ' ease-in-out, transform var(--long-tau) ease-in-out';
   document.getElementById("Gknob").style.transform = "rotate(0deg)";
   }, 1000);
   

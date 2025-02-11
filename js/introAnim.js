@@ -85,7 +85,9 @@ function textChange(j) {
         knob.style.opacity = 1;
         intro1.style.transitionProperty = 'font-size, opacity, width, max-width';
         intro2.style.transitionProperty = 'font-size, opacity, width, max-width';
-        knob.style.transitionProperty = 'font-size, opacity, width, max-width, transform';
+        knob.style.transition = 'font-size var(--tau) ease-in-out, opacity ' + 
+        'var(--tau) ease-in-out, width var(--tau) ease-in-out, max-width var(--tau)' + 
+        ' ease-in-out, transform var(--long-tau) ease-in-out';
         returnTitle();
       }, 10 );
       break;
