@@ -117,6 +117,7 @@ function pageState() {
     let home = document.getElementById("home");
     let intro1 = document.getElementById("intro1");
     let roo = document.querySelector(':root');
+    let workPage = document.getElementById('work-page');
     // Disable current page in nav
     removeTab(currentPage);
     // Stop any other transition
@@ -137,12 +138,16 @@ function pageState() {
         home.style.opacity = 0;
         myVideo.pause();
         myVideo.currentTime = 0;
+        // Hide grid
+        workPage.style.clipPath = "inset(0 0 100% 0 round 0 0 0 0)";
         break;
       case "about":
         // Set new page cover
         document.title = currentPage.toUpperCase() + ' - Guillermo A. R.';
         history.pushState({}, document.title, '/' + currentPage);
         home.style.opacity = 1;
+        // Hide grid
+        workPage.style.clipPath = "inset(0 0 100% 0 round 0 0 0 0)";
         break;
       case "contact":
         myVideo.pause();
@@ -159,6 +164,8 @@ function pageState() {
         bgcol = color(242,242,242)
         roo.style.setProperty('--bg-color', bgcol.toString('#rrggbb'));
         stroke(fontcol);
+        // Hide grid
+        workPage.style.clipPath = "inset(0 0 100% 0 round 0 0 0 0)";
         break;
       case "work":
         // Set new page cover
@@ -173,6 +180,8 @@ function pageState() {
         bgcol = color(23, 167, 126)
         roo.style.setProperty('--bg-color', bgcol.toString('#rrggbb'));
         stroke(fontcol);
+        // Reveal grid
+        workPage.style.clipPath = "inset(0 0 0 0 round 0 0 0 0)"
         break;
       default: // 404
         break;

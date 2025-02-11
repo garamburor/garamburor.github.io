@@ -756,4 +756,10 @@ section {
         linear-gradient(to bottom, var(--font-color) 1px, transparent 1px);
     background-size: 5dvh 5dvh;
     background-position: center center;
+    
+}
+
+#work-page {
+    clip-path: inset(0 0 100% 0 round 0 0 0 0);
+    transition: clip-path 2s ease-in-out;
 }
