@@ -4,9 +4,9 @@
     --short-tau: 200ms;
     --tau: 400ms;
     --long-tau: 800ms;
-    --title-pos: 33vh;
-    --title-width: 100vw;
-    --portrait-pos: 0vh;
+    --title-pos: 33dvh;
+    --title-width: 100dvw;
+    --portrait-pos: 0dvh;
     --show-portrait: 0;
   }
 
@@ -39,12 +39,12 @@ html,
 body {
     /* remove scrollbar */
     scrollbar-width: none;
-    width: 100vw;
-    height:100vh;
+    width: 100dvw;
+    height:100dvh;
     overflow-y: scroll;
     overflow-x: hidden;
     scroll-snap-type: mandatory;
-    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-points-y: repeat(100dvh);
     scroll-snap-type: y mandatory;
     /* remove gap at top for nav bar */
     margin: 0;
@@ -72,22 +72,22 @@ body {
         display: grid;
         position: sticky;
         align-content: center;
-        width: 100vw;
-        height: 33.33vh;
-        margin-top: -33.33vh;
+        width: 100dvw;
+        height: 33.33dvh;
+        margin-top: -33.33dvh;
         top: var(--title-pos);
         z-index: 999;
     }
     .title {
         display: flex;
-        width: 100vw;
+        width: 100dvw;
         justify-content: center;
         position: sticky;
         z-index: 999;
         align-items: center;
         /* Font settings */
         text-align: center;
-        font-size: min(11vmax, 15vw); 
+        font-size: min(11dvh, 15dvw); 
         color: var(--font-color);
         font-weight: 400;
         font-family: 'Lexend'; 
@@ -99,14 +99,14 @@ body {
         position: sticky;
         z-index: 1000;
         text-align: right;
-        font-size: max(4vw, 4vmin);
+        font-size: 4dvw;
         font-weight: 400;
         font-family: 'Lexend'; 
         color: var(--font-color);
         transition: opacity var(--long-tau);
         transition-property: font-size, opacity;
         opacity: 0;
-        margin-right: 2.8vmax;
+        margin-right: 2.8dvh;
     }
 
     /* TOP BAR */
@@ -117,17 +117,17 @@ body {
         right: 0;
         top: 0;
         /* Add some space in between */
-        padding: 2.7vmin;
+        padding: 2.7dvw;
         /*word-spacing: 3.7vmin;*/
         /* Height of nav bar */
-        height: 4vh;
+        height: 4dvh;
         z-index: 1000;
     }
 
     .navigation-bar a {
         font-family: 'Lexend';
         font-weight: 600;
-        font-size: 3.3vmin;/*min(2.5vw, 15px);*/
+        font-size: 3.3dvw;/*min(2.5vw, 15px);*/
         color: var(--font-color);
         text-decoration: transparent wavy underline;
         -webkit-text-decoration: transparent wavy underline;
@@ -135,7 +135,7 @@ body {
     }
 
     #menu {
-        width: 50vw; /*33vw*/
+        width: 50dvw; /*33vw*/
         float: right;
         text-align: center;
     }
@@ -143,10 +143,10 @@ body {
     #about-p1 {
         display: flex;
         text-align: justify;
-        font-size: 5vw;
-        max-width: 70vw;
-        height: 100vh;
-        top: 33vh;
+        font-size: 5dvw;
+        max-width: 70dvw;
+        height: 100dvh;
+        top: 33dvh;
         justify-content: center;
         align-items: center;
         margin-inline: auto;
@@ -155,10 +155,10 @@ body {
     .about-p1 {
         display: flex;
         text-align: justify;
-        font-size: 5vw;
-        max-width: 70vw;
-        height: 100vh;
-        top: 33vh;
+        font-size: 5dvw;
+        max-width: 70dvw;
+        height: 100dvh;
+        top: 33dvh;
         justify-content: center;
         align-items: center;
         margin-inline: auto;
@@ -172,18 +172,18 @@ body {
     
     table {
         position: relative;
-        top: 33vh;
-        width: 94.6vw;
-        padding-inline: 2.7vmin;
+        top: 33dvh;
+        width: 94.6dvw;
+        padding-inline: 2.7dvw;
         margin-left: auto;
         margin-right: auto;
-        height: 40vh;
+        height: 40dvh;
         border-collapse: collapse;
     }
     
     th {
         font-family: 'Gilda';
-        font-size: 6vw;
+        font-size: 6dvw;
         font-weight: normal;
         text-align: left;
     }
@@ -191,21 +191,21 @@ body {
     .jobmain {
         font-family: 'Montserrat';
         font-weight: bold;
-        font-size: 4.5vw;
+        font-size: 4.5dvw;
         vertical-align: bottom;
         border-top: 0.5px solid var(--font-color);
     }
     
     .jobdet {
         font-family: 'Gilda';
-        font-size: 4.5vw;
+        font-size: 4.5dvw;
         vertical-align: top;
     }
 
     .jobref {
         font-family: 'Montserrat';
         font-weight: bold;
-        font-size: 4.5vw;
+        font-size: 4.5dvw;
         vertical-align: top;
         opacity: 0.2;
         transition: opacity var(--tau) ease-in-out;
@@ -214,9 +214,9 @@ body {
 
     #portrait-container {
         position: relative;
-        top: 10vh;
-        bottom: 75vh;
-        width: 100vw;
+        top: 10dvh;
+        bottom: 75dvh;
+        width: 100dvw;
         align-content: center;
     }
     #portrait-vid {
@@ -226,8 +226,8 @@ body {
         border-radius: 1px;
         opacity: var(--show-portrait);
         object-fit: contain;
-        height: 60vh;
-        width: 75vw;
+        height: 60dvh;
+        width: 75dvw;
     }
 }
 
@@ -236,22 +236,22 @@ body {
         display: grid;
         position: sticky;
         align-content: center;
-        width: 100vw;
-        height: 33.33vh;
-        margin-top: -33.33vh;
+        width: 100dvw;
+        height: 33.33dvh;
+        margin-top: -33.33dvh;
         top: var(--title-pos);
         z-index: 999;
     }
     .title {
         display: flex;
-        width: 100vw;
+        width: 100dvw;
         justify-content: center;
         position: sticky;
         z-index: 999;
         align-items: center;
         /* Font settings */
         text-align: center;
-        font-size: min(11vmax, 15vw); 
+        font-size: min(11dvh, 15dvw); 
         color: var(--font-color);
         font-weight: 400;
         font-family: 'Lexend'; 
@@ -263,14 +263,14 @@ body {
         position: sticky;
         z-index: 1000;
         text-align: right;
-        font-size: max(4vw, 4vmin);
+        font-size: 4dvw;
         font-weight: 400;
         font-family: 'Lexend'; 
         color: var(--font-color);
         transition: opacity var(--long-tau);
         transition-property: font-size, opacity;
         opacity: 0;
-        margin-right: 2.8vmax;
+        margin-right: 2.8dvh;
     }
 
     /* TOP BAR */
@@ -281,17 +281,17 @@ body {
         right: 0;
         top: 0;
         /* Add some space in between */
-        padding: 2.7vmin;
+        padding: 2.7dvw;
         /*word-spacing: 3.7vmin;*/
         /* Height of nav bar */
-        height: 4vh;
+        height: 4dvh;
         z-index: 1000;
     }
-    
+
     .navigation-bar a {
         font-family: 'Lexend';
         font-weight: 600;
-        font-size: 3.3vmin;/*min(2.5vw, 15px);*/
+        font-size: 3.3dvw;/*min(2.5vw, 15px);*/
         color: var(--font-color);
         text-decoration: transparent wavy underline;
         -webkit-text-decoration: transparent wavy underline;
@@ -299,7 +299,7 @@ body {
     }
 
     #menu {
-        width: 50vw; /*33vw*/
+        width: 50dvw; /*33vw*/
         float: right;
         text-align: center;
     }
@@ -307,10 +307,10 @@ body {
     #about-p1 {
         display: flex;
         text-align: justify;
-        font-size: 5vw;
-        max-width: 70vw;
-        height: 100vh;
-        top: 33vh;
+        font-size: 5dvw;
+        max-width: 70dvw;
+        height: 100dvh;
+        top: 33dvh;
         justify-content: center;
         align-items: center;
         margin-inline: auto;
@@ -319,10 +319,10 @@ body {
     .about-p1 {
         display: flex;
         text-align: justify;
-        font-size: 5vw;
-        max-width: 70vw;
-        height: 100vh;
-        top: 33vh;
+        font-size: 5dvw;
+        max-width: 70dvw;
+        height: 100dvh;
+        top: 33dvh;
         justify-content: center;
         align-items: center;
         margin-inline: auto;
@@ -336,18 +336,18 @@ body {
     
     table {
         position: relative;
-        top: 33vh;
-        width: 94.6vw;
-        padding-inline: 2.7vmin;
+        top: 33dvh;
+        width: 94.6dvw;
+        padding-inline: 2.7dvw;
         margin-left: auto;
         margin-right: auto;
-        height: 40vh;
+        height: 40dvh;
         border-collapse: collapse;
     }
     
     th {
         font-family: 'Gilda';
-        font-size: 6vw;
+        font-size: 6dvw;
         font-weight: normal;
         text-align: left;
     }
@@ -355,21 +355,21 @@ body {
     .jobmain {
         font-family: 'Montserrat';
         font-weight: bold;
-        font-size: 4.5vw;
+        font-size: 4.5dvw;
         vertical-align: bottom;
         border-top: 0.5px solid var(--font-color);
     }
     
     .jobdet {
         font-family: 'Gilda';
-        font-size: 4.5vw;
+        font-size: 4.5dvw;
         vertical-align: top;
     }
 
     .jobref {
         font-family: 'Montserrat';
         font-weight: bold;
-        font-size: 4.5vw;
+        font-size: 4.5dvw;
         vertical-align: top;
         opacity: 0.2;
         transition: opacity var(--tau) ease-in-out;
@@ -378,9 +378,9 @@ body {
 
     #portrait-container {
         position: relative;
-        top: 10vh;
-        bottom: 75vh;
-        width: 100vw;
+        top: 10dvh;
+        bottom: 75dvh;
+        width: 100dvw;
         align-content: center;
     }
     #portrait-vid {
@@ -390,8 +390,8 @@ body {
         border-radius: 1px;
         opacity: var(--show-portrait);
         object-fit: contain;
-        height: 60vh;
-        width: 75vw;
+        height: 60dvh;
+        width: 75dvw;
     }
 }
 
@@ -401,23 +401,23 @@ body {
         display: grid;
         position: sticky;
         align-content: center;
-        width: 100vw;
-        height: 33.33vh;
-        margin-top: -33.33vh;
+        width: 100dvw;
+        height: 33.33dvh;
+        margin-top: -33.33dvh;
         top: var(--title-pos);
         z-index: 999;
     }
 
     .title {
         display: flex;
-        width: 100vw;
+        width: 100dvw;
         justify-content: center;
         position: sticky;
         z-index: 999;
         align-items: center;
         /* Font settings */
         text-align: center;
-        font-size: 18vh; 
+        font-size: 18dvh; 
         color: var(--font-color);
         font-weight: 400;
         font-family: 'Lexend';
@@ -428,7 +428,7 @@ body {
         display: inline-block;
         position: sticky;
         z-index: 1000;
-        font-size: 3vw;
+        font-size: 3dvw;
         font-weight: 400;
         font-family: 'Lexend'; 
         color: var(--font-color);
@@ -436,7 +436,7 @@ body {
         transition-property: font-size, opacity;
         opacity: 0;
         text-align: right;
-        margin-right: 8vw;
+        margin-right: 8dvw;
     }
     
     /* TOP BAR */
@@ -447,17 +447,17 @@ body {
         right: 0;
         top: 0;
         /* Add some space in between */
-        padding: 1.5vmin;
+        padding: 1.5dvh;
         /*word-spacing: 3.7vmin;*/
         /* Height of nav bar */
-        height: 4vh;
+        height: 4dvh;
         z-index: 1000;
     }
 
     .navigation-bar a {
         font-family: 'Lexend';
         font-weight: 600;
-        font-size: 3vmin;/*min(2.5vw, 15px);*/
+        font-size: 3dvh;/*min(2.5vw, 15px);*/
         color: var(--font-color);
         text-decoration: transparent wavy underline;
         -webkit-text-decoration: transparent wavy underline;
@@ -465,7 +465,7 @@ body {
     }
 
     #menu {
-        width: 33vw;
+        width: 33dvw;
         float: right;
         text-align: center;
     }
@@ -473,10 +473,10 @@ body {
     #about-p1 {
         display: flex;
         text-align: justify;
-        font-size: 3vw;
-        max-width: 70vw;
-        height: 100vh;
-        top: 33vh;
+        font-size: 3dvw;
+        max-width: 70dvw;
+        height: 100dvh;
+        top: 33dvh;
         justify-content: center;
         align-items: center;
         margin-inline: auto;
@@ -485,10 +485,10 @@ body {
     .about-p1 {
         display: flex;
         text-align: justify;
-        font-size: 3vw;
-        max-width: 70vw;
-        height: 100vh;
-        top: 33vh;
+        font-size: 3dvw;
+        max-width: 70dvw;
+        height: 100dvh;
+        top: 33dvh;
         justify-content: center;
         align-items: center;
         margin-inline: auto;
@@ -502,18 +502,18 @@ body {
     
     table {
         position: relative;
-        top: 33vh;
-        width: 66vw;
-        padding-inline: 1.5vmin;
+        top: 33dvh;
+        width: 66dvw;
+        padding-inline: 1.5dvh;
         margin-left: auto;
         margin-right: auto;
-        height: 40vh;
+        height: 40dvh;
         border-collapse: collapse;
     }
     
     th {
         font-family: 'Gilda';
-        font-size: 4vw;
+        font-size: 4dvw;
         font-weight: normal;
         text-align: left;
     }
@@ -521,21 +521,21 @@ body {
     .jobmain {
         font-family: 'Montserrat';
         font-weight: bold;
-        font-size: 2.5vw;
+        font-size: 2.5dvw;
         vertical-align: bottom;
         border-top: 0.5px solid var(--font-color);
     }
     
     .jobdet {
         font-family: 'Gilda';
-        font-size: 2.5vw;
+        font-size: 2.5dvw;
         vertical-align: top;
     }
 
     .jobref {
         font-family: 'Montserrat';
         font-weight: bold;
-        font-size: 2.5vw;
+        font-size: 2.5dvw;
         vertical-align: top;
         opacity: 0.2;
         transition: opacity var(--tau) ease-in-out;
@@ -544,9 +544,9 @@ body {
 
     #portrait-container {
         position: relative;
-        top: 9vh;
-        bottom: 70vh;
-        width: 100vw;
+        top: 9dvh;
+        bottom: 70dvh;
+        width: 100dvw;
         align-content: center;
     }
 
@@ -557,7 +557,7 @@ body {
         border-radius: 1px;
         opacity: var(--show-portrait);
         object-fit: contain;
-        height: 60vh;
+        height: 60dvh;
     }
 }
 
@@ -569,14 +569,14 @@ video::-webkit-media-controls-panel {
 /* CONTAINER FOR SCROLL SNAP */
 .dumbtainer {
     position:relative;
-    width:100vw;
-    height:100vh;
+    width:100dvw;
+    height:100dvh;
     scrollbar-width: none;
     overflow-x:hidden;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;  
     -webkit-scroll-snap: y mandatory;
-    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-points-y: repeat(100dvh);
 }
 
 a {
@@ -627,8 +627,8 @@ a {
     top: 0;
     left: 0;
     margin: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
     /* stack elements horizontally */
     display: grid;
     /* prevent overlapping */
@@ -704,7 +704,7 @@ a {
     /*transition: opacity var(--short-tau) ease-in-out;*/
     opacity: var(--show-portrait);
     object-fit: cover;
-    height: 50vh;
+    height: 50dvh;
     top: 17%;
     left: 50%; /* position the left edge of the element at the middle of the parent */
     transform: translateX(-50%); /* This is a shorthand of
@@ -717,7 +717,7 @@ a {
     transition: opacity var(--short-tau);
     bottom: 0%;
     left: 0%;
-    font-size: 2vh;
+    font-size: 2dvh;
     z-index: 2000;
 } 
 
@@ -743,8 +743,8 @@ a {
 
 section {
     top: 0;
-    height: 100vh;
-    width: 100vw;
+    height: 100dvh;
+    width: 100dvw;
     scroll-snap-align: start;
     -webkit-scroll-snap-align: start;
     position: relative;
@@ -754,6 +754,6 @@ section {
     background-image:
         linear-gradient(to right, var(--font-color) 1px, transparent 1px),
         linear-gradient(to bottom, var(--font-color) 1px, transparent 1px);
-    background-size: 5vh 5vh;
+    background-size: 5dvh 5dvh;
     background-position: center center;
 }

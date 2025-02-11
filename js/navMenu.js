@@ -126,7 +126,7 @@ function setTitle() {
   intro1.textContent = splitText[0];
   intro2.textContent = splitText[1];
   // Set text display transition
-  roo.style.setProperty('--title-width', "100vw");
+  roo.style.setProperty('--title-width', "100dvw");
   subt.style.opacity = 0;
 }
 

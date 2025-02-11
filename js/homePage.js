@@ -79,13 +79,13 @@ function scrollListener(evt) {
     roo.style.setProperty('--font-color', fontcol.toString('#rrggbb'));
     roo.style.setProperty('--bg-color', bgcol.toString('#rrggbb'));
     stroke(fontcol);
-    roo.style.setProperty('--title-pos', map(normH, 0, 1, 33.33, 66.66).toString() + "vh");
-    roo.style.setProperty('--portrait-pos', map(normH, 0, 1, 0, 166).toString() + "vh");
+    roo.style.setProperty('--title-pos', map(normH, 0, 1, 33.33, 66.66).toString() + "dvh");
+    roo.style.setProperty('--portrait-pos', map(normH, 0, 1, 0, 166).toString() + "dvh");
     // Static
     roo.style.setProperty('--show-portrait', normH);
   }
   else if (normH < 2) {
-    roo.style.setProperty('--title-pos', map(normH, 1, 2, 66.66, 0).toString() + "vh");
+    roo.style.setProperty('--title-pos', map(normH, 1, 2, 66.66, 0).toString() + "dvh");
     roo.style.setProperty('--show-portrait', map(normH, 1, 2, 1, 0));
     currentPage = "about";
   }
@@ -152,7 +152,7 @@ function pageState() {
         history.pushState({}, document.title, '/' + currentPage);
         home.style.opacity = 1;
         // Set title position
-        roo.style.setProperty('--title-pos', "0vh");
+        roo.style.setProperty('--title-pos', "0dvh");
         // Set colors
         fontcol = color(0, 0, 0)
         roo.style.setProperty('--font-color', fontcol.toString('#rrggbb'));
@@ -166,7 +166,7 @@ function pageState() {
         history.pushState({}, document.title, '/' + currentPage);
         home.style.opacity = 1;
         // Set title position
-        roo.style.setProperty('--title-pos', "0vh");
+        roo.style.setProperty('--title-pos', "0dvh");
         // Set colors
         fontcol = color(254, 250, 235)
         roo.style.setProperty('--font-color', fontcol.toString('#rrggbb'));
@@ -260,5 +260,5 @@ function returnTitle() {
       break;
   }
   let roo = document.querySelector(':root');
-  roo.style.setProperty('--title-width', "100vw");
+  roo.style.setProperty('--title-width', "100dvw");
 }
