@@ -70,7 +70,8 @@ function scrollListener(evt) {
   // console.log(normH);
   let fontcol;
   let bgcol;
-
+  // Fade elements
+  roo.style.setProperty('--show-elem', Math.abs(Math.cos(Math.PI * normH)));
   if (normH < 1) {
     currentPage = "home";
     // Dynamic
@@ -81,12 +82,10 @@ function scrollListener(evt) {
     stroke(fontcol);
     roo.style.setProperty('--title-pos', map(normH, 0, 1, 33.33, 66.66).toString() + "dvh");
     roo.style.setProperty('--portrait-pos', map(normH, 0, 1, 0, 166).toString() + "dvh");
-    // Static
-    roo.style.setProperty('--show-portrait', normH);
   }
   else if (normH < 2) {
     roo.style.setProperty('--title-pos', map(normH, 1, 2, 66.66, 0).toString() + "dvh");
-    roo.style.setProperty('--show-portrait', map(normH, 1, 2, 1, 0));
+    
     currentPage = "about";
   }
   else if (normH < 4) {
@@ -129,7 +128,6 @@ function pageState() {
 
     switch (currentPage) {
       case "home":
-        roo.style.setProperty('--show-portrait', 0);
         // Set new page cover
         document.title = 'Guillermo A. R.';
         history.pushState({}, 'Guillermo A. R.', '/');

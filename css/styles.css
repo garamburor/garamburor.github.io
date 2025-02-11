@@ -7,7 +7,7 @@
     --title-pos: 33dvh;
     --title-width: 100dvw;
     --portrait-pos: 0dvh;
-    --show-portrait: 0;
+    --show-elem: 0;
   }
 
 /* Import font */
@@ -164,6 +164,7 @@ body {
         margin-inline: auto;
         margin-top: 0;
         margin-bottom: 0;
+        opacity: var(--show-elem);
     }
     
     .about-h1 {
@@ -179,6 +180,7 @@ body {
         margin-right: auto;
         height: 40dvh;
         border-collapse: collapse;
+        opacity: var(--show-elem);
     }
     
     th {
@@ -224,7 +226,7 @@ body {
         margin-left: auto;
         margin-right: auto;
         border-radius: 1px;
-        opacity: var(--show-portrait);
+        opacity: var(--show-elem);
         object-fit: contain;
         height: 60dvh;
         width: 75dvw;
@@ -328,6 +330,7 @@ body {
         margin-inline: auto;
         margin-top: 0;
         margin-bottom: 0;
+        opacity: var(--show-elem);
     }
     
     .about-h1 {
@@ -343,6 +346,7 @@ body {
         margin-right: auto;
         height: 40dvh;
         border-collapse: collapse;
+        opacity: var(--show-elem);
     }
     
     th {
@@ -382,6 +386,7 @@ body {
         bottom: 75dvh;
         width: 100dvw;
         align-content: center;
+        opacity: var(--show-elem);
     }
     #portrait-vid {
         display: block;
@@ -494,6 +499,7 @@ body {
         margin-inline: auto;
         margin-top: 0;
         margin-bottom: 0;
+        opacity: var(--show-elem);
     }
     
     .about-h1 {
@@ -509,6 +515,7 @@ body {
         margin-right: auto;
         height: 40dvh;
         border-collapse: collapse;
+        opacity: var(--show-elem);
     }
     
     th {
@@ -548,6 +555,7 @@ body {
         bottom: 70dvh;
         width: 100dvw;
         align-content: center;
+        opacity: var(--show-elem);
     }
 
     #portrait-vid {
@@ -697,18 +705,6 @@ a {
     background-repeat: no-repeat;
     background-size: contain;
     */
-}
-
-#portrait-img {
-    position: relative;
-    /*transition: opacity var(--short-tau) ease-in-out;*/
-    opacity: var(--show-portrait);
-    object-fit: cover;
-    height: 50dvh;
-    top: 17%;
-    left: 50%; /* position the left edge of the element at the middle of the parent */
-    transform: translateX(-50%); /* This is a shorthand of
-                                         translateX(-50%) and translateY(-50%) */
 }
 
 #credits {
