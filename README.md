@@ -1,6 +1,11 @@
 # [Personal website](https://guillermo.works)
-Work in progress... (only home page currently)
+Work in progress...
 
 ## TO DO:
-- [ ] Create About page layout
-- [ ] Restructure site using CSS Grid
+- [ ] Center main text, issue with subt
+- [ ] Random text transition
+- [ ] Try different video transitions
+- [ ] Image hover effect
+- [ ] Contact page layout
+- [ ] Work portfolio carousel
+- [ ] Text curtain effect improve maybe

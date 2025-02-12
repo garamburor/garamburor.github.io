@@ -55,6 +55,7 @@ function setup() {
   if (currentPage == "home") {
     textChange(0);
     document.getElementById('intro1').addEventListener("transitionend", trigFrame);
+    document.getElementById('home').style.opacity = 0;
   }
   else {
     textChange(4);

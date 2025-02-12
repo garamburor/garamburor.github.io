@@ -101,9 +101,10 @@ function menuHoverOut(evt) {
   evt.target.style.webkitTextDecoration = "transparent wavy underline";
   
   let roo = document.querySelector(':root');
-
   // Set animation for hiding text
   roo.style.setProperty('--title-width', "0px");
+  // Rotate G
+  document.getElementById("Gknob").style.transform = "rotate(45deg)";
   // Once its done call the main cover
   id2 = setTimeout(returnTitle, 505);
 }
