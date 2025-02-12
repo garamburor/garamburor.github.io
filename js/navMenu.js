@@ -85,6 +85,8 @@ function menuHoverIn(evt) {
   else {
     // Set width to 0
     roo.style.setProperty('--title-width', "0px");
+    // Rotate G
+    document.getElementById("Gknob").style.transform = "rotate(45deg)";
     id1 = setTimeout(setTitle, 400);
   }
   // add underline
