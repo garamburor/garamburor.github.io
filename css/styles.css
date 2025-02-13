@@ -82,11 +82,13 @@ body {
         top: var(--title-pos);
         z-index: 999;
     }
+
     .title {
         display: flex;
         width: 100dvw;
+        height: 100%;
         justify-content: center;
-        position: sticky;
+        position: absolute;
         z-index: 999;
         align-items: center;
         /* Font settings */
@@ -98,11 +100,10 @@ body {
     }
     
     /* Subtitle */
-    .subtitle {
+    #subt {
         display: inline-block;
-        position: sticky;
-        z-index: 1000;
-        text-align: right;
+        position: absolute;
+        z-index: 200;
         font-size: 4dvw;
         font-weight: 400;
         font-family: 'Lexend'; 
@@ -110,7 +111,8 @@ body {
         transition: opacity var(--long-tau);
         transition-property: font-size, opacity;
         opacity: 0;
-        margin-right: 2.8dvh;
+        bottom: 25%;
+        right: 5%;
     }
 
     /* TOP BAR */
@@ -248,11 +250,13 @@ body {
         top: var(--title-pos);
         z-index: 999;
     }
+
     .title {
         display: flex;
         width: 100dvw;
+        height: 100%;
         justify-content: center;
-        position: sticky;
+        position: absolute;
         z-index: 999;
         align-items: center;
         /* Font settings */
@@ -264,11 +268,10 @@ body {
     }
     
     /* Subtitle */
-    .subtitle {
+    #subt {
         display: inline-block;
-        position: sticky;
-        z-index: 1000;
-        text-align: right;
+        position: absolute;
+        z-index: 200;
         font-size: 4dvw;
         font-weight: 400;
         font-family: 'Lexend'; 
@@ -276,7 +279,8 @@ body {
         transition: opacity var(--long-tau);
         transition-property: font-size, opacity;
         opacity: 0;
-        margin-right: 2.8dvh;
+        bottom: 25%;
+        right: 5%;
     }
 
     /* TOP BAR */
@@ -420,8 +424,9 @@ body {
     .title {
         display: flex;
         width: 100dvw;
+        height: 100%;
         justify-content: center;
-        position: sticky;
+        position: absolute;
         z-index: 999;
         align-items: center;
         /* Font settings */
@@ -433,10 +438,10 @@ body {
     }
     
     /* Subtitle */
-    .subtitle {
+    #subt {
         display: inline-block;
-        position: sticky;
-        z-index: 1000;
+        position: absolute;
+        z-index: 200;
         font-size: 3dvw;
         font-weight: 400;
         font-family: 'Lexend'; 
@@ -444,8 +449,8 @@ body {
         transition: opacity var(--long-tau);
         transition-property: font-size, opacity;
         opacity: 0;
-        text-align: right;
-        margin-right: 8dvw;
+        bottom: 0%;
+        left: 50%;
     }
     
     /* TOP BAR */
