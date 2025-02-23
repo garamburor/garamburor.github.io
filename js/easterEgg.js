@@ -17,7 +17,7 @@ function easterEggSetup() {
 
 function touchKnob(event) {
   //event.preventDefault();
-  if (clicked == 1) {
+  if (clicked == 1 && gameMode == 1) {
     let el = document.getElementById("Gknob")
     const rect = el.getBoundingClientRect();
     let targetAngle;
@@ -44,8 +44,9 @@ function touchKnob(event) {
 }
 
 function rotateKnob(event) {
-  if (clicked == 1) {
-    let el = document.getElementById("Gknob")
+  let el = document.getElementById("Gknob")
+  if (clicked == 1 && gameMode == 1) {
+    
     const rect = el.getBoundingClientRect();
     let targetAngle;
     let str1 = "rotate("
