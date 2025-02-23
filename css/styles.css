@@ -237,6 +237,19 @@ body {
         height: 60dvh;
         width: 75dvw;
     }
+
+    footer {
+        margin: 0;
+        font-family: 'Montserrat';
+        font-size: 3dvw;
+        font-weight: normal;
+        text-align: right;
+        position: absolute;
+        bottom: 0;
+        right:0;
+        opacity: 0.7;
+        padding: 0.5dvh;
+    }
 }
 
 @media screen and (aspect-ratio: 1/1) {
@@ -405,6 +418,19 @@ body {
         object-fit: contain;
         height: 60dvh;
         width: 75dvw;
+    }
+
+    footer {
+        margin: 0;
+        font-family: 'Montserrat';
+        font-size: 3dvw;
+        font-weight: normal;
+        text-align: right;
+        position: absolute;
+        bottom: 0;
+        right:0;
+        opacity: 0.7;
+        padding: 0.5dvh;
     }
 }
 
@@ -575,6 +601,19 @@ body {
         opacity: var(--show-portrait);
         object-fit: contain;
         height: 60dvh;
+    }
+
+    footer {
+        margin: 0;
+        font-family: 'Montserrat';
+        font-size: 1dvw;
+        font-weight: normal;
+        text-align: right;
+        position: absolute;
+        bottom: 0;
+        right:0;
+        opacity: 0.7;
+        padding: 0.25dvh;
     }
 }
 
