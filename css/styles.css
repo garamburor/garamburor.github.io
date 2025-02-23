@@ -250,6 +250,32 @@ body {
         opacity: 0.7;
         padding: 0.5dvh;
     }
+
+    #contact-info {   
+        width: 100dvw;
+        height: 66.66dvh;
+        top: 33.33dvh;
+        font-family: 'Montserrat';
+        font-size: 6dvw;
+        font-weight: normal;
+        text-align: center;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        /* transform:rotate(90deg); */
+    }
+
+    .contact-links {
+        /* transform: rotate(-90deg); */
+        display: block;
+        width: 100dvw;
+        height: 16.66dvh;
+        font-family: 'Montserrat';
+        font-size: 6dvw;
+        font-weight: normal;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-align: center
+    }
 }
 
 @media screen and (aspect-ratio: 1/1) {
@@ -432,6 +458,24 @@ body {
         opacity: 0.7;
         padding: 0.5dvh;
     }
+
+    #contact-info {   
+        width: 66.66dvh;
+        height: 100dvw;
+        top: 33.33dvh;
+        font-family: 'Montserrat';
+        font-size: 6dvw;
+        font-weight: normal;
+        text-align: center;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        /* transform:rotate(90deg); */
+    }
+    /*
+    .contact-links {
+        transform: rotate(-90deg);
+    }
+    */
 }
 
 /* DIMENSIONS FOR LANDSCAPE */
@@ -615,6 +659,39 @@ body {
         opacity: 0.7;
         padding: 0.25dvh;
     }
+
+    #contact-info {
+        display: inline-block;
+        margin: auto;
+        left: 10dvw;
+        width: 80dvw;
+        height: 50dvh;
+        top: 50dvh;
+        transform: rotate(0deg);
+    }
+
+    .contact-links {
+        display: inline-block;
+        transform: rotate(0deg);
+        height: 16.66dvh;
+        width: 19dvw;
+        font-family: 'Montserrat';
+        font-size: 2.5dvw;
+        font-weight: normal;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-align: center
+    }
+}
+
+#contact-info {
+    position: relative;
+    transition: width, height, font-size, transform 1s ease-in-out;
+    transform-origin: center;
+}
+
+.contact-links {
+    transition: width, height, font-size, transform 1s ease-in-out;
 }
 
 video::-webkit-media-controls-panel {
