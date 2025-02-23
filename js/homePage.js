@@ -260,6 +260,8 @@ function returnTitle() {
     default:
       // Make sure G is not there
       knob.textContent = "";
+      // Rotate
+      knob.style.transform = "rotate(45deg)";
       // Split text where O is
       let splitText = titleText.split("O");
       intro1.textContent = splitText[0];
