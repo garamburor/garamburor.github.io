@@ -813,6 +813,7 @@ a {
     user-select: auto; /* Standard syntax */
     word-wrap: normal;
     word-break: normal;
+    cursor: grab;
 }
 
 #logo {
