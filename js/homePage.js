@@ -4,6 +4,7 @@ let currentPage = 'home';
 let memory = 'home';
 let nbPages = 3 - 1.;
 
+
 // Secret video
 var myVideo;
 
@@ -28,20 +29,6 @@ function videoStop() {
 }
 
 function setup() {
-  // add video object
-  myVideo = document.getElementById("portrait-vid");
-  // add click event to play
-  myVideo.addEventListener("click", videoPlay);
-  // mute audio
-  myVideo.muted = true;
-  myVideo.loop = false;
-  myVideo.autoplay = false;
-  myVideo.controls = false;
-  myVideo.playsinline = true;
-
-  logoSetup();
-  easterEggSetup();
-
   let el = document.getElementById("intro1");
   el.addEventListener("transitionstart", function inT() {
     hoverState = 1;
@@ -80,7 +67,7 @@ function scrollListener(evt) {
     bgcol = lerpColor(color(255,254,241), color(253,253,253), normH);
     roo.style.setProperty('--font-color', fontcol.toString('#rrggbb'));
     roo.style.setProperty('--bg-color', bgcol.toString('#rrggbb'));
-    stroke(fontcol);
+    instance1.changeStrokeColor(red(fontcol), green(fontcol), blue(fontcol))
     roo.style.setProperty('--title-pos', map(normH, 0, 1, 33.33, 66.66).toString() + "dvh");
     roo.style.setProperty('--portrait-pos', map(normH, 0, 1, 0, 166).toString() + "dvh");
   }
@@ -97,7 +84,7 @@ function scrollListener(evt) {
     bgcol = lerpColor(color(253,253,253), color(242, 242, 242), normH - 4);
     roo.style.setProperty('--font-color', fontcol.toString('#rrggbb'));
     roo.style.setProperty('--bg-color', bgcol.toString('#rrggbb'));
-    stroke(fontcol);
+    instance1.changeStrokeColor(red(fontcol), green(fontcol), blue(fontcol))
     currentPage = "about";
   }
   else if (normH < 6) {
@@ -109,6 +96,132 @@ function scrollListener(evt) {
   
   pageState();
 }
+
+let sketch2 = (p) => {
+  let img1, modImg;
+  let j;
+  let x;
+  let y;
+  let coord;
+  let canvas;
+  let aspectRatio;
+  let imgWidth, imgHeight;
+  let mouseX, mouseY;
+  let insideLock = 0;
+  let quadrant;
+
+  // Load content before processing
+  p.preload = () => {
+    // Get original aspect ratio from image
+    img1 = p.loadImage('media/portrait.jpg'); 
+    aspectRatio = 1067 / 1600;
+  }
+
+  // Set stuff before running loop
+  p.setup = () => {
+    // Adjust image size while preserving aspect ratio
+    imgHeight = p.windowHeight * 0.6
+    imgWidth = imgHeight * aspectRatio
+    // Set canvas
+    canvas = p.createCanvas(p.windowWidth, imgHeight);
+    canvas.position(0, 0, 'relative');
+    // Set frame rate
+    p.frameRate(24);
+  }
+
+  // Adjust image if window changes size
+  p.windowResized = () => {
+    imgHeight = p.windowHeight * 0.6
+    imgWidth = imgHeight * aspectRatio
+    p.resizeCanvas(p.windowWidth, imgHeight);
+  }
+
+  // Main loop
+  p.draw = () => {
+    // Clear canvas
+    p.clear();
+    // Load frame of video
+    modImg = img1.get();
+    modImg.loadPixels();
+    // Reset coordiante counter
+    j = 0;
+    // Clamp x coordinates to image position
+    mouseX = p.constrain(p.mouseX, (p.width - imgWidth) * 0.5, (p.width + imgWidth) * 0.5)
+    // Map to be 0 until image width
+    mouseX = Math.floor(p.map(mouseX, (p.width - imgWidth) * 0.5, (p.width + imgWidth) * 0.5, 0, modImg.width));
+    // There's no need to clamp for mouseY since the canvas and image
+    // have the same height, just map
+    mouseY = Math.floor(p.map(p.mouseY, 0, p.height, 0, modImg.height));
+    // Check if mouse is hovering over image or not
+    if(p.mouseY <= 0 || p.mouseY >= p.height || mouseX == 0 || mouseX == modImg.width) {
+      insideLock = 0;
+    }
+
+    // Detec from which quadrant of the image the mouse has entered
+    if (insideLock == 0) {
+      if (mouseX < modImg.width * 0.5 && mouseY < modImg.height * 0.5) {
+        quadrant = 0;
+      } else if (mouseX > modImg.width * 0.5 && mouseY < modImg.height * 0.5) {
+        quadrant = 1;
+      } else if (mouseX < modImg.width * 0.5 && mouseY > modImg.height * 0.5) {
+        quadrant = 2;
+      } else {
+        quadrant = 3;
+      }
+      // Do not change this quadrant until mouse has left image
+      insideLock = 1;
+    }
+    
+    // Pixel transform
+    for (var i = 0; i < modImg.pixels.length; i += 4) {
+        // Get cartesian coordinates of pixels
+        y = Math.floor(j / modImg.width);
+        x = j % modImg.width;
+        j += 1;
+        coord = (mouseX + y * modImg.width) * 4;
+
+        // Repeat horizontally the pixel the mouse is hovering on
+        if (quadrant == 0) {
+            if(x < mouseX && y < mouseY) {
+              modImg.pixels[i + 0] = modImg.pixels[coord + 0];
+              modImg.pixels[i + 1] = modImg.pixels[coord + 1];
+              modImg.pixels[i + 2] = modImg.pixels[coord + 2];
+              modImg.pixels[i + 3] = modImg.pixels[coord + 3];
+            }
+        }
+        else if (quadrant == 1) {
+          if(x > mouseX && y < mouseY) {
+            modImg.pixels[i + 0] = modImg.pixels[coord + 0];
+            modImg.pixels[i + 1] = modImg.pixels[coord + 1];
+            modImg.pixels[i + 2] = modImg.pixels[coord + 2];
+            modImg.pixels[i + 3] = modImg.pixels[coord + 3];
+          }
+        }
+        else if (quadrant == 2) {
+          if(x < mouseX && y > mouseY) {
+            modImg.pixels[i + 0] = modImg.pixels[coord + 0];
+            modImg.pixels[i + 1] = modImg.pixels[coord + 1];
+            modImg.pixels[i + 2] = modImg.pixels[coord + 2];
+            modImg.pixels[i + 3] = modImg.pixels[coord + 3];
+          }
+        }
+        else if (quadrant == 3) {
+          if(x > mouseX && y > mouseY) {
+            modImg.pixels[i + 0] = modImg.pixels[coord + 0];
+            modImg.pixels[i + 1] = modImg.pixels[coord + 1];
+            modImg.pixels[i + 2] = modImg.pixels[coord + 2];
+            modImg.pixels[i + 3] = modImg.pixels[coord + 3];
+          }
+        }
+    }
+    // Update changes
+    modImg.updatePixels();
+    // Plot image
+    p.image(modImg, (p.width - imgWidth) * 0.5, 0, imgWidth, imgHeight);
+  }
+}
+// Create sketch
+let instance2 = new p5(sketch2, 'portrait-container');
 
 // For the state events that don't repeat every loop
 function pageState() {
@@ -135,8 +248,8 @@ function pageState() {
         // Set animation for hiding text
         roo.style.setProperty('--title-width', "0px");
         home.style.opacity = 0;
-        myVideo.pause();
-        myVideo.currentTime = 0;
+        // myVideo.pause();
+        // myVideo.currentTime = 0;
         // Hide grid
         workPage.style.clipPath = "inset(0 0 100% 0 round 0 0 0 0)";
         break;
@@ -149,8 +262,8 @@ function pageState() {
         workPage.style.clipPath = "inset(0 0 100% 0 round 0 0 0 0)";
         break;
       case "contact":
-        myVideo.pause();
-        myVideo.currentTime = 0;
+        // myVideo.pause();
+        // myVideo.currentTime = 0;
         // Set new page cover
         document.title = currentPage.toUpperCase() + ' - Guillermo A. R.';
         history.pushState({}, document.title, '/' + currentPage);
@@ -159,10 +272,10 @@ function pageState() {
         roo.style.setProperty('--title-pos', "0dvh");
         // Set colors
         fontcol = color(0, 0, 0)
+        instance1.changeStrokeColor(0, 0, 0)
         roo.style.setProperty('--font-color', fontcol.toString('#rrggbb'));
         bgcol = color(242,242,242)
         roo.style.setProperty('--bg-color', bgcol.toString('#rrggbb'));
-        stroke(fontcol);
         // Hide grid
         workPage.style.clipPath = "inset(0 0 100% 0 round 0 0 0 0)";
         break;
@@ -175,10 +288,10 @@ function pageState() {
         roo.style.setProperty('--title-pos', "0dvh");
         // Set colors
         fontcol = color(254, 250, 235)
+        instance1.changeStrokeColor(254, 250, 235)
         roo.style.setProperty('--font-color', fontcol.toString('#rrggbb'));
         bgcol = color(23, 167, 126)
         roo.style.setProperty('--bg-color', bgcol.toString('#rrggbb'));
-        stroke(fontcol);
         // Reveal grid
         workPage.style.clipPath = "inset(0 0 0 0 round 0 0 0 0)"
         break;
