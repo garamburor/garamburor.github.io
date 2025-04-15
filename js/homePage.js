@@ -153,7 +153,15 @@ let sketch2 = (p) => {
     // have the same height, just map
     mouseY = Math.floor(p.map(p.mouseY, 0, p.height, 0, modImg.height));
     // Check if mouse is hovering over image or not
-    if(p.mouseY <= 0 || p.mouseY >= p.height || mouseX == 0 || mouseX == modImg.width) {
+    if(p.mouseX >= (p.width - imgWidth) * 0.5 && p.mouseX <= (p.width + imgWidth) * 0.5) {
+      if(p.mouseY >= 0 && p.mouseY <= imgHeight) {
+        insideLock = 1;
+      }
+      else {
+        insideLock = 0;
+      }
+    }
+    else {
       insideLock = 0;
     }
 
@@ -168,10 +176,8 @@ let sketch2 = (p) => {
       } else {
         quadrant = 3;
       }
-      // Do not change this quadrant until mouse has left image
-      insideLock = 1;
     }
-    
+
     // Pixel transform
     for (var i = 0; i < modImg.pixels.length; i += 4) {
         // Get cartesian coordinates of pixels
@@ -181,6 +187,7 @@ let sketch2 = (p) => {
         coord = (mouseX + y * modImg.width) * 4;
 
         // Repeat horizontally the pixel the mouse is hovering on
+        if (insideLock) {
         if (quadrant == 0) {
             if(x < mouseX && y < mouseY) {
               modImg.pixels[i + 0] = modImg.pixels[coord + 0];
@@ -213,6 +220,7 @@ let sketch2 = (p) => {
             modImg.pixels[i + 3] = modImg.pixels[coord + 3];
           }
         }
+      }
     }
     // Update changes
     modImg.updatePixels();
@@ -252,6 +260,7 @@ function pageState() {
         // myVideo.currentTime = 0;
         // Hide grid
         workPage.style.clipPath = "inset(0 0 100% 0 round 0 0 0 0)";
+        instance2.noLoop();
         break;
       case "about":
         // Set new page cover
@@ -260,6 +269,7 @@ function pageState() {
         home.style.opacity = 1;
         // Hide grid
         workPage.style.clipPath = "inset(0 0 100% 0 round 0 0 0 0)";
+        instance2.loop();
         break;
       case "contact":
         // myVideo.pause();
@@ -278,6 +288,7 @@ function pageState() {
         roo.style.setProperty('--bg-color', bgcol.toString('#rrggbb'));
         // Hide grid
         workPage.style.clipPath = "inset(0 0 100% 0 round 0 0 0 0)";
+        instance2.noLoop();
         break;
       case "work":
         // Set new page cover
@@ -294,6 +305,7 @@ function pageState() {
         roo.style.setProperty('--bg-color', bgcol.toString('#rrggbb'));
         // Reveal grid
         workPage.style.clipPath = "inset(0 0 0 0 round 0 0 0 0)"
+        instance2.noLoop();
         break;
       default: // 404
         break;
