@@ -129,6 +129,7 @@ const sketch2 = p => {
     // Set canvas
     canvas = p.createCanvas(p.windowWidth, imgHeight);
     canvas.position(0, 0, 'relative');
+    p.windowResized();
     // Set frame rate
     p.frameRate(24);
   }

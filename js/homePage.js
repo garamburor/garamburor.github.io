@@ -7,6 +7,7 @@ let nbPages = 3 - 1.;
 
 // Setup website
 function setup() {
+  // Don't create a default canvas
   noCanvas()
   // Detect if mousehover has triggered a transition
   let el = document.getElementById("intro1");
