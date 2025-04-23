@@ -64,8 +64,7 @@ body {
     font-weight: 400;
     font-family: 'Montserrat'; 
     /* help safari render font well */
-    -webkit-font-smoothing: subpixel-antialiased !important;
-
+    -webkit-font-smoothing: antialiased !important;
     margin:0;
     padding:0;
 }
