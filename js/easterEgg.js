@@ -73,6 +73,7 @@ function rotateKnob(event) {
   }
 }
 
+// Handle mouseUp for knob
 function mouseUp(evt) {
   // evt.preventDefault();
   clicked = 0;
@@ -90,6 +91,7 @@ function mouseUp(evt) {
   
 }
 
+// Handle mouseDown for knob
 function mouseDown(evt) {
   evt.preventDefault();
   document.getElementById("Gknob").style.transitionProperty = "font-size, opacity, max-width, width";
@@ -97,3 +99,138 @@ function mouseDown(evt) {
   clicked = 1;
   clearInterval(easterEggTimer);
 }
+
+// Sketch for about photo
+const sketch2 = p => {
+  let img1, modImg;
+  let j;
+  let x;
+  let y;
+  let coord;
+  let canvas;
+  let aspectRatio;
+  let imgWidth, imgHeight;
+  let mouseX, mouseY;
+  let insideLock = 0;
+  let quadrant;
+
+  // Load content before processing
+  p.preload = function() {
+    // Get original aspect ratio from image
+    img1 = p.loadImage('media/portrait.jpg'); 
+    aspectRatio = 1067 / 1600;
+  }
+
+  // Set stuff before running loop
+  p.setup = function() {
+    // Adjust image size while preserving aspect ratio
+    imgHeight = p.windowHeight * 0.6
+    imgWidth = imgHeight * aspectRatio
+    // Set canvas
+    canvas = p.createCanvas(p.windowWidth, imgHeight);
+    canvas.position(0, 0, 'relative');
+    // Set frame rate
+    p.frameRate(24);
+  }
+
+  // Adjust image if window changes size
+  p.windowResized = function() {
+    imgHeight = p.windowHeight * 0.6
+    imgWidth = imgHeight * aspectRatio
+    p.resizeCanvas(p.windowWidth, imgHeight);
+  }
+
+  // Main loop
+  p.draw = function() {
+    // Clear canvas
+    p.clear();
+    // Load frame of video
+    modImg = img1.get();
+    modImg.loadPixels();
+    // Reset coordiante counter
+    j = 0;
+    // Clamp x coordinates to image position
+    mouseX = p.constrain(p.mouseX, (p.width - imgWidth) * 0.5, (p.width + imgWidth) * 0.5)
+    // Map to be 0 until image width
+    mouseX = Math.floor(p.map(mouseX, (p.width - imgWidth) * 0.5, (p.width + imgWidth) * 0.5, 0, modImg.width));
+    // There's no need to clamp for mouseY since the canvas and image
+    // have the same height, just map
+    mouseY = Math.floor(p.map(p.mouseY, 0, p.height, 0, modImg.height));
+    // Check if mouse is hovering over image or not
+    if(p.mouseX >= (p.width - imgWidth) * 0.5 && p.mouseX <= (p.width + imgWidth) * 0.5) {
+      if(p.mouseY >= 0 && p.mouseY <= imgHeight) {
+        insideLock = 1;
+      }
+      else {
+        insideLock = 0;
+      }
+    }
+    else {
+      insideLock = 0;
+    }
+
+    // Detec from which quadrant of the image the mouse has entered
+    if (insideLock == 0) {
+      if (mouseX < modImg.width * 0.5 && mouseY < modImg.height * 0.5) {
+        quadrant = 0;
+      } else if (mouseX > modImg.width * 0.5 && mouseY < modImg.height * 0.5) {
+        quadrant = 1;
+      } else if (mouseX < modImg.width * 0.5 && mouseY > modImg.height * 0.5) {
+        quadrant = 2;
+      } else {
+        quadrant = 3;
+      }
+    }
+
+    // Pixel transform
+    for (var i = 0; i < modImg.pixels.length; i += 4) {
+        // Get cartesian coordinates of pixels
+        y = Math.floor(j / modImg.width);
+        x = j % modImg.width;
+        j += 1;
+        coord = (mouseX + y * modImg.width) * 4;
+
+        // Repeat horizontally the pixel the mouse is hovering on
+        if (insideLock) {
+        if (quadrant == 0) {
+            if(x < mouseX && y < mouseY) {
+              modImg.pixels[i + 0] = modImg.pixels[coord + 0];
+              modImg.pixels[i + 1] = modImg.pixels[coord + 1];
+              modImg.pixels[i + 2] = modImg.pixels[coord + 2];
+              modImg.pixels[i + 3] = modImg.pixels[coord + 3];
+            }
+        }
+        else if (quadrant == 1) {
+          if(x > mouseX && y < mouseY) {
+            modImg.pixels[i + 0] = modImg.pixels[coord + 0];
+            modImg.pixels[i + 1] = modImg.pixels[coord + 1];
+            modImg.pixels[i + 2] = modImg.pixels[coord + 2];
+            modImg.pixels[i + 3] = modImg.pixels[coord + 3];
+          }
+        }
+        else if (quadrant == 2) {
+          if(x < mouseX && y > mouseY) {
+            modImg.pixels[i + 0] = modImg.pixels[coord + 0];
+            modImg.pixels[i + 1] = modImg.pixels[coord + 1];
+            modImg.pixels[i + 2] = modImg.pixels[coord + 2];
+            modImg.pixels[i + 3] = modImg.pixels[coord + 3];
+          }
+        }
+        else if (quadrant == 3) {
+          if(x > mouseX && y > mouseY) {
+            modImg.pixels[i + 0] = modImg.pixels[coord + 0];
+            modImg.pixels[i + 1] = modImg.pixels[coord + 1];
+            modImg.pixels[i + 2] = modImg.pixels[coord + 2];
+            modImg.pixels[i + 3] = modImg.pixels[coord + 3];
+          }
+        }
+      }
+    }
+    // Update changes
+    modImg.updatePixels();
+    // Plot image
+    p.image(modImg, (p.width - imgWidth) * 0.5, 0, imgWidth, imgHeight);
+  }
+}
+// Create sketch
+let instance2 = new p5(sketch2, 'portrait-container');

@@ -4,7 +4,7 @@ let waves = [];
 // Number of sines
 let num = 6;
 
-let sketch1 = (p) => {
+const sketch1 = p => {
   class Wave {
     constructor(shift) {
       this.shift = shift; // phase shift between each sine
@@ -47,7 +47,7 @@ let sketch1 = (p) => {
   
   // Phase shift between sines 
   let step = 30;
-  p.setup = () => {
+  p.setup = function() {
     // Update size of logo based on font size
     sphereSize();
     // Set canvas size to diameter of circle
@@ -69,7 +69,7 @@ let sketch1 = (p) => {
     easterEggSetup();
   };
 
-  p.draw = () => {
+  p.draw = function() {
     p.clear();
     // Center drawing in canvas
     p.translate(p.width * 0.5, p.height * 0.5);
@@ -82,7 +82,7 @@ let sketch1 = (p) => {
   };
 
   /* Sphere animation loop */
-  p.sphereAnim = () =>  {
+  p.sphereAnim = function()  {
     p.noFill();
     p.strokeWeight(2);
     for (let i=0; i<num; i++) {
@@ -92,7 +92,7 @@ let sketch1 = (p) => {
   }
     
   /* Adjust to window size  dynamically */
-  p.windowResized = () => {
+  p.windowResized = function() {
     // Update size of logo based on font size
     sphereSize();
     p.resizeCanvas(2.1*r, 2.1*r);

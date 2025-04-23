@@ -2,6 +2,8 @@ let titleText = null;
 let tempTitle = titleText;
 // Variable to check if title is on transition
 let hoverState = 0;
+// Variable to check if transition is due to mouse click
+let titleLock = 0;
 // Variables for controlling timed transitions
 let id1 = null;
 let id2 = null;
@@ -143,7 +145,7 @@ function enableTab(id) {
   el.style.userSelect = "auto";
   el.style.pointerEvents = "auto";
   el.style.cursor = "pointer";
-  el.style.fontSize = "3.3vmin";
+  // el.style.fontSize = "3.3vmin";
 }
 
 /* Disable element in nav menu */
@@ -160,7 +162,7 @@ function removeTab(id) {
   // Set new title
   titleText = id.toUpperCase();
   // Change style
-  el.style.filter = "blur(1.5px)";
+  el.style.filter = "blur(2px)";
   el.style.userSelect = "none";
   el.style.pointerEvents = "none";
   el.style.cursor = "pointer";
@@ -170,15 +172,59 @@ function removeTab(id) {
     home.style.opacity = 0;
   }
   // Make text a bit smaller
-  el.style.fontSize = "3vmin";
+  // el.style.fontSize = "3vmin";
 }
 
 /* Handle nav click */
 function menuClick(evt) {
+  clearTimeout(id1);
+  clearTimeout(id2);
   evt.preventDefault();
   // Remove underline
   evt.target.style.textDecoration = "transparent wavy underline";
   evt.target.style.webkitTextDecoration = "transparent wavy underline";
   currentPage = evt.target.id;
+  // Close text
+  let roo = document.querySelector(':root');
+  roo.style.setProperty('--title-width', "0px");
+  titleLock = 1;
   scrollPage();
+}
+
+function scrollPage() {
+  let divContainer = document.getElementById("main");
+  switch (currentPage) {
+    case "home":
+      // Scroll to position
+      divContainer.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+      break;
+    case "about":
+      // Scroll to position
+      divContainer.scrollTo({
+        top: 1 * divContainer.clientHeight,
+        left: 0,
+        behavior: "smooth",
+      });
+      break;
+    case "contact":
+      // Scroll to position
+      divContainer.scrollTo({
+        top: 5 * divContainer.clientHeight,
+        left: 0,
+        behavior: "smooth",
+      });
+      break;
+    case "work":
+      // Scroll to position
+      divContainer.scrollTo({
+        top: 6 * divContainer.clientHeight,
+        left: 0,
+        behavior: "smooth",
+      });
+      break;
+    }
 }

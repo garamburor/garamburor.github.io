@@ -7,7 +7,7 @@
     --title-pos: 33dvh;
     --title-width: 100dvw;
     --portrait-pos: 0dvh;
-    --show-elem: 0;
+    --show-elem: 1;
   }
 
 /* Import font */
@@ -133,7 +133,7 @@ body {
     .navigation-bar a {
         font-family: 'Lexend';
         font-weight: 600;
-        font-size: 3.3dvw;/*min(2.5vw, 15px);*/
+        font-size: 3.3dvw;/*min(2.5dvw, 15px);*/
         color: var(--font-color);
         text-decoration: transparent wavy underline;
         -webkit-text-decoration: transparent wavy underline;
@@ -141,7 +141,7 @@ body {
     }
 
     #menu {
-        width: 50dvw; /*33vw*/
+        width: 50dvw; /*33dvw*/
         float: right;
         text-align: center;
     }
@@ -285,7 +285,7 @@ body {
         align-content: center;
         width: 100dvw;
         height: 33.33dvh;
-        margin-top: -33.33dvh;
+        margin-top: 0; /*-33.33dvh;*/
         top: var(--title-pos);
         z-index: 999;
     }
@@ -340,7 +340,7 @@ body {
     .navigation-bar a {
         font-family: 'Lexend';
         font-weight: 600;
-        font-size: 3.3dvw;/*min(2.5vw, 15px);*/
+        font-size: 3.3dvw;/*min(2.5dvw, 15px);*/
         color: var(--font-color);
         text-decoration: transparent wavy underline;
         -webkit-text-decoration: transparent wavy underline;
@@ -348,7 +348,7 @@ body {
     }
 
     #menu {
-        width: 50dvw; /*33vw*/
+        width: 50dvw; /*33dvw*/
         float: right;
         text-align: center;
     }
@@ -541,7 +541,7 @@ body {
     .navigation-bar a {
         font-family: 'Lexend';
         font-weight: 600;
-        font-size: 3dvh;/*min(2.5vw, 15px);*/
+        font-size: 3dvh;/*min(2.5dvw, 15px);*/
         color: var(--font-color);
         text-decoration: transparent wavy underline;
         -webkit-text-decoration: transparent wavy underline;
@@ -828,7 +828,7 @@ a {
 
 #about-page {
     position: relative;
-    height: 100vh;
+    height: 100dvh;
     width: 100%;
     left: 0;
     display: grid;
@@ -902,18 +902,18 @@ section {
     -ms-overflow-style: none;
     /* Hide scrollbar in webkit */
     -webkit-scrollbar: none;
-    top: 33.33vh;
-    width: 100vw;
-    height: 66.66vh;
+    top: 33.33dvh;
+    width: 100dvw;
+    height: 66.66dvh;
     align-content: center;
 }
 
 #preludio {
     display: block;
     margin: 0 auto;
-    width: 45vh;
-    height: 45vh;
-    width: 35vh;
-    height: 35vh;
+    width: 45dvh;
+    height: 45dvh;
+    width: 35dvh;
+    height: 35dvh;
     object-fit: contain;
 }
