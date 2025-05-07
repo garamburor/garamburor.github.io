@@ -1,5 +1,5 @@
 // Audio elements
-let audioCtx = new window.AudioContext || window.webkitAudioContext;
+let audioCtx = new window.AudioContext() || window.webkitAudioContext();
 
 
 
@@ -19,7 +19,6 @@ const sketch3 = p => {
 
     let oscArray = [];
     let envArray = [];
-    let filArray = [];
     let bpm = 100;
     let lastTime = 0;
     let currentStep = 0;
@@ -30,7 +29,7 @@ const sketch3 = p => {
     let clock;
 
     // Scale
-    let midiNotes = [72, 73, 75, 77];
+    let midiNotes = [60, 61, 63, 65];
     midiNotes = midiNotes.reverse();
 
     // Colors
@@ -45,10 +44,6 @@ const sketch3 = p => {
     }
 
     function initializeGrid() {
-        // Size of squares always fits sequence length
-        squareSize = p.windowWidth / cols;
-        // Determine rows that fit
-        rows = Math.floor(p.windowHeight / squareSize);
         // Check how many octaves can be added
         // Reset grid
         grid = [];
@@ -63,14 +58,14 @@ const sketch3 = p => {
         }
     }
 
-    function initSynth() {
+    function initSynth() {            
         // Create oscillators and envelopes
         for (let i = 0; i < nbVoices; i++) {
             let osc = audioCtx.createOscillator();
-            osc.type = "sine";
+            osc.type = "triangle";
             
             let env = audioCtx.createGain();
-            env.gain.setValueAtTime(0, audioCtx.currentTime); // Start silent
+            env.gain.setValueAtTime(1e-9, audioCtx.currentTime); // Start silent
             
             osc.connect(env);
             env.connect(audioCtx.destination);
@@ -89,9 +84,6 @@ const sketch3 = p => {
         // Set line color and width
         p.stroke(254, 250, 235);
         p.strokeWeight(1);
-        // Calculate square size and amount of rows
-        squareSize = p.windowWidth / (cols + 0.5);
-        rows = Math.floor(p.windowHeight / squareSize);
         // Check how many octaves can be added
         // Estimate screen excess to center grid
         let totalGridWidth = cols * squareSize;
@@ -119,63 +111,55 @@ const sketch3 = p => {
         return 440 * Math.pow(2, (midiNote - 69) / 12);
     }
 
-    function checkOrientation() {
-        if (windowWidth > windowHeight) {
-            return 24;
-        } else {
-            return 16;
-        }
-    }
-
     p.setup = function() {
         initializePalette();
         initializeGrid();
         canvas = p.createCanvas(p.windowWidth, p.windowHeight);
         canvas.position(0, 0);
         canvas.style('z-index', '-1');
-        cols =  24;
-        // Size of squares always fits sequence length
-        squareSize = p.windowWidth / cols;
-        // Determine rows that fit
-        rows = Math.floor(p.windowHeight / squareSize);
+        cols =  32;
         // Check how many octaves can be added
         p.windowResized();
-        interval = (60000 / bpm) / 4; // Step interval in milliseconds
-        
-        rows = Math.floor(p.windowHeight / squareSize);
+        interval = (60 / bpm) / 8; // Step interval in milliseconds
         // Check how many octaves can be added
-
-        // init synth
-        initSynth();
-
-        frameRate(30);
-        clock = setInterval(p.scheduler, 10);
     }
 
     p.scheduler = function() {
-        let now = p.millis();
+        // Capture current time
+        let now = audioCtx.currentTime;
 
-        if (now - lastTime > interval) {
+        // If step time already passed
+        if (now - lastTime >= interval) {
+            // Update last time
             lastTime = now;
+            // Play step
+            playStep();
+            // Advance step
             currentStep = (currentStep + 1) % cols;
         }
+        
+        clock = requestAnimationFrame(p.scheduler);
+        
+    }
+
+    function playStep() {
         for (let i = 0; i < rows; i++) {
             if (grid[i][currentStep]) {
-
-                let noteFreq = midiNotes[i % midiNotes.length] 
-                noteFreq -= 12 * Math.floor(i/midiNotes.length);
-                noteFreq = p.midiToFreq(noteFreq);
+                let noteFreq = midiNotes[i % midiNotes.length]
+                let middleNote = Math.floor(rows * 0.5);
+                let octvPos = -12 * Math.floor((i - middleNote) / midiNotes.length);
+                noteFreq = p.midiToFreq(noteFreq + octvPos);
                 oscArray[voiceCount].frequency.setValueAtTime(noteFreq, audioCtx.currentTime); 
 
                 envArray[voiceCount].gain.exponentialRampToValueAtTime(
                     1. / nbVoices, 
-                    audioCtx.currentTime + 0.005
+                    audioCtx.currentTime + 0.1
                 );
                 // envArray[i].gain.setValueAtTime(0, audioCtx.currentTime + 0.1);
                 // Finally this schedules the fade out.
                 envArray[voiceCount].gain.exponentialRampToValueAtTime(
                     1e-9, 
-                    audioCtx.currentTime + 0.2
+                    audioCtx.currentTime + 0.8
                 );
                 voiceCount = (voiceCount + 1) % nbVoices;
             }
@@ -184,19 +168,29 @@ const sketch3 = p => {
 
     // if window size changes draw grid again
     p.windowResized = function() {
-        clearInterval(clock);
+        cancelAnimationFrame(clock);
         p.resizeCanvas(p.windowWidth, p.windowHeight);
-        cols = checkOrientation();
-        squareSize = p.windowWidth / cols;
+        // Size of squares always fits sequence length
+        if (window.matchMedia("(orientation: portrait)").matches) {
+            cols = 16;
+        }
+        else {
+            cols = 32;
+        }
+        squareSize = p.windowWidth / (cols + 0.5);
         rows = Math.floor(p.windowHeight / squareSize);
+        
         initializeGrid();
         p.drawGrid();
-        clock = setInterval(p.scheduler, 10);
+        p.scheduler();
     }
-
+    
     p.mouseClicked = function() {
         if (audioCtx.state === 'suspended') {
             audioCtx.resume();
+            lastTime = audioCtx.currentTime;
+            initSynth();
+            p.scheduler();
         }
 
         if (p.mouseX >= 0 && p.mouseX <= p.windowWidth && p.mouseY >= 0 && p.mouseY <= p.windowHeight) {
