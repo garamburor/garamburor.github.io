@@ -4,7 +4,6 @@ let currentPage = 'home';
 let memory = 'home';
 let nbPages = 3 - 1.;
 
-
 // Setup website
 function setup() {
   // Don't create a default canvas
@@ -116,8 +115,6 @@ function pageState() {
         // Set animation for hiding text
         //roo.style.setProperty('--title-width', "0px");
         home.style.opacity = 0;
-        // Hide grid
-        workPage.style.clipPath = "inset(0 0 100% 0 round 0 0 0 0)";
         // Stop about photo effect
         instance2.noLoop();
         break;
@@ -126,8 +123,6 @@ function pageState() {
         document.title = currentPage.toUpperCase() + ' - Guillermo A. R.';
         history.pushState({}, document.title, '/' + currentPage);
         home.style.opacity = 1;
-        // Hide grid
-        workPage.style.clipPath = "inset(0 0 100% 0 round 0 0 0 0)";
         // Begin about photo effect
         instance2.loop();
         // Set colors
@@ -150,8 +145,6 @@ function pageState() {
         roo.style.setProperty('--font-color', fontcol.toString('#rrggbb'));
         bgcol = color(242,242,242)
         roo.style.setProperty('--bg-color', bgcol.toString('#rrggbb'));
-        // Hide grid
-        workPage.style.clipPath = "inset(0 0 100% 0 round 0 0 0 0)";
         // Stop about photo effect
         instance2.noLoop();
         break;
@@ -168,8 +161,6 @@ function pageState() {
         roo.style.setProperty('--font-color', fontcol.toString('#rrggbb'));
         bgcol = color(23, 167, 126)
         roo.style.setProperty('--bg-color', bgcol.toString('#rrggbb'));
-        // Reveal grid
-        workPage.style.clipPath = "inset(0 0 0 0 round 0 0 0 0)"
         // Stop about photo effect
         instance2.noLoop();
         break;
