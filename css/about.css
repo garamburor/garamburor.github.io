@@ -1,0 +1,111 @@
+:host {
+    height: 300dvh;
+    width: 100dvw;
+    font-weight: 400;
+    font-style: normal;
+    font-family: 'Montserrat';
+    background-color: var(--bg-color);
+    color: var(--tx-color);
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+section {
+    top: 0;
+    height: 100dvh;
+    width: 100dvw;
+    scroll-snap-align: start;
+    -webkit-scroll-snap-align: start;
+    position: relative;
+    background-color: inherit;
+    transition: background-color var(--tau) ease-in-out;
+}
+
+.about-p1 {
+    display: flex;
+    text-align: justify;
+    font-size: 3dvw;
+    max-width: 70dvw;
+    height: 100dvh;
+    top: 33dvh;
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+    
+table {
+    position: relative;
+    top: 33dvh;
+    width: 66dvw;
+    padding-inline: 1.5dvh;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40dvh;
+    border-collapse: collapse;
+}
+
+th {
+    font-family: 'test';
+    font-size: 4dvw;
+    font-weight: normal;
+    text-align: left;
+}
+
+tr {
+    font-size: 2.5dvw;
+}
+
+.jobmain {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    vertical-align: bottom;
+    border-top: 0.5px solid black;
+}
+
+.jobdet {
+    font-family: 'test';
+    vertical-align: top;
+}
+
+.jobref {
+    vertical-align: top;
+    opacity: 0.2;
+    transition: opacity var(--tau) ease-in-out;
+}
+
+.jobtitle {
+    text-align: left;
+}
+
+.jobdate {
+    text-align: right;
+}
+
+.jobref:hover {
+    opacity: 1;
+}
+
+/* DIMENSIONS FOR PORTRAIT */
+@media screen and (max-aspect-ratio: 1/1) {
+    .about-p1 {
+        font-size: 5dvw;
+    }
+
+    table {
+        width: 94.6dvw;
+        padding-inline: 2.7dvw;
+    }
+
+    th {
+        font-size: 6dvw;
+    }
+
+    tr {
+        font-size: 4.5dvw;
+    }
+}

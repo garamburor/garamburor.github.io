@@ -1,0 +1,77 @@
+:host {
+    position: fixed; /* Ensures it stays put during scroll */
+    pointer-events: none; /* Allows scrolling over the nav */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99; /* Keeps it above the pages */
+    font-family: "Lexend";
+    font-weight: 600;
+    font-size: 3dvh;
+    color: var(--tx-color);
+}
+
+a {
+    color: inherit;
+    text-decoration: transparent wavy underline;
+    -webkit-text-decoration: transparent wavy underline;
+    transition: all var(--tau);
+    pointer-events: auto; /* Re-enables pointer events for the links */
+}
+
+/* Larger and wavy when hover */
+a:hover {
+    font-size: 3.05dvh;
+    text-decoration: var(--tx-color) wavy underline;
+    -webkit-text-decoration: var(--tx-color) wavy underline;
+}
+
+/* Settings for active page link */
+.active {
+    filter: blur(2px);
+    user-select: none;
+    pointer-events: none;
+    cursor: none;
+    font-size: 2.95dvh;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end; /* Pushes content to the right */
+    align-items: center;
+    padding: 1.5dvh;
+    height: 4dvh;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    /* Nav size and spacing */
+    width: 33.33dvw; 
+    justify-content: space-between; /* Spreads links evenly within that 33% */
+}
+
+/* DIMENSIONS FOR PORTRAIT */
+@media screen and (max-aspect-ratio: 1/1) {
+    :host {
+        font-size: 3.3dvw;
+    }
+
+    a:hover{
+        font-size: 3.35dvw;
+    }
+
+    .active {
+        font-size: 3.25dvw;
+    }
+    nav {
+        padding: 3dvw;
+    }
+
+    ul {
+        width: 50dvw;
+    }
+}

@@ -1,0 +1,26 @@
+:host {
+    top: 0%;
+    height: 100%;
+    width: 100%;
+    font-weight: 400;
+    font-style: normal;
+    font-family: 'Montserrat';
+    background: var(--work-bg-color);
+    color: var(--work-tx-color);
+    display: block;
+    position: relative;
+}
+
+section {
+    /* Set section size and position */
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+#work-page canvas {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}

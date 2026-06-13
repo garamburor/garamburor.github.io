@@ -1,0 +1,96 @@
+:host {
+    top: 0;
+    height: 100dvh;
+    width: 100dvw;
+    font-weight: 400;
+    font-style: normal;
+    font-family: 'Montserrat';
+    background-color: var(--bg-color);
+    color: var(--tx-color);
+}
+
+/* Links look like normal text */
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100dvh;
+    width: 100dvw;
+    background-color: inherit;
+    transition: background-color var(--tau) ease-in-out;
+}
+
+#blank {
+    height: 50dvh;
+}
+
+footer {
+    margin: 0;
+    width: 100dvw;
+    bottom: 0;
+    padding: 1dvw;
+    margin-right: 2dvw;
+    font-family: 'Montserrat';
+    font-size: 1dvw;
+    font-weight: normal;
+    text-align: right;
+    opacity: 0.7;
+}
+
+#contact-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 66.66dvw;
+    height: 48dvh;
+    top: 50dvh;
+
+    transform: rotate(0deg);
+}
+
+.contact-links {
+    font-family: 'Montserrat';
+    font-size: 2.5dvw;
+    font-weight: normal;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-align: center
+}
+
+#contact-info {
+    transition: width, height, font-size, transform var(--tau) ease-in-out;
+    transform-origin: center;
+}
+
+.contact-links {
+    transition: width, height, font-size, transform var(--tau) ease-in-out;
+}
+
+/* DIMENSIONS FOR PORTRAIT */
+@media screen and (max-aspect-ratio: 1/1) {
+    #blank {
+        height: 20dvh;
+    }
+    footer {
+        padding: 1dvh;
+        margin-right: 4dvw;
+        font-size: 2dvw;
+    }
+
+    #contact-info {
+        display: flex;
+        flex-direction: column;
+        height: 50dvh;
+        width: 100dvw;
+    }
+
+    .contact-links {
+        font-size: 6dvw;
+    }
+}
