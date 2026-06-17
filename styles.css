@@ -16,6 +16,8 @@
     
     --work-bg-color: #17a77e;
     --work-tx-color: #fefaeb;
+    --photo-bg-color: #912e19;
+    --photo-tx-color: #912e19;
     --about-bg-color: #fdfdfd;
     --about-tx-color: #062976;
     --contact-bg-color: #f2f2f2;
@@ -37,6 +39,7 @@ body, html {
     overflow: hidden;
     -webkit-scroll-snap-type: y mandatory;
     scroll-snap-type: y mandatory;
+    pointer-events: auto;
 }
 
 canvas {

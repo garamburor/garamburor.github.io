@@ -70,7 +70,7 @@ class SiteTitle extends HTMLElement {
             intro1.style.maxWidth = "100dvw";
             intro2.style.maxWidth = "100dvw";
             // Split text where O is
-            let splitText = this.state.split("O");
+            let splitText = this.state.split(/O(.*)/s) //.split("O");
             intro1.textContent = splitText[0];
             intro2.textContent = splitText[1];
             this.width = true;

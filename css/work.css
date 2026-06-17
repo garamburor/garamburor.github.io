@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Permanent+Marker);
 :host {
     top: 0%;
     height: 100%;
@@ -19,8 +20,64 @@ section {
     position: absolute;
 }
 
-#work-page canvas {
-    position: absolute;
-    top: 0%;
-    left: 0%;
+.canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.post-it {
+    width:15dvw;
+    height:15dvw;
+    position:relative;
+    background:#ffa;
+    overflow:hidden;
+    z-index: 10;
+    margin:30px auto;
+    padding:20px;
+    border-radius:0 0 0 30px/45px;
+    box-shadow:
+    inset 0 -40px 40px rgba(0,0,0,0.2),
+    inset 0 25px 10px rgba(0,0,0,0.2),
+    0 5px 6px 5px rgba(0,0,0,0.2);
+    font-family: 'Permanent Marker', cursive;
+    font-weight: auto;
+    font-style: auto;
+    line-height:3dvh;
+    font-size:1.8dvw;
+    -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+    pointer-events: auto;
+    color:#130d6b;
+}
+
+h1 {
+    font-size:2.2dvw; 
+    position:relative;
+}
+
+/* DIMENSIONS FOR PORTRAIT */
+@media screen and (max-aspect-ratio: 1/1) {
+    :host {
+    font-size: 3dvw;
+    }
+
+    .post-it {
+        position: absolute;
+        width:40dvw;
+        height:40dvw;
+        line-height:2dvh;
+        font-size:2dvh;
+        padding: 1px;
+        bottom: 0%;
+        left: 25%;
+    }
+
+    h1 {
+    font-size:2.3dvh; 
+    position:relative;
+    }
+
 }

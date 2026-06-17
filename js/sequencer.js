@@ -90,19 +90,20 @@ export const sequencer = p => {
         const container = p.canvas.parentElement;
         // Sketch takes the whole element size
         canvas = p.createCanvas(container.offsetWidth, container.offsetHeight);
-        canvas.position(0, 0);
-        // Check how many octaves can be added
-        p.windowResized();
-        // Step interval in milliseconds
-        interval = (60 / bpm) / 8;
         // Ensure sketch is visible
         p.canvas.style.display = "block";
         p.canvas.style.visibility = "visible";
-        canvas.show();
+        p.canvas.style.pointerEvents = "auto";
+        canvas.position(0, 0);
+        // Step interval in milliseconds
+        interval = (60 / bpm) / 8;
         // Events for Sequencer UX
         canvas.mousePressed(buttonPressed);
         canvas.mouseReleased(buttonReleased);
         canvas.mouseMoved(handleDrag); // yass
+        canvas.show();
+        // Check how many octaves can be added
+        p.windowResized();
     }
 
     // Destructor

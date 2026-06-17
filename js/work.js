@@ -1,5 +1,4 @@
 import { sequencer } from './sequencer.js'; // Import the specific class
-import './photos.js';
 
 class WorkPage extends HTMLElement {
     constructor() {
@@ -20,6 +19,10 @@ class WorkPage extends HTMLElement {
                 sequencer(p);
             }, container);
         }
+        let photos = this.shadowRoot.querySelectorAll('.instax');
+        for(let i = 0; i < photos.length; i++) {
+            photos[i].addEventListener('click', this.callPage);
+        }
     }
 
     disconnectedCallback() {
@@ -28,16 +31,62 @@ class WorkPage extends HTMLElement {
             this.seq.remove(); // Remove canvas
             this.seq = null;
         }
+        let photos = this.shadowRoot.querySelectorAll('instax');
+        for(let i = 0; i < photos.length; i++) {
+            photos[i].removeEventListener('click', this.callPage);
+        }
+    }
+
+    callPage = (e) => {
+        e.preventDefault();
+        this.dispatch('change-page', 'photo');
+    }
+
+    async unload() {
+        return Promise.resolve();
     }
 
     render() {
         this.shadowRoot.innerHTML = `
         <link rel="stylesheet" href="../css/work.css">
-         
+        <link rel="stylesheet" href="../css/photos.css">
         <section id="seq">
-            <photo-work></photo-work>
+            <div id="photos">
+                <div class="instax" id="frame3">
+                    <img class="photo" id="photo3" src='../media/photos/DSCF1874.avif'>
+                </div>
+                <div class="instax" id="frame2">
+                    <img class="photo" id="photo2" src='../media/photos/DSCF1881.avif'>
+                </div>
+                <div class="instax" id="frame1">
+                    <img class="photo" id="photo1" src='../media/photos/DSCF2415.avif'>
+                </div>
+                <div class='tooltip-content'>I'm often moving about with a digital camera.🏃🏻‍♂️</div>
+            </div>
+            <div class='post-it'>
+                    <h1>Hi!</h1>
+                <ul>
+                    <li>This is still a WIP</li>
+                    <li>I leave you with the basics</li>
+                    <li>+ some photos & a sequencer</li>
+                </ul> 
+            </div>
+            <!--
+            <div id="ob1wrap">
+                <img id="ob1" src="./media/ob-1.svg"></img>
+                <div class='tooltip-content'>Been making music for a long time, now mainly just 2 bar loops with this thing.🤡</div>
+            </div>
+            -->
         </section>
         `;
+    }
+
+    dispatch(name, link) {
+        this.dispatchEvent(new CustomEvent(name, {
+            detail: { link },
+            bubbles: true,
+            composed: true
+        }));
     }
 }
 

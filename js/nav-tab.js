@@ -35,7 +35,7 @@ class NavTab extends HTMLElement {
 
         if (e.type === 'click') {
             e.preventDefault();
-            this.dispatch('nav-page', href);
+            this.dispatch('change-page', href);
         } else if (e.type === 'mouseover') {
             this.dispatch('enter-hover', href);
         } else if (e.type === 'mouseout') {
