@@ -9,6 +9,8 @@
   font-family: 'Montserrat';
   pointer-events: none;
   z-index: 98;
+  background: var(--photo-bg-color);
+  color: var(--photo-tx-color);
 }
 
 .instax {

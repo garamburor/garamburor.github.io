@@ -44,7 +44,8 @@ export const carousel = (p) => {
 
     p.draw = () => {
         // Set background color
-        p.background(250);
+        //canvas.clear();
+        p.background(254, 250, 235);
         // Check if user input is idle
         let idleTime = p.millis() - lastInputTime;
         if (idleTime > IDLE_THRESHOLD) {
