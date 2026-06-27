@@ -19,9 +19,15 @@ class WorkPage extends HTMLElement {
                 sequencer(p);
             }, container);
         }
+        
         let photos = this.shadowRoot.querySelectorAll('.instax');
         for(let i = 0; i < photos.length; i++) {
             photos[i].addEventListener('click', this.callPage);
+        }
+        let banners = this.shadowRoot.querySelectorAll('.tooltip-content');
+        for(let i = 0; i < banners.length; i++) {
+            let el = this.shadowRoot.getElementById(banners[i].id);
+            el.addEventListener('click', this.callPage);
         }
     }
 
@@ -31,9 +37,15 @@ class WorkPage extends HTMLElement {
             this.seq.remove(); // Remove canvas
             this.seq = null;
         }
+
         let photos = this.shadowRoot.querySelectorAll('instax');
         for(let i = 0; i < photos.length; i++) {
             photos[i].removeEventListener('click', this.callPage);
+        }
+        let banners = this.shadowRoot.querySelectorAll('.tooltip-content');
+        for(let i = 0; i < banners.length; i++) {
+            let el = this.shadowRoot.getElementById(banners[i].id);
+            el.removeEventListener('click', this.callPage);
         }
     }
 
@@ -61,7 +73,7 @@ class WorkPage extends HTMLElement {
                 <div class="instax" id="frame1">
                     <img class="photo" id="photo1" src='../media/photos/DSCF2415.avif'>
                 </div>
-                <div class='tooltip-content'>I'm often moving about with a digital camera.🏃🏻‍♂️</div>
+                <div id="photo-ban" class='tooltip-content'>I'm often moving about with a digital camera.🏃🏻‍♂️</div>
             </div>
             <div class='post-it'>
                     <h1>Hi!</h1>
