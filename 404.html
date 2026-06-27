@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Website title -->
+    <title>Guillermo A. R. - Redirecting...</title>
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" href="media/logo.png" sizes="any" type="image/png">
+    <link rel="icon" href="media/logo.png" type="image/svg">
+    <!-- Handle URLs -->
+    <script type="text/javascript">
+      var pathSegmentsToKeep = 0; // Set to 1 if hosting as a project page (e.g., username.github.io/repo-name)
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') +
+        '/?/' + l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

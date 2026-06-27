@@ -4,6 +4,7 @@ import './js/about.js';
 import './js/contact.js'; 
 import './js/work.js';
 import './js/photos.js';
+import './js/404.js';
 
 class MainApp extends HTMLElement {
     constructor() {
@@ -143,7 +144,7 @@ class MainApp extends HTMLElement {
             this.handleState("contact");
         }
         else {
-            // Make a 404
+            //this.handleState("4o4");
         }
     };
     
