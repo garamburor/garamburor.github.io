@@ -68,23 +68,24 @@ class MainApp extends HTMLElement {
             // Create new page
             let newElem = document.createElement(id + '-page');
             newElem.id = id;
-            // Default prev page to work if not defined
-            if (this.state == null) { this.state = "work";}
-            // Look for prev page in document
-            let oldElem = this.shadowRoot.querySelector(this.state + '-page');
-            // If its the work page, remove state call listener
-            if (this.state === "work") {
-                 // Listen to work component
-                let work = this.shadowRoot.querySelector('work-page');
-                work.removeEventListener('change-page', (e) => {
-                    // Scroll to page position
-                    this.handleState(e.detail.link);
-                });
+            // Remove page that already exists
+            if (this.state != null) {
+                // Look for prev page in document
+                let oldElem = this.shadowRoot.querySelector(this.state + '-page');
+                // If its the work page, remove state call listener
+                if (this.state === "work") {
+                    // Listen to work component
+                    let work = this.shadowRoot.querySelector('work-page');
+                    work.removeEventListener('change-page', (e) => {
+                        // Scroll to page position
+                        this.handleState(e.detail.link);
+                    });
+                }
+                // Trigger page unload and wait until it's done
+                let unloadPage = oldElem.unload();
+                await unloadPage;
+                oldElem.remove();
             }
-            // Trigger page unload and wait until it's done
-            let unloadPage = oldElem.unload();
-            await unloadPage;
-            oldElem.remove();
             // Add new page
             this.shadowRoot.appendChild(newElem);
 
@@ -182,8 +183,6 @@ class MainApp extends HTMLElement {
             <nav-tab></nav-tab>
 
             <site-title></site-title>
-
-            <work-page id="work"></work-page>
         `;
     }
 

@@ -193,6 +193,13 @@ export const sequencer = p => {
     // if window size changes draw grid again
     p.windowResized = () =>  {
         p.clear();
+        let winWidth = window.innerWidth || 
+            document.documentElement.clientWidth ||  
+            document.body.clientWidth;
+        let winHeight = window.innerHeight|| 
+            document.documentElement.clientHeight|| 
+            document.body.clientHeight;
+
         // Clear sequencer since grid size could change
         cancelAnimationFrame(clock);
         audioCtx.suspend();
@@ -200,7 +207,7 @@ export const sequencer = p => {
             try { osc.stop(); osc.disconnect(); } catch(e) {}
         });
         envArray.forEach(env => env.disconnect());
-        p.resizeCanvas(p.windowWidth, p.windowHeight);
+        p.resizeCanvas(winWidth, winHeight);
         // 32 steps landscape, 16 steps for portrait
         if (window.matchMedia("(orientation: portrait)").matches) {
             cols = 16;
@@ -209,13 +216,13 @@ export const sequencer = p => {
             cols = 32;
         }
         // Calculate size!
-        squareSize = p.windowWidth * 0.98 / cols;
-        rows = Math.floor(p.windowHeight * 0.98 / squareSize);
+        squareSize = winWidth* 0.98 / cols;
+        rows = Math.floor(winHeight * 0.98 / squareSize);
         // Estimate screen excess to center grid
         gridHeight = rows * squareSize;
         gridWidth = cols * squareSize;
-        xOffset = (p.windowWidth - gridWidth) * 0.5;
-        yOffset = (p.windowHeight - gridHeight) * 0.5;
+        xOffset = (winWidth - gridWidth) * 0.5;
+        yOffset = (winHeight - gridHeight) * 0.5;
         // Reset gui and audio
         initializeGrid();
         p.drawGrid();

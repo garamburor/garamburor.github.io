@@ -19,8 +19,14 @@ export const carousel = (p) => {
     }
 
     p.setup = () => {  
+        let winWidth = window.innerWidth || 
+            document.documentElement.clientWidth ||  
+            document.body.clientWidth;
+        let winHeight = window.innerHeight|| 
+            document.documentElement.clientHeight|| 
+            document.body.clientHeight;
         // Create a 3D canvas
-        canvas = p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
+        canvas = p.createCanvas(winWidth, winHeight, p.WEBGL);
         canvas.position(0, 0);
         // Ensure sketch is visible
         p.canvas.style.display = "block";
@@ -86,11 +92,18 @@ export const carousel = (p) => {
 
     // Adjust canvas size if the window resizes
     p.windowResized = () => {
-        p.resizeCanvas(p.windowWidth, p.windowHeight);
-        if (p.windowHeight > p.windowWidth) {
-            norm = p.windowWidth;
+        let winWidth = window.innerWidth || 
+            document.documentElement.clientWidth ||  
+            document.body.clientWidth;
+        let winHeight = window.innerHeight|| 
+            document.documentElement.clientHeight|| 
+            document.body.clientHeight;
+
+        p.resizeCanvas(winWidth, winHeight);
+        if (winHeight > winWidth) {
+            norm = winWidth;
         } else {
-            norm = p.windowHeight;
+            norm = winHeight;
         }
         scale = norm * 1e-4;
     }
