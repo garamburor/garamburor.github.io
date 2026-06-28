@@ -81,6 +81,8 @@ export const carousel = (p) => {
             
             p.rotateY(angleY);
             p.rotateX(-angleX);
+            // To avoid image flip due to camera
+            p.scale(cam.upY, cam.upY);
             // Apply img as texture
             p.texture(images[i]);
             // Create plane
