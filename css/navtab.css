@@ -75,3 +75,25 @@ ul {
         width: 50dvw;
     }
 }
+
+/* DIMENSIONS FOR ULTRAWIDE */
+@media (min-aspect-ratio: 2/1) {
+    :host {
+        font-size: 5dvh;
+    }
+
+    a:hover{
+        font-size: 5.05dvh;
+    }
+
+    .active {
+        font-size: 4.95dvh;
+    }
+    nav {
+        padding: 1.5dvh;
+    }
+
+    ul {
+        width: 33.33dvw;
+    }
+}

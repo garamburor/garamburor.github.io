@@ -115,3 +115,23 @@ tr {
         font-size: 4.5dvw;
     }
 }
+
+/* DIMENSIONS FOR ULTRAWIDE */
+@media (min-aspect-ratio: 2/1) {
+  .about-p1 {
+        font-size: 7dvh;
+    }
+
+    table {
+        width: 70dvw;
+        padding-inline: 1dvh;
+    }
+
+    th {
+        font-size: 8dvh;
+    }
+
+    tr {
+        font-size: 6dvh;
+    }
+}
