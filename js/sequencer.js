@@ -37,9 +37,9 @@ export const sequencer = p => {
         colors = [
             p.color(254, 250, 235), // Stroke color
             p.color(246, 192, 106), // Warm gold
+            p.color(6, 41, 118),   // Rich blue
             p.color(244, 122, 96),  // Soft coral
-            p.color(92, 64, 107),   // Deep purple
-            p.color(45, 117, 161)   // Rich blue
+            p.color(92, 64, 107)   // Deep purple
         ];
     }
 
@@ -248,7 +248,7 @@ export const sequencer = p => {
                     lastTime = audioCtx.currentTime;
                     initSynth();
                     // draw stop button
-                    p.fill(204, 74, 65);
+                    p.fill(171, 50, 24);
                     p.rect(xOffset, yOffset, squareSize, squareSize);
                 }
 
