@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="131.385 123.445 228.89 155.945" width="228.89px" height="155.945px">
+  <defs>
+    <mask id="body-mask">
+      <rect x="1" y="10" width="58" height="95" rx="4" ry="4" fill="#ffffff"/>
+    </mask>
+  </defs>
+  <rect x="131.385" y="123.445" width="228.89" height="153.539" rx="6" fill="#fffaec" stroke="#D0C9BC" style="" ry="6" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <rect x="131.385" y="199.099" width="228.89" height="2.233" fill="#D0C9BC" style="stroke-width: 1;" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <line x1="131.385" y1="199.099" x2="360.275" y2="199.099" stroke="#B5AD9E" stroke-width="1" style="stroke-width: 1;" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <line x1="131.385" y1="201.333" x2="360.275" y2="201.333" stroke="#FFFFFF" stroke-width="1" style="stroke-width: 1;" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <line x1="146.07" y1="130.425" x2="348.121" y2="130.425" stroke="#062976" stroke-linecap="round" style="" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <line x1="146.07" y1="145.779" x2="348.121" y2="145.779" stroke="#ac3418" stroke-linecap="round" style="" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <g id="top-rails" transform="matrix(0.25319698452949524, 0, 0, 0.2791630029678345, 131.384765625, 123.44615173339844)" style="">
+    <g transform="translate(64, 0)">
+      <g id="rail-group-5-top">
+        <g transform="translate(0,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 37)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 67)"/>
+        </g>
+        <g transform="translate(28,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 37)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 67)"/>
+        </g>
+        <g transform="translate(56,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 37)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 67)"/>
+        </g>
+        <g transform="translate(84,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 37)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 67)"/>
+        </g>
+        <g transform="translate(112,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 37)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 67)"/>
+        </g>
+      </g>
+    </g>
+    <g transform="translate(232, 0)">
+      <g>
+        <g transform="translate(0,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 37)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 67)"/>
+        </g>
+        <g transform="translate(28,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 37)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 67)"/>
+        </g>
+        <g transform="translate(56,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 37)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 67)"/>
+        </g>
+        <g transform="translate(84,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 37)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 67)"/>
+        </g>
+        <g transform="translate(112,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 37)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 67)"/>
+        </g>
+      </g>
+    </g>
+    <g transform="translate(400, 0)">
+      <g>
+        <g transform="translate(0,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 37)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 67)"/>
+        </g>
+        <g transform="translate(28,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 37)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 67)"/>
+        </g>
+        <g transform="translate(56,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 37)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 67)"/>
+        </g>
+        <g transform="translate(84,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 37)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 67)"/>
+        </g>
+        <g transform="translate(112,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 37)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 67)"/>
+        </g>
+      </g>
+    </g>
+    <g transform="translate(568, 0)">
+      <g>
+        <g transform="translate(0,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 37)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 67)"/>
+        </g>
+        <g transform="translate(28,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 37)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 67)"/>
+        </g>
+        <g transform="translate(56,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 37)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 67)"/>
+        </g>
+        <g transform="translate(84,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 37)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 67)"/>
+        </g>
+        <g transform="translate(112,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 37)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 67)"/>
+        </g>
+      </g>
+    </g>
+    <g transform="translate(736, 0)">
+      <g>
+        <g transform="translate(0,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 37)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 67)"/>
+        </g>
+        <g transform="translate(28,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 37)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 67)"/>
+        </g>
+        <g transform="translate(56,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 37)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 67)"/>
+        </g>
+        <g transform="translate(84,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 37)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 67)"/>
+        </g>
+        <g transform="translate(112,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 37)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 67)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g id="main-grid" transform="matrix(0.25319698452949524, 0, 0, 0.2791630029678345, 131.384765625, 123.44615173339844)" style="">
+    <g id="col">
+      <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+      <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+      <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+      <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+      <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+      <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+      <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+      <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+      <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+      <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+    </g>
+    <g transform="translate(28,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+    <g transform="translate(56,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+    <g transform="translate(84,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+    <g transform="translate(112,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+    <g transform="translate(140,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+    <g transform="translate(168,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+    <g transform="translate(196,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+    <g transform="translate(224,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+    <g transform="translate(252,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+    <g transform="translate(280,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+    <g transform="translate(308,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+    <g transform="translate(336,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+    <g transform="translate(364,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+    <g transform="translate(392,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+    <g transform="translate(420,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+    <g transform="translate(448,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+    <g transform="translate(476,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+    <g transform="translate(504,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+    <g transform="translate(532,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+    <g transform="translate(560,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+    <g transform="translate(588,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+    <g transform="translate(616,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+    <g transform="translate(644,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+    <g transform="translate(672,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+    <g transform="translate(700,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+    <g transform="translate(728,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+    <g transform="translate(756,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+    <g transform="translate(784,0)">
+      <g>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 110)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 138)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 166)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 194)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 222)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 330)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 358)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 386)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 414)"/>
+        <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 64, 442)"/>
+      </g>
+    </g>
+  </g>
+  <line x1="146.07" y1="254.653" x2="348.121" y2="254.653" stroke="#ac3418" stroke-linecap="round" style="" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <line x1="146.07" y1="270.006" x2="348.121" y2="270.006" stroke="#062976" stroke-linecap="round" style="" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <g id="bottom-rails" transform="matrix(0.25319698452949524, 0, 0, 0.2791630029678345, 131.384765625, 123.44615173339844)" style="">
+    <g transform="translate(64, 0)">
+      <g id="rail-group-5-bottom">
+        <g transform="translate(0,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 483)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 513)"/>
+        </g>
+        <g transform="translate(28,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 483)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 513)"/>
+        </g>
+        <g transform="translate(56,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 483)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 513)"/>
+        </g>
+        <g transform="translate(84,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 483)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 513)"/>
+        </g>
+        <g transform="translate(112,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 483)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 513)"/>
+        </g>
+      </g>
+    </g>
+    <g transform="translate(232, 0)">
+      <g>
+        <g transform="translate(0,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 483)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 513)"/>
+        </g>
+        <g transform="translate(28,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 483)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 513)"/>
+        </g>
+        <g transform="translate(56,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 483)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 513)"/>
+        </g>
+        <g transform="translate(84,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 483)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 513)"/>
+        </g>
+        <g transform="translate(112,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 483)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 513)"/>
+        </g>
+      </g>
+    </g>
+    <g transform="translate(400, 0)">
+      <g>
+        <g transform="translate(0,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 483)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 513)"/>
+        </g>
+        <g transform="translate(28,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 483)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 513)"/>
+        </g>
+        <g transform="translate(56,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 483)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 513)"/>
+        </g>
+        <g transform="translate(84,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 483)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 513)"/>
+        </g>
+        <g transform="translate(112,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 483)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 513)"/>
+        </g>
+      </g>
+    </g>
+    <g transform="translate(568, 0)">
+      <g>
+        <g transform="translate(0,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 483)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 513)"/>
+        </g>
+        <g transform="translate(28,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 483)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 513)"/>
+        </g>
+        <g transform="translate(56,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 483)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 513)"/>
+        </g>
+        <g transform="translate(84,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 483)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 513)"/>
+        </g>
+        <g transform="translate(112,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 483)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 513)"/>
+        </g>
+      </g>
+    </g>
+    <g transform="translate(736, 0)">
+      <g>
+        <g transform="translate(0,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 483)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 513)"/>
+        </g>
+        <g transform="translate(28,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 483)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 513)"/>
+        </g>
+        <g transform="translate(56,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 483)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 513)"/>
+        </g>
+        <g transform="translate(84,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 483)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 513)"/>
+        </g>
+        <g transform="translate(112,0)">
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 483)"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#111" stroke="#444" stroke-width="0.5" transform="matrix(1, 0, 0, 1, 0, 513)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+  <line x1="317.6" y1="152" x2="318.8" y2="152" stroke-linecap="round" style="stroke-width: 1.5px; fill: rgb(216, 216, 216); stroke: rgb(216, 216, 216); transform-origin: 318.211px 200.553px;"/>
+  <rect x="316.628" y="184.687" width="2.237" height="31.857" style="stroke-width: 0.2; fill: rgb(216, 216, 216); stroke: rgb(216, 216, 216); transform-origin: 317.747px 200.62px;" rx="2" ry="2"/>
+  <rect x="9.762" y="-1.898" width="10.847" height="3.796" rx="1" stroke="#5C5343" stroke-width="1" transform="matrix(0, 0.9999999999999999, -0.9999999999999999, 0, 317.6835632324219, 185.3606719970703)" style="stroke-width: 0.271; fill: rgb(219, 185, 121);" ry="1"/>
+  <rect x="11.931" y="-1.765" width="1.085" height="3.531" transform="matrix(0, 0.9999999999999999, -0.9999999999999999, 0, 317.6781921386719, 184.21607971191406)" style="stroke-width: 0.271; fill: rgb(123, 64, 34);"/>
+  <rect x="14.101" y="-1.762" width="1.085" height="3.524" fill="#000000" transform="matrix(0, 0.9999999999999999, -0.9999999999999999, 0, 317.6793212890625, 184.2118682861328)" style="stroke-width: 0.271;"/>
+  <rect x="16.27" y="-1.762" width="1.085" height="3.525" transform="matrix(0, 0.9999999999999999, -0.9999999999999999, 0, 317.67852783203125, 184.21327209472656)" style="stroke-width: 0.271; fill: rgb(172, 52, 24);"/>
+  <rect x="18.982" y="-1.754" width="1.085" height="3.506" transform="matrix(0, 0.9999999999999999, -0.9999999999999999, 0, 317.6802673339844, 184.9334259033203)" style="stroke-width: 0.271; fill: rgb(219, 153, 49);"/>
+  <rect x="302.454" y="133.19" width="2.201" height="21.724" style="stroke-width: 0.2px; stroke: rgb(6, 41, 118); fill: rgb(6, 41, 118);" rx="2" ry="2" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <rect x="302.441" y="246.154" width="2.201" height="12.971" style="stroke-width: 0.2; stroke: rgb(172, 52, 24); fill: rgb(172, 52, 24);" rx="2" ry="2" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <rect x="281.179" y="141.634" width="2.201" height="12.971" style="stroke-width: 0.2; stroke: rgb(172, 52, 24); fill: rgb(172, 52, 24);" rx="2" ry="2" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <rect x="259.943" y="133.071" width="2.201" height="21.724" style="stroke-width: 0.2; stroke: rgb(6, 41, 118); fill: rgb(6, 41, 118);" rx="2" ry="2" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <rect x="259.93" y="246.035" width="2.201" height="12.971" style="stroke-width: 0.2; stroke: rgb(172, 52, 24); fill: rgb(172, 52, 24);" rx="2" ry="2" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <rect x="238.669" y="141.515" width="2.201" height="12.971" style="stroke-width: 0.2; stroke: rgb(172, 52, 24); fill: rgb(172, 52, 24);" rx="2" ry="2" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <rect x="287.825" y="253.093" width="2.237" height="36.652" style="stroke-width: 0.2; fill: rgb(91, 64, 106); stroke: rgb(91, 64, 106); transform-origin: 288.944px 271.419px;" rx="2" ry="2" transform="matrix(0, -1, 1, 0, -17.50588989, -109.44497681)"/>
+  <rect x="287.825" y="57.099" width="2.237" height="8.268" style="stroke-width: 0.2; fill: rgb(91, 64, 106); stroke: rgb(91, 64, 106); transform-origin: 288.944px 61.234px;" rx="2" ry="2" transform="matrix(0, -1, 1, 0, -38.5331459, 162.17120743)"/>
+  <rect x="287.825" y="154.197" width="2.237" height="22.328" style="stroke-width: 0.2; fill: rgb(91, 64, 106); stroke: rgb(91, 64, 106); transform-origin: 288.944px 165.364px;" rx="2" ry="2" transform="matrix(0, -1, 1, 0, 18.31425476, 58.02528381)"/>
+  <rect x="287.825" y="154.811" width="2.237" height="22.416" style="stroke-width: 0.2; fill: rgb(91, 64, 106); stroke: rgb(91, 64, 106); transform-origin: 288.944px 166.022px;" rx="2" ry="2" transform="matrix(0, -1, 1, 0, -10.30580902, 57.36672974)"/>
+  <rect x="266.999" y="184.598" width="2.237" height="31.857" style="stroke-width: 0.2; fill: rgb(91, 64, 106); stroke: rgb(91, 64, 106); transform-origin: 268.118px 200.531px;" rx="2" ry="2"/>
+  <rect x="287.825" y="206.424" width="2.237" height="29.89" style="stroke-width: 0.2; fill: rgb(91, 64, 106); stroke: rgb(91, 64, 106); transform-origin: 288.944px 221.372px;" rx="2" ry="2" transform="matrix(0, -1, 1, 0, -6.61965179, -43.77149963)"/>
+  <rect x="287.825" y="157.248" width="2.237" height="22.77" style="stroke-width: 0.2; fill: rgb(91, 64, 106); stroke: rgb(91, 64, 106); transform-origin: 288.944px 168.635px;" rx="2" ry="2" transform="matrix(0, -1, 1, 0, 18.2459259, 1.16773987)"/>
+  <g transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -103.0359878540039, 8.404501914978034)">
+    <rect x="382.847" y="180.073" width="26" height="24" style="fill: rgb(52, 48, 48); stroke-width: 1;"/>
+    <rect x="383.347" y="176.073" width="4" height="4" style="fill: rgb(216, 216, 216); stroke-width: 1;"/>
+    <rect x="390.347" y="176.073" width="4" height="4" style="fill: rgb(216, 216, 216); stroke-width: 1;"/>
+    <rect x="397.347" y="176.073" width="4" height="4" style="fill: rgb(216, 216, 216); stroke-width: 1;"/>
+    <rect x="404.347" y="176.073" width="4" height="4" style="fill: rgb(216, 216, 216); stroke-width: 1;"/>
+    <rect x="383.347" y="204.073" width="4" height="4" style="fill: rgb(216, 216, 216); stroke-width: 1;"/>
+    <rect x="390.347" y="204.073" width="4" height="4" style="fill: rgb(216, 216, 216); stroke-width: 1;"/>
+    <rect x="397.347" y="204.073" width="4" height="4" style="fill: rgb(216, 216, 216); stroke-width: 1;"/>
+    <rect x="404.347" y="204.073" width="4" height="4" style="fill: rgb(216, 216, 216); stroke-width: 1;"/>
+  </g>
+  <g transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -145.51080322265625, 8.43488025665284)">
+    <rect x="382.847" y="180.073" width="26" height="24" style="fill: rgb(52, 48, 48); stroke-width: 1;"/>
+    <rect x="383.347" y="176.073" width="4" height="4" style="fill: rgb(216, 216, 216); stroke-width: 1;"/>
+    <rect x="390.347" y="176.073" width="4" height="4" style="fill: rgb(216, 216, 216); stroke-width: 1;"/>
+    <rect x="397.347" y="176.073" width="4" height="4" style="fill: rgb(216, 216, 216); stroke-width: 1;"/>
+    <rect x="404.347" y="176.073" width="4" height="4" style="fill: rgb(216, 216, 216); stroke-width: 1;"/>
+    <rect x="383.347" y="204.073" width="4" height="4" style="fill: rgb(216, 216, 216); stroke-width: 1;"/>
+    <rect x="390.347" y="204.073" width="4" height="4" style="fill: rgb(216, 216, 216); stroke-width: 1;"/>
+    <rect x="397.347" y="204.073" width="4" height="4" style="fill: rgb(216, 216, 216); stroke-width: 1;"/>
+    <rect x="404.347" y="204.073" width="4" height="4" style="fill: rgb(216, 216, 216); stroke-width: 1;"/>
+  </g>
+  <rect x="295.565" y="133.84" width="1.773" height="21.048" style="fill: rgb(216, 216, 216); stroke-width: 1.297;" rx="1" ry="1" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <rect x="294.312" y="139.511" width="4.249" height="7.474" style="fill: rgb(225, 177, 23); stroke-width: 1.297;" rx="1.5" ry="1.5" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <rect x="245.963" y="177.957" width="1.773" height="15.669" style="fill: rgb(216, 216, 216); stroke-width: 1.32; transform-origin: 246.849px 185.792px;" rx="1" ry="1" transform="matrix(0, -1, 1, 0, -6.99834061, 45.38165283)"/>
+  <rect x="244.699" y="252.477" width="4.249" height="6.812" style="fill: rgb(225, 177, 23); stroke-width: 1.32; transform-origin: 246.824px 255.883px;" rx="1.5" ry="1.5" transform="matrix(0, -1, 1, 0, -6.8869915, -24.6663208)"/>
+  <rect x="337.912" y="133.034" width="2.201" height="134.53" style="stroke-width: 0.2; stroke: rgb(6, 41, 118); fill: rgb(6, 41, 118);" rx="2" ry="2" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <rect x="344.996" y="141.284" width="2.201" height="117.875" style="stroke-width: 0.2; fill: rgb(172, 52, 24); stroke: rgb(172, 52, 24);" rx="2" ry="2" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <rect x="238.52" y="141.295" width="2.201" height="12.971" style="stroke-width: 0.2; stroke: rgb(172, 52, 24); fill: rgb(172, 52, 24); transform-origin: 239.621px 147.78px;" rx="2" ry="2" transform="matrix(0, -1, 1, 0, -34.09061432, -5.62086487)"/>
+  <rect x="196.099" y="132.827" width="2.201" height="10.457" style="stroke-width: 0.2; stroke: rgb(6, 41, 118); fill: rgb(6, 41, 118);" rx="2" ry="2" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <g transform="matrix(1.1600370407104492, 0, 0, 1.1600370407104492, -319.42138671875, 30.095035552978523)" style="">
+    <rect x="402.486" y="97.385" width="17" height="8" fill="rgb(216, 216, 216)" style="stroke-width: 1;"/>
+    <rect x="427.486" y="97.385" width="17" height="8" fill="rgb(216, 216, 216)" style="stroke-width: 1;"/>
+    <rect x="396.486" y="94.385" width="54" height="5" rx="2" ry="2" fill="rgb(50, 49, 47)" style="stroke-width: 1;"/>
+    <g mask="url(#body-mask)" transform="matrix(1, 0, 0, 1, 393.485748, 94.385124)">
+      <rect x="1" y="10" width="58" height="95" fill="rgb(50, 49, 47)"/>
+      <rect x="1" y="10" width="58" height="38" fill="rgb(209, 127, 22)"/>
+    </g>
+  </g>
+  <rect x="217.603" y="245.905" width="1.773" height="21.643" style="fill: rgb(216, 216, 216); stroke-width: 1.32;" rx="1" ry="1" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <ellipse style="fill: rgb(255, 49, 1); stroke-opacity: 0.59; stroke: rgb(255, 47, 0);" cx="218.413" cy="260.854" rx="5.067" ry="5.067" id="LED" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <rect x="210.494" y="230.384" width="1.804" height="28.77" style="stroke-width: 0.2; fill: rgb(216, 216, 216); stroke: rgb(216, 216, 216); transform-origin: 211.396px 244.773px;" rx="2" ry="2"/>
+  <rect x="9.762" y="-1.898" width="10.847" height="3.796" rx="1" stroke="#5C5343" stroke-width="1" transform="matrix(0, 0.9999999999999999, -0.9999999999999999, 0, 211.3630218505859, 229.32815551757812)" style="stroke-width: 0.271; fill: rgb(219, 185, 121);" ry="1"/>
+  <rect x="11.931" y="-1.765" width="1.085" height="3.531" transform="matrix(0, 0.9999999999999999, -0.9999999999999999, 0, 211.3576507568359, 228.18356323242188)" style="stroke-width: 0.271; fill: rgb(123, 64, 34);"/>
+  <rect x="14.101" y="-1.762" width="1.085" height="3.524" fill="#000000" transform="matrix(0, 0.9999999999999999, -0.9999999999999999, 0, 211.35877990722653, 228.17935180664062)" style="stroke-width: 0.271;"/>
+  <rect x="16.27" y="-1.762" width="1.085" height="3.525" transform="matrix(0, 0.9999999999999999, -0.9999999999999999, 0, 211.35798645019528, 228.18075561523438)" style="stroke-width: 0.271; fill: rgb(172, 52, 24);"/>
+  <rect x="18.982" y="-1.754" width="1.085" height="3.506" transform="matrix(0, 0.9999999999999999, -0.9999999999999999, 0, 211.3597259521484, 228.90090942382812)" style="stroke-width: 0.271; fill: rgb(219, 153, 49);"/>
+  <rect x="287.825" y="57.099" width="2.237" height="8.268" style="stroke-width: 0.2; fill: rgb(91, 64, 106); stroke: rgb(91, 64, 106); transform-origin: 288.944px 61.234px;" rx="2" ry="2" transform="matrix(0, -1, 1, 0, -74.02024841, 162.16334534)"/>
+  <rect x="231.587" y="245.799" width="2.201" height="21.724" style="stroke-width: 0.2; stroke: rgb(6, 41, 118); fill: rgb(6, 41, 118);" rx="2" ry="2" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <rect x="300.752" y="238.59" width="5.2" height="4.4" style="fill: rgb(216, 216, 216); stroke-width: 1;" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <rect x="315.152" y="238.59" width="5.2" height="4.4" style="fill: rgb(216, 216, 216); stroke-width: 1;" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <rect x="329.552" y="238.59" width="5.2" height="4.4" style="fill: rgb(216, 216, 216); stroke-width: 1;" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <rect x="298.752" y="240.49" width="38" height="10.3" style="fill: rgb(198, 135, 82); stroke-width: 1;" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <g style="transform-origin: 317.752px 256.99px;" id="knob2">
+    <circle cx="317.752" cy="256.99" r="22.4" style="fill: rgb(36, 34, 34); stroke-width: 1;"/>
+    <rect x="316.752" y="238.49" width="2" height="12" style="fill: rgb(240, 240, 240); stroke-width: 1;" rx="0.5"/>
+  </g>
+  <rect x="243.751" y="238.318" width="5.2" height="4.4" style="fill: rgb(216, 216, 216); stroke-width: 1;" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <rect x="258.151" y="238.318" width="5.2" height="4.4" style="fill: rgb(216, 216, 216); stroke-width: 1;" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <rect x="272.551" y="238.318" width="5.2" height="4.4" style="fill: rgb(216, 216, 216); stroke-width: 1;" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <rect x="241.751" y="240.218" width="38" height="10.3" style="fill: rgb(198, 135, 82); stroke-width: 1;" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 1.4210854715202004e-14)"/>
+  <g style="transform-origin: 260.751px 256.718px;" transform="matrix(1, 0, 0, 1, -0.000004, 0.000005)" id="knob1">
+    <circle cx="260.751" cy="256.718" r="22.4" style="fill: rgb(36, 34, 34); stroke-width: 1;"/>
+    <rect x="259.751" y="238.218" width="2" height="12" style="fill: rgb(240, 240, 240); stroke-width: 1;" rx="0.5"/>
+  </g>
+</svg>

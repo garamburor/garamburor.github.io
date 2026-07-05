@@ -8,6 +8,7 @@ class WorkPage extends HTMLElement {
         this.render();
         // Allocate sequencer
         this.seq = null;
+        this.knob1 = false;
     }
 
     connectedCallback() {
@@ -29,6 +30,15 @@ class WorkPage extends HTMLElement {
             let el = this.shadowRoot.getElementById(banners[i].id);
             el.addEventListener('click', this.callPage);
         }
+        let apc = this.shadowRoot.getElementById('apc');
+        apc.addEventListener('load', () => {
+            let svgDoc = apc.contentDocument;
+            let knob1 = svgDoc.getElementById('knob1');
+            knob1.addEventListener('click', () => {
+                let led = svgDoc.getElementById('LED');
+                led.style.fill = '#3498db';
+            }); 
+        });
     }
 
     disconnectedCallback() {
@@ -75,6 +85,7 @@ class WorkPage extends HTMLElement {
                 </div>
                 <div id="photo-ban" class='tooltip-content'>I'm often moving about with a digital camera.🏃🏻‍♂️</div>
             </div>
+            <!--
             <div class='post-it'>
                     <h1>Hi!</h1>
                 <ul>
@@ -83,12 +94,14 @@ class WorkPage extends HTMLElement {
                     <li>+ some photos & a sequencer</li>
                 </ul> 
             </div>
-            <!--
             <div id="ob1wrap">
                 <img id="ob1" src="./media/ob-1.svg"></img>
                 <div class='tooltip-content'>Been making music for a long time, now mainly just 2 bar loops with this thing.🤡</div>
             </div>
             -->
+            <div id="apcwrap">
+                <object id="apc" data="./media/apc.svg" type="image/svg+xml"></object>            
+            </div>
         </section>
         `;
     }

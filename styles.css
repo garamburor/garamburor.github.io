@@ -56,3 +56,8 @@ canvas {
     transition: opacity var(--tau);
     pointer-events: none;
 }
+
+.is-hidden {
+  opacity: 0;
+  pointer-events: none; /* Prevents users from clicking things on the hidden page */
+}
