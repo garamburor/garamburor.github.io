@@ -68,6 +68,9 @@ class MainApp extends HTMLElement {
             // Create new page
             let newElem = document.createElement(id + '-page');
             newElem.id = id;
+            // Add new page
+            this.shadowRoot.appendChild(newElem);
+            newElem.className = 'is-hidden';
             // Remove page that already exists
             if (this.state != null) {
                 // Look for prev page in document
@@ -85,9 +88,8 @@ class MainApp extends HTMLElement {
                 let unloadPage = oldElem.unload();
                 await unloadPage;
                 oldElem.remove();
+                newElem.classList.remove('is-hidden');
             }
-            // Add new page
-            this.shadowRoot.appendChild(newElem);
 
             if (id === "work") { // Add state listener if its the work page
                  // Listen to work component
