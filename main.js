@@ -68,6 +68,7 @@ class MainApp extends HTMLElement {
             // Create new page
             let newElem = document.createElement(id + '-page');
             newElem.id = id;
+            newElem.className = 'is-hidden';
             // Add new page
             this.shadowRoot.appendChild(newElem);
             newElem.className = 'is-hidden';
