@@ -64,7 +64,7 @@ class AboutPage extends HTMLElement {
 
     wheelHandle = (e) => {
         this.touchPos += e.deltaY;
-        if (Math.abs(this.touchPos) > window.innerHeight * 0.05) {
+        if (Math.abs(this.touchPos) > window.innerHeight * 0.1) {
             this.changePage(e.deltaY);
             this.touchPos = 0;
         }

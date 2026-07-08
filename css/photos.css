@@ -168,15 +168,14 @@
   }
 
   #photos {
-    top: 40dvh;
-    left: 10dvw;
-    height: 40dvh;
-    width: 60dvw;
+    height: 33.33dvh;
+    width: 100dvw;
+    grid-row: 2 / 3; /* Starts at row 2, spans down 2 rows */
+    grid-column: 1;       /* Defaults to taking up just 1 column track */
     pointer-events: none;
     transition: opacity var(--tau);
     overflow: hidden;
   }
-
 
   #photos .tooltip-content {
     border-radius: 1dvh;
