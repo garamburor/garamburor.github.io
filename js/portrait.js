@@ -25,7 +25,7 @@ export const portrait = p => {
         // Set element that will hold the sequencer
         const container = p.canvas.parentElement;
         let ar = dryImg.width / dryImg.height; 
-        canvas = p.createCanvas(container.offsetHeight * ar * 0.5, container.offsetHeight * 0.5);
+        canvas = p.createCanvas(container.offsetHeight * ar * 0.6, container.offsetHeight * 0.6);
         // Ensure sketch is visible
         p.canvas.style.display = "block";
         p.canvas.style.visibility = "visible";
@@ -33,18 +33,18 @@ export const portrait = p => {
         p.windowResized();
         // Page colors for two tone effect
         colorDark = p.color(6, 41, 118);
-        colorLight = p.color(253, 253, 253);
+        colorLight = p.color(204, 211, 226); // p.color(253, 253, 253);
         p.noLoop();
         count = 0;
     }
 
     p.windowResized = () => {
-        canvas.clear();
+        p.clear();
         const container = p.canvas.parentElement;
         let ar = dryImg.width / dryImg.height; 
-        p.resizeCanvas(container.offsetHeight * ar * 0.5, container.offsetHeight * 0.5);
-        canvas.position(container.offsetWidth * 0.5 - container.offsetHeight * ar * 0.25, container.offsetHeight * 0.33);
-        pixelSize = p.floor(p.height * 0.05);
+        p.resizeCanvas(container.offsetHeight * ar * 0.6, container.offsetHeight * 0.6);
+        canvas.position(container.offsetWidth * 0.5 - container.offsetHeight * ar * 0.5 * 0.6, container.offsetHeight * 0.33);
+        pixelSize = 10; // p.floor(p.height * 0.04);
         effectRadius = p.width * 0.25;
     }
 
@@ -52,7 +52,8 @@ export const portrait = p => {
         // Draw image
         // Load img pixels
         dryImg.loadPixels();
-        p.image(dryImg, 0, 0, p.width, p.height);
+        // p.image(dryImg, 0, 0, p.width, p.height);
+        makeImg();
     }
 
     // Helper function to math-magically reduce color depth
@@ -62,20 +63,20 @@ export const portrait = p => {
     }
 
     p.mouseMoved = () =>  {
-        canvas.clear();
+        p.clear();
+        // p.image(dryImg, 0, 0, p.width, p.height);
         makeImg();
     }
 
     function makeImg() {
-        p.image(dryImg, 0, 0, p.width, p.height);
         for (x = 0; x < dryImg.width; x += pixelSize) {
             let true_x = p.map(x, 0, dryImg.width, 0, p.width);
         for (y = 0; y < dryImg.height; y += pixelSize) {
             let true_y = p.map(y, 0, dryImg.height, 0, p.height);
             // Distance from mouse pos to current x, y pixels
-            d = p.dist(p.mouseX, p.mouseY, true_x, true_y);
+            // d = p.dist(p.mouseX, p.mouseY, true_x, true_y);
             // If inside radius for effect
-            if (d < effectRadius) {
+            // if (d < effectRadius) {
                 // Get the color of the current pixel
                 pixIndex = (x + y * dryImg.width) * 4;
                 r = dryImg.pixels[pixIndex];
@@ -84,7 +85,7 @@ export const portrait = p => {
                 // Convert to grayscale using standard luminance weights
                 gray = (r * 0.299) + (g * 0.587) + (b * 0.114);
                 // Reduce effect with distance
-                alphaValue = p.map(d, 0, effectRadius, 255, 0);
+                // alphaValue = p.map(d, 0, effectRadius, 255, 0);
                 // Decimate color shades
                 txt = p.floor(p.map(gray + 50 * p.noise(0.008 * (pixIndex + count)) - 25, 255, 0, 0, asciiChar.length));
                 // gray = crushColor(gray, colorsPerChannel);
@@ -95,17 +96,17 @@ export const portrait = p => {
                 //txtColor = p.lerpColor(colorLight, colorDark, gray * 1.6);
                 //txtColor.setAlpha(200);
                 // Set effect reduce / dist
-                finalColor.setAlpha(alphaValue);
+                // finalColor.setAlpha(alphaValue);
                 // Draw
                 p.fill(finalColor);
                 //noStroke();
-                //rect(x, y, pixelSize, pixelSize);
+                //rect(true_x, true_x, pixelSize, pixelSize);
                 //finalColor.setAlpha(alphaValue);
-                p.textSize(8);
+                p.textSize(p.height * 0.005);
                 //fill(txtColor);
                 p.textAlign(p.CENTER, p.CENTER);
                 p.text(asciiChar.charAt(txt), true_x, true_y);
-            }
+            // }
         }
         }
         count++;

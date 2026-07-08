@@ -71,7 +71,6 @@ class MainApp extends HTMLElement {
             newElem.className = 'is-hidden';
             // Add new page
             this.shadowRoot.appendChild(newElem);
-            newElem.className = 'is-hidden';
             // Remove page that already exists
             if (this.state != null) {
                 // Look for prev page in document

@@ -27,6 +27,28 @@ canvas {
     display: none !important;
 }
 
+#frame {
+    position: absolute;
+    width: 100%;
+    height: 59.8dvh; /* Set whatever height you want */
+    top: 33dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 40;
+}
+
+#portrait {
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity var(--tau);
+}
+
+#portrait:hover {
+    opacity: 1;
+}
+
 section {
     top: 0;
     height: 100dvh;

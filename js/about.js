@@ -8,6 +8,7 @@ class AboutPage extends HTMLElement {
         this.prev = this.page;
         this.currentAnim;
         this.funk;
+        this.touchStart;
         this.touchPos = 0.;
         this.touchEvent;
         this.timer = null;
@@ -42,22 +43,21 @@ class AboutPage extends HTMLElement {
     }
 
     tsHandle = (e) => {
-        this.touchPos = e.touches[0].clientY;
-        
+        this.touchStart = e.touches[0].clientY;
     }
     
     tmHandle = (e) => {
         this.touchEvent = e;
-        this.touchPos -= this.touchEvent.touches[0].clientY;
-        if (Math.abs(this.touchPos) > window.innerHeight * 0.5) {
+        this.touchPos = this.touchStart - this.touchEvent.touches[0].clientY;
+        if (Math.abs(this.touchPos) > window.innerHeight * 0.1) {
             this.changePage(this.touchPos);
         }
         this.touchPos = 0;
     }
 
     teHandle = (e) => {
-        // this.touchPos -= this.touchEvent.touches[0].clientY;
-        if (Math.abs(this.touchPos) > window.innerHeight * 0.5) {
+        this.touchPos = this.touchStart - this.touchEvent.touches[0].clientY;
+        if (Math.abs(this.touchPos) > window.innerHeight * 0.1) {
             this.changePage(this.touchPos);
         }
     }
@@ -125,12 +125,20 @@ class AboutPage extends HTMLElement {
         if(load) {
             await this.currentAnim.finished;
             if (!this.portrait) {
+                let img = new Image();
+                img.src = './media/portrait.jpg';
+                img.alt = "Portrait";
+                img.id = "portrait";
                 let container = this.shadowRoot.getElementById('container');
                 container.innerHTML = "";
                 this.portrait = new p5((p) => {
                     p.canvasParentNode = container;
                     portrait(p);
                 }, container);
+                let div = document.createElement('div');
+                div.id = "frame";
+                div.appendChild(img);
+                container.appendChild(div);
 
                 this.currentAnim = container.animate(
                     [
