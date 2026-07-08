@@ -1,17 +1,19 @@
 import { sequencer } from './sequencer.js'; // Import the specific class
+import './apc.js'; // Import the specific class
 
 class WorkPage extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
         // Render html
-        this.render();
+        this.render()
         // Allocate sequencer
         this.seq = null;
         this.knob1 = false;
+        this.knob2 = false;
     }
 
-    connectedCallback() {
+    async connectedCallback() {
         let container = this.shadowRoot.getElementById("seq");
         // Create sequencer if it doesn't exist
         if (!this.seq) {
@@ -30,15 +32,6 @@ class WorkPage extends HTMLElement {
             let el = this.shadowRoot.getElementById(banners[i].id);
             el.addEventListener('click', this.callPage);
         }
-        let apc = this.shadowRoot.getElementById('apc');
-        apc.addEventListener('load', () => {
-            let svgDoc = apc.contentDocument;
-            let knob1 = svgDoc.getElementById('knob1');
-            knob1.addEventListener('click', () => {
-                let led = svgDoc.getElementById('LED');
-                led.style.fill = '#3498db';
-            }); 
-        });
     }
 
     disconnectedCallback() {
@@ -52,11 +45,13 @@ class WorkPage extends HTMLElement {
         for(let i = 0; i < photos.length; i++) {
             photos[i].removeEventListener('click', this.callPage);
         }
+        /*
         let banners = this.shadowRoot.querySelectorAll('.tooltip-content');
         for(let i = 0; i < banners.length; i++) {
             let el = this.shadowRoot.getElementById(banners[i].id);
             el.removeEventListener('click', this.callPage);
         }
+        */
     }
 
     callPage = (e) => {
@@ -83,7 +78,9 @@ class WorkPage extends HTMLElement {
                 <div class="instax" id="frame1">
                     <img class="photo" id="photo1" src='../media/photos/DSCF2415.avif'>
                 </div>
+                <!--
                 <div id="photo-ban" class='tooltip-content'>I'm often moving about with a digital camera.🏃🏻‍♂️</div>
+                -->
             </div>
             <!--
             <div class='post-it'>
@@ -99,8 +96,11 @@ class WorkPage extends HTMLElement {
                 <div class='tooltip-content'>Been making music for a long time, now mainly just 2 bar loops with this thing.🤡</div>
             </div>
             -->
-            <div id="apcwrap">
-                <object id="apc" data="./media/apc.svg" type="image/svg+xml"></object>            
+            <div id="apcwrap"> 
+                <apc-elm id="apc"></apc-elm>
+                <!--
+                <div id="apc-ban" class='tooltip-content'>I specialize in VA models so, here's a simple one!🎛 The LED turns it on/off.</div>   
+                -->      
             </div>
         </section>
         `;
