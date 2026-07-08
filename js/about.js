@@ -1,3 +1,5 @@
+import { portrait } from './portrait.js'; // Import the specific class
+
 class AboutPage extends HTMLElement {
     constructor() {
         super();
@@ -9,6 +11,7 @@ class AboutPage extends HTMLElement {
         this.touchPos = 0.;
         this.touchEvent;
         this.timer = null;
+        this.portrait = null;
     }
 
     connectedCallback() {
@@ -27,6 +30,11 @@ class AboutPage extends HTMLElement {
         cont.removeEventListener('touchstart', this.tsHandle);
         cont.addEventListener('touchmove', this.tmHandle);
         cont.removeEventListener('touchend', this.teHandle);
+
+        if (this.portrait) {
+            this.portrait.remove(); // Remove canvas
+            this.portrait = null;
+        }
     }
 
     holdup() {
@@ -34,22 +42,32 @@ class AboutPage extends HTMLElement {
     }
 
     tsHandle = (e) => {
-        console.log(e.touches[0].clientY);
         this.touchPos = e.touches[0].clientY;
         
     }
     
     tmHandle = (e) => {
         this.touchEvent = e;
+        this.touchPos -= this.touchEvent.touches[0].clientY;
+        if (Math.abs(this.touchPos) > window.innerHeight * 0.5) {
+            this.changePage(this.touchPos);
+        }
+        this.touchPos = 0;
     }
 
     teHandle = (e) => {
-        this.touchPos -= this.touchEvent.touches[0].clientY;
-        this.changePage(this.touchPos);
+        // this.touchPos -= this.touchEvent.touches[0].clientY;
+        if (Math.abs(this.touchPos) > window.innerHeight * 0.5) {
+            this.changePage(this.touchPos);
+        }
     }
 
     wheelHandle = (e) => {
-        this.changePage(e.deltaY);
+        this.touchPos += e.deltaY;
+        if (Math.abs(this.touchPos) > window.innerHeight * 0.05) {
+            this.changePage(e.deltaY);
+            this.touchPos = 0;
+        }
     }
 
     changePage(pos) {
@@ -59,14 +77,14 @@ class AboutPage extends HTMLElement {
             } else {
                 this.page--;
             }
-            this.timer = setTimeout(this.holdup.bind(this), 1200);
+            this.timer = setTimeout(this.holdup.bind(this), 500);
         }
         // Clip & reset page count
-        if (this.page > 2) {
+        if (this.page > 3) {
             this.page = 0;
         }
         if (this.page < 0) {
-            this.page = 2;
+            this.page = 3;
         }
         // If there's a change trigger state change
         if (this.prev != this.page) {
@@ -97,11 +115,57 @@ class AboutPage extends HTMLElement {
                     Hopefully I'll share more projects in the near future.`
             this.textBox(text);
             this.funk = this.textBox;
+        } else if (this.page == 3) {
+            this.photo(true);
+            this.funk = this.photo;
         }
     }
+
+    async photo(load) {
+        if(load) {
+            await this.currentAnim.finished;
+            if (!this.portrait) {
+                let container = this.shadowRoot.getElementById('container');
+                container.innerHTML = "";
+                this.portrait = new p5((p) => {
+                    p.canvasParentNode = container;
+                    portrait(p);
+                }, container);
+
+                this.currentAnim = container.animate(
+                    [
+                        { opacity: 0.},
+                        { opacity: 1.}
+                    ], {
+                        duration: 300,
+                        easing: 'ease-in',
+                        iterations: 1,
+                        fill: 'both',
+                });
+            }
+        } else {
+            let div = this.shadowRoot.getElementById('defaultCanvas0');
+            this.currentAnim = div.animate(
+                [
+                    { opacity: 1.},
+                    { opacity: 0.}
+                ], {
+                    duration: 300,
+                    easing: 'ease-in',
+                    iterations: 1,
+                    fill: 'both',
+            });
+            
+        }
+    }
+
     async textBox(text, skip=false) {
         if (text) {
             if (!skip) {await this.currentAnim.finished;}
+            if (this.portrait) {
+                this.portrait.remove(); // Remove canvas
+                this.portrait = null;
+            }
             let div = document.createElement('p');
             div.classList.add('about-p1');
             div.textContent = text;
@@ -115,8 +179,9 @@ class AboutPage extends HTMLElement {
                     iterations: 1,
                     fill: 'both',
             });
-            this.shadowRoot.querySelector('#container').innerHTML = "";
-            this.shadowRoot.querySelector('#container').appendChild(div);
+            let cont = this.shadowRoot.querySelector('#container')
+            cont.innerHTML = "";
+            cont.appendChild(div);
         } else {
             let div = this.shadowRoot.querySelector('#container').getElementsByClassName('about-p1');
             this.currentAnim = div[0].animate(

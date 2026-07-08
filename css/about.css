@@ -17,6 +17,16 @@ a {
     text-decoration: inherit;
 }
 
+canvas {
+    position: relative;
+    z-index: 20;
+    pointer-events: auto;
+}
+
+#p5_loading {
+    display: none !important;
+}
+
 section {
     top: 0;
     height: 100dvh;
