@@ -7,7 +7,7 @@ class SiteTitle extends HTMLElement {
         // To avoid jitter with mouse interaction
         this.render();
         this.motif = null;
-        this.state;
+        this.state = null;
         this.test = null;
         this.width = false;
         this.timer1 = null;
@@ -88,9 +88,9 @@ class SiteTitle extends HTMLElement {
         this.shadowRoot.innerHTML = `
         <link rel="stylesheet" href="../css/title.css">
         <div class="title" id="title-container">
-          <span class="sides" id="intro1">W</span>
+          <span class="sides" id="intro1"></span>
           <span id="logo"></span>
-          <span class="sides" id="intro2">RK</span>
+          <span class="sides" id="intro2"></span>
         </div>
         `;
     }
