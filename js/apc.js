@@ -30,23 +30,33 @@ class APC extends HTMLElement {
         // Add events for interaction with knobs
         let knob1 = this.shadowRoot.getElementById("knob1");
         knob1.addEventListener('mousedown', this.clickKnob1.bind(this));
+        knob1.addEventListener('touchstart', this.clickKnob1.bind(this));
         let knob2 = this.shadowRoot.getElementById("knob2");
+        knob2.addEventListener('touchstart', this.clickKnob1.bind(this));
         knob2.addEventListener('mousedown', this.clickKnob2.bind(this));
         document.addEventListener('mouseup', this.mouseUp.bind(this));
+        document.addEventListener('touchend', this.mouseUp.bind(this));
         document.addEventListener('mousemove', this.mouseTrack.bind(this));
+        document.addEventListener('touchmove', this.touchTrack.bind(this));
         let led = this.shadowRoot.getElementById("LED");
         led.addEventListener('click', this.ledClick.bind(this));
+        led.addEventListener('touchstart', this.ledClick.bind(this));
     }
 
     disconnectedCallback() {
         let knob1 = this.shadowRoot.getElementById("knob1");
         knob1.removeEventListener('mousedown', this.clickKnob1.bind(this));
+        knob1.removeEventListener('touchstart', this.clickKnob2.bind(this));
         let knob2 = this.shadowRoot.getElementById("knob2");
         knob2.removeEventListener('mousedown', this.clickKnob2.bind(this));
+        knob2.removeEventListener('touchstart', this.clickKnob2.bind(this));
         document.removeEventListener('mouseup', this.mouseUp.bind(this));
+        document.removeEventListener('touchend', this.mouseUp.bind(this));
         document.removeEventListener('mousemove', this.mouseTrack.bind(this));
+        document.removeEventListener('touchmove', this.touchTrack.bind(this));
         let led = this.shadowRoot.getElementById("LED");
         led.removeEventListener('click', this.ledClick.bind(this));
+        led.removeEventListener('touchstart', this.ledClick.bind(this));
     }
 
     mouseUp() {
@@ -109,6 +119,42 @@ class APC extends HTMLElement {
         }
     }
 
+    touchTrack(e) {
+        let knob = null;
+        let index = null;
+        // If a knob is being moved, calculate the rotation based on mouse position
+        if (this.knob1 || this.knob2) {
+            // Reset timer
+            clearTimeout(this.timer);
+            this.timer = setTimeout(this.ledOff.bind(this), this.timeout);
+            if (this.knob1) {
+                knob = this.shadowRoot.getElementById("knob1");
+                index = this.param.indexOf(0);
+            }
+            if (this.knob2) {
+                knob = this.shadowRoot.getElementById("knob2");
+                index = this.param.indexOf(1);
+            }
+            let rect = this.shadowRoot.getElementById("apcbox");
+            let apcRect = rect.getBoundingClientRect();
+            let knobBox = knob.getBoundingClientRect();
+            let knobCenterX = knobBox.x + knobBox.width * 0.5;
+            let knobCenterY = knobBox.y + knobBox.height * 0.5;
+            let deltaX = e.touches[0].clientX - knobCenterX;
+            let deltaY = e.touches[0].clientY - knobCenterY;
+            let angleRad = Math.atan2(deltaY, deltaX);
+            let angleDeg = angleRad * (180 / Math.PI);
+            let param = (angleDeg + 258) % 360;
+             // Clamp between 35 and 325 degrees
+            param = Math.min(Math.max(param, 35), 325);
+            // Set rotation but remove the 180 deg offset + 8 degree tilt of svg
+            let rotation = param - 172; // angleDeg + 82;
+            knob.style.transform = `rotate(${rotation}deg)`;
+            // Set value
+            this.param[index] = (param - 35) / (325 - 35);
+        }
+    }
+
     mouseTrack(e) {
         let knob = null;
         let index = null;
@@ -142,7 +188,6 @@ class APC extends HTMLElement {
             knob.style.transform = `rotate(${rotation}deg)`;
             // Set value
             this.param[index] = (param - 35) / (325 - 35);
-            console.log(this.param);
         }
     }
 
