@@ -85,15 +85,14 @@ h1 {
 
 #apcwrap .tooltip-content {
     position: relative;
-    bottom: 70%;
+    width: 90%;
     left: 5%;
-    right: 5%;
+    bottom: 70%;
+    height: 20%;
     border-radius: 1dvw;
+    text-align: center;
     background-color: var(--work-tx-color);
     color: var(--contact-tx-color);
-    padding: 5%;
-    min-width: 50%;
-    max-width: 70%;
     opacity: 0;
     transition: opacity var(--tau);
     pointer-events: auto;

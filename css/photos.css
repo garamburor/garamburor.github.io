@@ -131,6 +131,7 @@
   border-radius: 1dvw;
   background-color: var(--work-tx-color);
   color: var(--contact-tx-color);
+  text-align: center;
   padding: 5%;
   max-width: 50%;
   opacity: 0;
@@ -175,11 +176,12 @@
     pointer-events: none;
     transition: opacity var(--tau);
     overflow: hidden;
+    justify-content: center;
   }
 
   #photos .tooltip-content {
     border-radius: 1dvh;
-    min-width: 66.66%;
+    min-width: 50%;
     max-width:80%;
   }
 }

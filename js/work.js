@@ -78,9 +78,7 @@ class WorkPage extends HTMLElement {
                 <div class="instax" id="frame1">
                     <img class="photo" id="photo1" src='../media/photos/DSCF2415.avif'>
                 </div>
-                <!--
                 <div id="photo-ban" class='tooltip-content'>I'm often moving about with a digital camera.🏃🏻‍♂️</div>
-                -->
             </div>
             <!--
             <div class='post-it'>
@@ -98,9 +96,7 @@ class WorkPage extends HTMLElement {
             -->
             <div id="apcwrap"> 
                 <apc-elm id="apc"></apc-elm>
-                <!--
                 <div id="apc-ban" class='tooltip-content'>I specialize in VA models so, here's a simple one!🎛 The LED turns it on/off.</div>   
-                -->      
             </div>
         </section>
         `;
