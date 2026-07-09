@@ -32,7 +32,7 @@ class APC extends HTMLElement {
         knob1.addEventListener('mousedown', this.clickKnob1.bind(this));
         knob1.addEventListener('touchstart', this.clickKnob1.bind(this));
         let knob2 = this.shadowRoot.getElementById("knob2");
-        knob2.addEventListener('touchstart', this.clickKnob1.bind(this));
+        knob2.addEventListener('touchstart', this.clickKnob2.bind(this));
         knob2.addEventListener('mousedown', this.clickKnob2.bind(this));
         document.addEventListener('mouseup', this.mouseUp.bind(this));
         document.addEventListener('touchend', this.mouseUp.bind(this));
@@ -45,7 +45,7 @@ class APC extends HTMLElement {
 
     disconnectedCallback() {
         let knob1 = this.shadowRoot.getElementById("knob1");
-        knob1.removeEventListener('mousedown', this.clickKnob1.bind(this));
+        knob1.removeEventListener('mousedown', this.clickKnob2.bind(this));
         knob1.removeEventListener('touchstart', this.clickKnob2.bind(this));
         let knob2 = this.shadowRoot.getElementById("knob2");
         knob2.removeEventListener('mousedown', this.clickKnob2.bind(this));
