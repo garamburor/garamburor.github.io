@@ -44,7 +44,7 @@ export const portrait = p => {
         let ar = dryImg.width / dryImg.height; 
         p.resizeCanvas(container.offsetHeight * ar * 0.6, container.offsetHeight * 0.6);
         canvas.position(container.offsetWidth * 0.5 - container.offsetHeight * ar * 0.5 * 0.6, container.offsetHeight * 0.33);
-        pixelSize = 10; // p.floor(p.height * 0.04);
+        pixelSize = 40; // p.floor(p.height * 0.04);
         effectRadius = p.width * 0.25;
     }
 
@@ -102,7 +102,7 @@ export const portrait = p => {
                 //noStroke();
                 //rect(true_x, true_x, pixelSize, pixelSize);
                 //finalColor.setAlpha(alphaValue);
-                p.textSize(p.height * 0.005);
+                p.textSize(p.height * 0.02);
                 //fill(txtColor);
                 p.textAlign(p.CENTER, p.CENTER);
                 p.text(asciiChar.charAt(txt), true_x, true_y);
