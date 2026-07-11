@@ -34,8 +34,10 @@ export const portrait = p => {
         // Page colors for two tone effect
         colorDark = p.color(6, 41, 118);
         colorLight = p.color(204, 211, 226); // p.color(253, 253, 253);
-        p.noLoop();
+        // p.noLoop();
         count = 0;
+        dryImg.loadPixels();
+        p.frameRate(5);
     }
 
     p.windowResized = () => {
@@ -46,13 +48,10 @@ export const portrait = p => {
         canvas.position(container.offsetWidth * 0.5 - container.offsetHeight * ar * 0.5 * 0.6, container.offsetHeight * 0.33);
         pixelSize = 40; // p.floor(p.height * 0.04);
         effectRadius = p.width * 0.25;
+        dryImg.loadPixels();
     }
 
     p.draw = () =>  {
-        // Draw image
-        // Load img pixels
-        dryImg.loadPixels();
-        // p.image(dryImg, 0, 0, p.width, p.height);
         makeImg();
     }
 
@@ -63,52 +62,35 @@ export const portrait = p => {
     }
 
     p.mouseMoved = () =>  {
-        p.clear();
         // p.image(dryImg, 0, 0, p.width, p.height);
-        makeImg();
+        // makeImg();
     }
 
     function makeImg() {
+        p.clear();
+        p.textSize(p.height * 0.02);
+        p.textAlign(p.CENTER, p.CENTER);
         for (x = 0; x < dryImg.width; x += pixelSize) {
             let true_x = p.map(x, 0, dryImg.width, 0, p.width);
         for (y = 0; y < dryImg.height; y += pixelSize) {
             let true_y = p.map(y, 0, dryImg.height, 0, p.height);
-            // Distance from mouse pos to current x, y pixels
-            // d = p.dist(p.mouseX, p.mouseY, true_x, true_y);
-            // If inside radius for effect
-            // if (d < effectRadius) {
-                // Get the color of the current pixel
-                pixIndex = (x + y * dryImg.width) * 4;
-                r = dryImg.pixels[pixIndex];
-                g = dryImg.pixels[pixIndex + 1];
-                b = dryImg.pixels[pixIndex + 2];
-                // Convert to grayscale using standard luminance weights
-                gray = (r * 0.299) + (g * 0.587) + (b * 0.114);
-                // Reduce effect with distance
-                // alphaValue = p.map(d, 0, effectRadius, 255, 0);
-                // Decimate color shades
-                txt = p.floor(p.map(gray + 50 * p.noise(0.008 * (pixIndex + count)) - 25, 255, 0, 0, asciiChar.length));
-                // gray = crushColor(gray, colorsPerChannel);
-                // Normalize brightness
-                gray = gray * maxInvOpcty;
-                // Mix the two tones based on grayscale
-                finalColor = p.lerpColor(colorDark, colorLight, gray * 1.6);
-                //txtColor = p.lerpColor(colorLight, colorDark, gray * 1.6);
-                //txtColor.setAlpha(200);
-                // Set effect reduce / dist
-                // finalColor.setAlpha(alphaValue);
-                // Draw
-                p.fill(finalColor);
-                //noStroke();
-                //rect(true_x, true_x, pixelSize, pixelSize);
-                //finalColor.setAlpha(alphaValue);
-                p.textSize(p.height * 0.02);
-                //fill(txtColor);
-                p.textAlign(p.CENTER, p.CENTER);
-                p.text(asciiChar.charAt(txt), true_x, true_y);
-            // }
+            pixIndex = (x + y * dryImg.width) * 4;
+            r = dryImg.pixels[pixIndex];
+            g = dryImg.pixels[pixIndex + 1];
+            b = dryImg.pixels[pixIndex + 2];
+            // Convert to grayscale using standard luminance weights
+            gray = (r * 0.299) + (g * 0.587) + (b * 0.114);
+            // Decimate color shades
+            txt = p.floor(p.map(gray + 50 * p.noise(0.1 * (pixIndex + count)) - 25, 255, 0, 0, asciiChar.length));
+            // Normalize brightness
+            gray = gray * maxInvOpcty;
+            // Mix the two tones based on grayscale
+            finalColor = p.lerpColor(colorDark, colorLight, gray * 1.6);
+            // Draw
+            p.fill(finalColor);
+            p.text(asciiChar.charAt(txt), true_x, true_y);
         }
         }
         count++;
-        }
+    }
 }
