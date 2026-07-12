@@ -40,7 +40,7 @@ class APC extends HTMLElement {
         document.addEventListener('mouseup', this.mouseUp.bind(this));
         document.addEventListener('touchend', this.mouseUp.bind(this));
         document.addEventListener('mousemove', this.mouseTrack.bind(this));
-        document.addEventListener('touchmove', this.touchTrack.bind(this));
+        document.addEventListener('touchmove', this.touchTrack.bind(this), { passive: false });
         let led = this.shadowRoot.getElementById("LED");
         led.addEventListener('click', this.ledClick.bind(this));
         led.addEventListener('touchstart', this.ledClick.bind(this));
