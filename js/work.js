@@ -30,7 +30,9 @@ class WorkPage extends HTMLElement {
         let banners = this.shadowRoot.querySelectorAll('.tooltip-content');
         for(let i = 0; i < banners.length; i++) {
             let el = this.shadowRoot.getElementById(banners[i].id);
-            el.addEventListener('click', this.callPage);
+            if (banners[i].id === "photo-ban") {
+                el.addEventListener('click', this.callPage);
+            }
         }
     }
 
@@ -45,13 +47,13 @@ class WorkPage extends HTMLElement {
         for(let i = 0; i < photos.length; i++) {
             photos[i].removeEventListener('click', this.callPage);
         }
-        /*
         let banners = this.shadowRoot.querySelectorAll('.tooltip-content');
         for(let i = 0; i < banners.length; i++) {
             let el = this.shadowRoot.getElementById(banners[i].id);
-            el.removeEventListener('click', this.callPage);
+            if (banners[i].id === "photo-ban") {
+                el.removeEventListener('click', this.callPage);
+            }
         }
-        */
     }
 
     callPage = (e) => {
