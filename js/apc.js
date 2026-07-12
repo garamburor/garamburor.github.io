@@ -283,6 +283,7 @@ class APC extends HTMLElement {
     }
 
     touchTrack(e) {
+        e.preventDefault();
         let knob = null;
         let index = null;
         // If a knob is being moved, calculate the rotation based on mouse position
