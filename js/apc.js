@@ -315,6 +315,7 @@ class APC extends HTMLElement {
     }
 
     mouseTrack(e) {
+        e.preventDefault();
         // If a knob is being moved, calculate the rotation based on mouse position
         if (this.knob1 || this.knob2) {
             // Knob tracking
