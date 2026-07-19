@@ -48,10 +48,14 @@ class AboutPage extends HTMLElement {
     
     tmHandle = (e) => {
         this.touchEvent = e;
-        this.touchPos = this.touchStart - this.touchEvent.touches[0].clientY;
+        // If there was movement, measure scroll amount
+        if (this.touchEvent.touches[0].clientY != null) {
+            this.touchPos = this.touchStart - this.touchEvent.touches[0].clientY;
+        }
         if (Math.abs(this.touchPos) > window.innerHeight * 0.1) {
             this.changePage(this.touchPos);
         }
+        this.touchEvent.touches[0].clientY = 0;
         this.touchPos = 0;
     }
 
