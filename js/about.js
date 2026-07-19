@@ -43,32 +43,24 @@ class AboutPage extends HTMLElement {
     }
 
     tsHandle = (e) => {
+        this.touchEvent = e;
         this.touchStart = e.touches[0].clientY;
     }
     
     tmHandle = (e) => {
         this.touchEvent = e;
+        this.touchPos = this.touchStart - this.touchEvent.touches[0].clientY;
         if (Math.abs(this.touchPos) > window.innerHeight * 0.1) {
             this.changePage(this.touchPos);
-            if (this.touchEvent.touches[0].clientY != null) {
-                this.touchStart = 0;
-                this.touchEvent.touches[0].clientY = 0;
-            } else {
-                this.touchStart = this.touchEvent.touches[0].clientY;
-            }
+            this.touchPos = 0;
         }
-        this.touchPos = 0;
     }
 
     teHandle = (e) => {
-        // If there was movement, measure scroll amount
-        if (this.touchEvent != null) {
-            this.touchPos = this.touchStart - this.touchEvent.touches[0].clientY;
-        }
         if (Math.abs(this.touchPos) > window.innerHeight * 0.1) {
             this.changePage(this.touchPos);
+            this.touchPos = 0;
         }
-        this.touchPos = 0;
     }
 
     wheelHandle = (e) => {
