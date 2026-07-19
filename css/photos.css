@@ -60,7 +60,7 @@
   height: 33.33dvh;
   pointer-events: none;
   transition: opacity var(--tau);
-  overflow: hidden;
+  overflow: visible;
   object-fit: contain;
 }
 
