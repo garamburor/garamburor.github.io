@@ -81,7 +81,6 @@ class APC extends HTMLElement {
             if (!this.audioCtx) {
                 await this.initAudio();
             }
-            this.timer = setTimeout(this.ledOff.bind(this), this.timeout);
             let led = this.shadowRoot.getElementById("LED");
             // Circuit is on!
             led.style.fill = "red";
@@ -216,7 +215,7 @@ class APC extends HTMLElement {
                     this.b6 = this.white * 0.115926;
 
                     /* DC Blocker */
-                    x = (saw - delayedSaw) * 0.1 + this.pink * 5e-4;
+                    x = (saw - delayedSaw) * 0.2 + this.pink * 1e-3;
                     monoBuffer[i] = this.alpha * (this.y1 + x - this.x1);
                     this.x1 = x;
                     this.y1 = monoBuffer[i];
@@ -258,8 +257,6 @@ class APC extends HTMLElement {
             }
         this.led = false;
         let led = this.shadowRoot.getElementById("LED");
-        clearTimeout(this.timer);
-        this.timer = null;
         led.style.fill = "var(--photo-tx-color)";
         led.style.filter = "none";
     }
@@ -284,17 +281,35 @@ class APC extends HTMLElement {
 
     touchTrack(e) {
         e.preventDefault();
-        let knob = null;
-        let index = null;
         // If a knob is being moved, calculate the rotation based on mouse position
         if (this.knob1 || this.knob2) {
-            // Reset timer
-            clearTimeout(this.timer);
-            this.timer = setTimeout(this.ledOff.bind(this), this.timeout);
-            let param = this.map(e.touches[0].clientX, 0., window.innerWidth * 0.8, 0., 1.);
-            // param += this.map(e.clientY, window.innerHeight, 0., 0., 0.5); 
+            // Knob tracking
+            let knob;
+            if (this.knob1) {
+                knob = this.shadowRoot.getElementById("knob1");
+            }
+            if (this.knob2) {
+                knob = this.shadowRoot.getElementById("knob2");
+            }
+            // knob tracks mouse pos
+            let rect = this.shadowRoot.getElementById("apcbox");
+            let apcRect = rect.getBoundingClientRect();
+            let knobBox = knob.getBoundingClientRect();
+            let knobCenterX = knobBox.x + knobBox.width * 0.5;
+            let knobCenterY = knobBox.y + knobBox.height * 0.5;
+            let deltaX = e.touches[0].clientX - knobCenterX;
+            let deltaY = e.touches[0].clientY - knobCenterY;
+            let angleRad = Math.atan2(deltaY, deltaX);
+            let angleDeg = angleRad * (180 / Math.PI);
+            let param = (angleDeg + 258) % 360;
+            param = Math.max(0., Math.min(param / 360, 1.));
+            // + add x pos
+            param += this.map(e.touches[0].clientX - knobCenterX, 0, window.innerWidth, 0., 1.);
+            // Add y pos
+            param += this.map(e.touches[0].clientY - knobCenterY, window.innerHeight, 0, 0., 0.1);
             // Clamp value
             param = Math.max(0., Math.min(param, 1.));
+            // Calculate param + draw knob rotation
             this.APCParams(param);
         }
     }
@@ -302,13 +317,33 @@ class APC extends HTMLElement {
     mouseTrack(e) {
         // If a knob is being moved, calculate the rotation based on mouse position
         if (this.knob1 || this.knob2) {
-            // Reset timer
-            clearTimeout(this.timer);
-            this.timer = setTimeout(this.ledOff.bind(this), this.timeout);
-            let param = this.map(e.clientX, 0., window.innerWidth * 0.8, 0., 1.);
-            // param += this.map(e.clientY, window.innerHeight, 0., 0., 0.5); 
+            // Knob tracking
+            let knob;
+            if (this.knob1) {
+                knob = this.shadowRoot.getElementById("knob1");
+            }
+            if (this.knob2) {
+                knob = this.shadowRoot.getElementById("knob2");
+            }
+            // knob tracks mouse pos
+            let rect = this.shadowRoot.getElementById("apcbox");
+            let apcRect = rect.getBoundingClientRect();
+            let knobBox = knob.getBoundingClientRect();
+            let knobCenterX = knobBox.x + knobBox.width * 0.5;
+            let knobCenterY = knobBox.y + knobBox.height * 0.5;
+            let deltaX = e.clientX - knobCenterX;
+            let deltaY = e.clientY - knobCenterY;
+            let angleRad = Math.atan2(deltaY, deltaX);
+            let angleDeg = angleRad * (180 / Math.PI);
+            let param = (angleDeg + 258) % 360;
+            param = Math.max(0., Math.min(param / 360, 1.));
+            // + add x pos
+            param += this.map(e.clientX - knobCenterX, 0, window.innerWidth, 0., 1.);
+            // Add y pos
+            param += this.map(e.clientY - knobCenterY, window.innerHeight, 0, 0., 0.1);
             // Clamp value
             param = Math.max(0., Math.min(param, 1.));
+            // Calculate param + draw knob rotation
             this.APCParams(param);
         }
     }
@@ -350,10 +385,10 @@ class APC extends HTMLElement {
         // Clamp to avoid pure DC
         this.d = Math.min(0.999, Math.max(1e-3, this.d));
         if (index == 0) {
-            this.pulseNode.parameters.get('f').setTargetAtTime(this.f, this.audioCtx.currentTime, 0.02);
+            this.pulseNode.parameters.get('f').setTargetAtTime(this.f, this.audioCtx.currentTime, 0.01);
         }
         else {
-            this.pulseNode.parameters.get('d').setTargetAtTime(this.d, this.audioCtx.currentTime, 0.02);
+            this.pulseNode.parameters.get('d').setTargetAtTime(this.d, this.audioCtx.currentTime, 0.01);
         }
     }
 

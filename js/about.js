@@ -177,6 +177,7 @@ class AboutPage extends HTMLElement {
             let div = document.createElement('p');
             div.classList.add('about-p1');
             div.textContent = text;
+            // anim
             this.currentAnim = div.animate(
                 [
                     { opacity: 0},
@@ -204,7 +205,7 @@ class AboutPage extends HTMLElement {
             });
         }
     }
-
+    
     // transitions for table
     async table(state) {
         if (state) { // show
