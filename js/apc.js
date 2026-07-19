@@ -34,7 +34,9 @@ class APC extends HTMLElement {
         let knob1 = this.shadowRoot.getElementById("knob1");
         knob1.addEventListener('mousedown', this.clickKnob1.bind(this));
         knob1.addEventListener('touchstart', this.clickKnob1.bind(this));
+        knob1.style.cursor = "pointer";
         let knob2 = this.shadowRoot.getElementById("knob2");
+        knob2.style.cursor = "pointer";
         knob2.addEventListener('touchstart', this.clickKnob2.bind(this));
         knob2.addEventListener('mousedown', this.clickKnob2.bind(this));
         document.addEventListener('mouseup', this.mouseUp.bind(this));
@@ -42,6 +44,7 @@ class APC extends HTMLElement {
         document.addEventListener('mousemove', this.mouseTrack.bind(this));
         document.addEventListener('touchmove', this.touchTrack.bind(this), { passive: false });
         let led = this.shadowRoot.getElementById("LED");
+        led.style.cursor = "pointer";
         led.addEventListener('click', this.ledClick.bind(this));
         led.addEventListener('touchstart', this.ledClick.bind(this));
     }
@@ -280,7 +283,6 @@ class APC extends HTMLElement {
     }
 
     touchTrack(e) {
-        e.preventDefault();
         // If a knob is being moved, calculate the rotation based on mouse position
         if (this.knob1 || this.knob2) {
             // Knob tracking
@@ -315,7 +317,6 @@ class APC extends HTMLElement {
     }
 
     mouseTrack(e) {
-        e.preventDefault();
         // If a knob is being moved, calculate the rotation based on mouse position
         if (this.knob1 || this.knob2) {
             // Knob tracking
