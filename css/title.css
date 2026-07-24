@@ -34,6 +34,7 @@
     display: block !important;
     visibility: visible !important;
     pointer-events: auto;
+    cursor: pointer;
 }
 
 /* DIMENSIONS FOR PORTRAIT */
