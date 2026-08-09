@@ -9,7 +9,6 @@
     background: var(--work-bg-color);
     color: var(--work-tx-color);
     display: block;
-    position: relative;
     overflow: hidden;
 }
 
