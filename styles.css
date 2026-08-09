@@ -39,16 +39,19 @@ body, html {
     padding: 0;
     padding-top: 0;
     height: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
     /* Hide scrollbar in Firefox */
     scrollbar-width: none;
     /* Hide scrollbar in IE and Edge */
     -ms-overflow-style: none;
     /* Hide scrollbar in webkit */
     -webkit-scrollbar: none;
+    overscroll-behavior: none;
     -webkit-scroll-snap-type: y mandatory;
     scroll-snap-type: y mandatory;
     pointer-events: auto;
+    position: sticky;
+    background-color: var(--bg-color);
 }
 
 canvas {
