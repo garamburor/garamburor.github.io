@@ -33,10 +33,19 @@
 
 /* Global resets for the light DOM (body, html) */
 body, html {
+    top: 0;
+    /* remove gap at top for nav bar */
     margin: 0;
     padding: 0;
+    padding-top: 0;
     height: 100%;
     overflow: hidden;
+    /* Hide scrollbar in Firefox */
+    scrollbar-width: none;
+    /* Hide scrollbar in IE and Edge */
+    -ms-overflow-style: none;
+    /* Hide scrollbar in webkit */
+    -webkit-scrollbar: none;
     -webkit-scroll-snap-type: y mandatory;
     scroll-snap-type: y mandatory;
     pointer-events: auto;

@@ -155,12 +155,6 @@ class MainApp extends HTMLElement {
         this.shadowRoot.innerHTML = `
         <style>
             :host {
-                /* Hide scrollbar in Firefox */
-                scrollbar-width: none;
-                /* Hide scrollbar in IE and Edge */
-                -ms-overflow-style: none;
-                /* Hide scrollbar in webkit */
-                -webkit-scrollbar: none;
                 /* Take whole space of screen */
                 display: block;
                 width: 100dvw;
@@ -168,13 +162,6 @@ class MainApp extends HTMLElement {
                 z-index: auto;
                 /* Allow scrolling inside object */
                 overflow-y: auto;
-                -webkit-scroll-snap-type: y proximity;
-                scroll-snap-type: y proximity;
-                /* scroll-snap-align: start; */
-                /* remove gap at top for nav bar */
-                top: 0;
-                margin: 0;
-                padding-top: 0;
                 /* help safari render font well */
                 -webkit-font-smoothing: antialiased !important;
                 text-rendering: optimizeLegibility;
