@@ -158,14 +158,13 @@ class MainApp extends HTMLElement {
                 /* Take whole space of screen */
                 display: block;
                 width: 100dvw;
-                height: 100dvh;
+                height: 300dvh;
                 z-index: auto;
                 /* Allow scrolling inside object */
                 overflow-y: auto;
                 /* help safari render font well */
                 -webkit-font-smoothing: antialiased !important;
                 text-rendering: optimizeLegibility;
-                background-color: var(--bg-color);
             }
 
         </style>
