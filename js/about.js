@@ -82,10 +82,10 @@ class AboutPage extends HTMLElement {
         }
         // Clip & reset page count
         if (this.page > 3) {
-            this.page = 0;
+            this.page = 3;
         }
         if (this.page < 0) {
-            this.page = 3;
+            this.page = 0;
         }
         // If there's a change trigger state change
         if (this.prev != this.page) {
