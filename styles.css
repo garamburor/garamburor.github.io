@@ -23,12 +23,14 @@
     --contact-bg-color: #f2f2f2;
     --contact-tx-color: black;
 
-    --bg-color: var(--about-bg-color);
+    --bg-color: var(--work-bg-color);
     --tx-color: var(--work-tx-color);
 
     --tau: 400ms;
 
     --title-width: 100dvw;
+
+    background-color: var(--bg-color);
 }
 
 /* Global resets for the light DOM (body, html) */
@@ -39,15 +41,15 @@ body, html {
     padding: 0;
     padding-top: 0;
     height: 100%;
-    /* overflow: hidden; */
     /* Hide scrollbar in Firefox */
     scrollbar-width: none;
     /* Hide scrollbar in IE and Edge */
     -ms-overflow-style: none;
     /* Hide scrollbar in webkit */
     -webkit-scrollbar: none;
-    overscroll-behavior: none;
+    /* overscroll-behavior: none; */
     -webkit-scroll-snap-type: y mandatory;
+    overscroll-behavior: none;
     scroll-snap-type: y mandatory;
     pointer-events: auto;
     position: sticky;
@@ -62,4 +64,10 @@ canvas {
 .is-hidden {
   opacity: 0;
   pointer-events: none; /* Prevents users from clicking things on the hidden page */
+}
+
+#page {
+    top: 0;
+    width: 100dvw;
+    height: 100dvh;
 }

@@ -30,6 +30,10 @@ class MainApp extends HTMLElement {
         this.render();
 
         // Listen to link clicks from the nav tab
+        this.handleScrollDebounced = this.debounce(this.handleScroll.bind(this));
+        window.addEventListener('scroll', () => {
+            this.handleScrollDebounced();
+        });
         this.handleNavDebounced = this.debounce(this.handleNav.bind(this));
 
         // Listen to nav component
@@ -69,8 +73,7 @@ class MainApp extends HTMLElement {
             let newElem = document.createElement(id + '-page');
             newElem.id = id;
             newElem.className = 'is-hidden';
-            // Add new page
-            this.shadowRoot.appendChild(newElem);
+            let pageContainer = this.shadowRoot.getElementById('page');
             // Remove page that already exists
             if (this.state != null) {
                 // Look for prev page in document
@@ -87,9 +90,12 @@ class MainApp extends HTMLElement {
                 // Trigger page unload and wait until it's done
                 let unloadPage = oldElem.unload();
                 await unloadPage;
+                pageContainer.innerHTML = '';
                 oldElem.remove();
-                newElem.classList.remove('is-hidden');
             }
+            // Add new page
+            pageContainer.appendChild(newElem);
+            newElem.classList.remove('is-hidden');
 
             if (id === "work") { // Add state listener if its the work page
                  // Listen to work component
@@ -111,6 +117,7 @@ class MainApp extends HTMLElement {
             }
             // Change colors
             document.documentElement.style.setProperty('--tx-color', 'var(--' + id + '-tx-color)');
+            document.documentElement.style.setProperty('--bg-color', 'var(--' + id + '-bg-color)');
             // Only change title if hover didn't change it first
             if (id != this.tempTitle) {
                 // Change title
@@ -128,6 +135,19 @@ class MainApp extends HTMLElement {
         if(id != this.state){
             // Handle website state
             this.handleNavDebounced(id, hist);
+        }
+    }
+
+    handleScroll() {
+        let pos = window.scrollY / window.innerHeight * 100;
+        if (pos >= 100) {
+            if (pos >= 200) {
+                this.handleState('contact');
+            } else {
+                this.handleState('about');
+            }
+        } else {
+            this.handleState('work');
         }
     }
 
@@ -171,6 +191,7 @@ class MainApp extends HTMLElement {
             <nav-tab></nav-tab>
 
             <site-title></site-title>
+            <div id="page"></div>
         `;
     }
 
