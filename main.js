@@ -36,11 +36,11 @@ class MainApp extends HTMLElement {
         let nav = this.shadowRoot.querySelector('nav-tab');
 
         // For nav clicks
-        nav.addEventListener('change-page', (e) => {
+        this.addEventListener('change-page', (e) => {
             // Scroll to page position
             this.handleState(e.detail.link);
         });
-        
+
         // For nav hover
         nav.addEventListener('enter-hover', (e) => {
             // Temporarily show hovered page title
