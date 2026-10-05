@@ -18,8 +18,6 @@ class MainApp extends HTMLElement {
     }
 
     connectedCallback() {
-        // Set page in middle of hidden scroll parent
-        window.scrollTo(0, window.innerHeight * 0.5);
         // Browser back/forward buttons
         window.addEventListener("popstate", (e) => {
             if(e.state){
@@ -32,10 +30,6 @@ class MainApp extends HTMLElement {
         this.render();
 
         // Listen to link clicks from the nav tab
-        this.handleScrollDebounced = this.debounce(this.handleScroll.bind(this));
-        window.addEventListener('scroll', () => {
-            this.handleScrollDebounced();
-        });
         this.handleNavDebounced = this.debounce(this.handleNav.bind(this));
 
         // Listen to nav component
@@ -97,18 +91,6 @@ class MainApp extends HTMLElement {
             }
             // Add new page
             pageContainer.appendChild(newElem);
-            newElem.classList.remove('is-hidden');
-            // Reset scroll position to middle of page
-            window.scrollTo(0, window.innerHeight * 0.5);
-            if (id === "work") { // Add state listener if its the work page
-                 // Listen to work component
-                let work = this.shadowRoot.querySelector('work-page');
-                // For work clicks
-                work.addEventListener('change-page', (e) => {
-                    // Scroll to page position
-                    this.handleState(e.detail.link);
-                });
-            }
             // Disable current page in nav
             let nav = this.shadowRoot.querySelector('nav-tab');
             nav.handleState(id);
@@ -141,25 +123,6 @@ class MainApp extends HTMLElement {
         }
     }
 
-    handleScroll() {
-        let pos = window.scrollY / window.innerHeight * 100;
-        if (pos == 0) {
-            if (this.state === "about") {
-                this.handleState('work');
-            } else if (this.state === "contact") {
-                this.handleState('about');
-            }
-            window.scrollTo(0, window.innerHeight * 0.5);
-        } else if (pos >= 100) {
-            if (this.state === "work") {
-                this.handleState('about');
-            } else if (this.state === "about") {
-                this.handleState('contact');
-            }
-            window.scrollTo(0, window.innerHeight * 0.5);
-        }
-    }
-
     handleURL = () => {
         const path = window.location.pathname.slice(1);
         // Simple logic to decide what to show
@@ -187,7 +150,7 @@ class MainApp extends HTMLElement {
                 /* Take whole space of screen */
                 display: block;
                 width: 100dvw;
-                height: 200dvh;
+                height: 100dvh;
                 z-index: auto;
                 /* Allow scrolling inside object */
                 overflow-y: auto;

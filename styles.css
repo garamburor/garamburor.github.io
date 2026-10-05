@@ -13,6 +13,7 @@
 
 :root {
     --main-font: "Lexend";
+    font-display: block;
     
     --work-bg-color: #17a77e;
     --work-tx-color: #fefaeb;
