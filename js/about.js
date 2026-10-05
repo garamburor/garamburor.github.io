@@ -265,10 +265,28 @@ class AboutPage extends HTMLElement {
             for (i = 0; i < children.length; i++) {
                 this.currentAnim = children[i].animate(
                 [
-                    { transform: 'translateY(10dvh)', opacity: '0', width: '0%', borderTopColor: 'transparent'},
-                    { transform: 'translateY(0%)', opacity: '0.5', width: '0%'},
-                    { opacity: '0.6', width: '1%', borderTopColor: 'transparent'},
-                    { opacity: '1', width: '100%', borderTopColor: 'var(--about-tx-color)'}
+                    { 
+                        transform: 'translateY(10dvh)', 
+                        opacity: '0', 
+                        width: '0%', 
+                        borderTopColor: 'color-mix(in srgb, var(--about-tx-color) 0%, transparent)' 
+                    },
+                    { 
+                        transform: 'translateY(0%)', 
+                        opacity: '0.5', 
+                        width: '1%', 
+                        borderTopColor: 'color-mix(in srgb, var(--about-tx-color) 1%, transparent)' 
+                    },
+                    { 
+                        opacity: '0.6', 
+                        width: '50%', 
+                        borderTopColor: 'color-mix(in srgb, var(--about-tx-color) 50%, transparent)' 
+                    },
+                    { 
+                        opacity: '1', 
+                        width: '100%', 
+                        borderTopColor: 'var(--about-tx-color)' 
+                    }
                 ], {
                     duration: 300,
                     delay: i * 100,
