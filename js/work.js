@@ -1,5 +1,6 @@
 import { sequencer } from './sequencer.js'; // Import the specific class
 import './apc.js'; // Import the specific class
+import './aps.js'; // Import the specific class
 
 class WorkPage extends HTMLElement {
     constructor() {
@@ -91,6 +92,7 @@ class WorkPage extends HTMLElement {
                     <li>+ some photos & a sequencer</li>
                 </ul> 
             </div>
+            
             <div id="ob1wrap">
                 <ap7-elm id="ob1"></ap7-elm>
                 <div class='tooltip-content'>Been making music for a long time, now mainly just 2 bar loops.🤡</div>
