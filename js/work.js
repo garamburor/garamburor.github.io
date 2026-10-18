@@ -92,8 +92,8 @@ class WorkPage extends HTMLElement {
                 </ul> 
             </div>
             <div id="ob1wrap">
-                <img id="ob1" src="./media/ob-1.svg"></img>
-                <div class='tooltip-content'>Been making music for a long time, now mainly just 2 bar loops with this thing.🤡</div>
+                <ap7-elm id="ob1"></ap7-elm>
+                <div class='tooltip-content'>Been making music for a long time, now mainly just 2 bar loops.🤡</div>
             </div>
             -->
             <div id="apcwrap"> 

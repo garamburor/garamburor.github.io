@@ -103,6 +103,48 @@ h1 {
   opacity: 0.9;
 }
 
+#ob1wrap {
+    position: relative;
+    z-index: 2;
+    grid-row: 3/ span 4; /* Starts at row 2, spans down 2 rows */
+    grid-column: 4;       /* Defaults to taking up just 1 column track */
+    height: 50dvh;
+    pointer-events: none;
+    object-fit: contain;
+}
+
+#ob1 {
+    position: relative;
+    height: 90%;
+    width: 90%;
+    margin: auto;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+    pointer-events: all;
+    transform: rotate(-4deg);
+}
+
+#ob1wrap .tooltip-content {
+    position: relative;
+    width: 80%;
+    left: 10%;
+    bottom: 80%;
+    height: 30%;
+    border-radius: 1dvw;
+    text-align: center;
+    align-content: center;
+    background-color: var(--work-tx-color);
+    color: var(--contact-tx-color);
+    opacity: 0;
+    transition: opacity var(--tau);
+    pointer-events: auto;
+}
+
+#ob1wrap:hover .tooltip-content {
+  opacity: 0.9;
+}
+
 /* DIMENSIONS FOR PORTRAIT */
 @media screen and (max-aspect-ratio: 1/1) {
     :host {
