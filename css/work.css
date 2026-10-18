@@ -19,8 +19,8 @@ section {
     width: 100dvw;
     position: absolute;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
 }
 
 .canvas {
@@ -64,11 +64,11 @@ h1 {
 #apcwrap {
     position: relative;
     z-index: 2;
-    grid-row: 3 / 3; /* Starts at row 2, spans down 2 rows */
-    grid-column: 2 / 3;       /* Defaults to taking up just 1 column track */
+    grid-row: 4; /* Starts at row 2, spans down 2 rows */
+    grid-column: 2 / span 3;       /* Defaults to taking up just 1 column track */
     width: 33.33dvw;
     height: 33.33dvh;
-    pointer-events: auto;
+    pointer-events: none;
     object-fit: contain;
 }
 
@@ -86,7 +86,7 @@ h1 {
 #apcwrap .tooltip-content {
     position: relative;
     width: 70%;
-    left: 15%;
+    left: 30%;
     bottom: 80%;
     height: 30%;
     border-radius: 1dvw;
