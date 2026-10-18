@@ -78,7 +78,7 @@ class AboutPage extends HTMLElement {
             } else {
                 this.page--;
             }
-            this.timer = setTimeout(this.holdup.bind(this), 500);
+            this.timer = setTimeout(this.holdup.bind(this), 1000);
         }
         // Clip & reset page count
         if (this.page > 3) {
@@ -265,28 +265,10 @@ class AboutPage extends HTMLElement {
             for (i = 0; i < children.length; i++) {
                 this.currentAnim = children[i].animate(
                 [
-                    { 
-                        transform: 'translateY(10dvh)', 
-                        opacity: '0', 
-                        width: '0%', 
-                        borderTopColor: 'color-mix(in srgb, var(--about-tx-color) 0%, transparent)' 
-                    },
-                    { 
-                        transform: 'translateY(0%)', 
-                        opacity: '0.5', 
-                        width: '1%', 
-                        borderTopColor: 'color-mix(in srgb, var(--about-tx-color) 1%, transparent)' 
-                    },
-                    { 
-                        opacity: '0.6', 
-                        width: '50%', 
-                        borderTopColor: 'color-mix(in srgb, var(--about-tx-color) 50%, transparent)' 
-                    },
-                    { 
-                        opacity: '1', 
-                        width: '100%', 
-                        borderTopColor: 'var(--about-tx-color)' 
-                    }
+                    { transform: 'translateY(10dvh)', opacity: '0', width: '0%', borderTopColor: 'rgba(255,255,255,0)'},
+                    { transform: 'translateY(0%)', opacity: '0.5', width: '0%'},
+                    { opacity: '0.6', width: '1%', borderTopColor: 'rgba(255,255,255,0)'},
+                    { opacity: '1', width: '100%', borderTopColor: 'var(--about-tx-color)'}
                 ], {
                     duration: 300,
                     delay: i * 100,
@@ -302,10 +284,10 @@ class AboutPage extends HTMLElement {
             for (i = 0; i < children.length; i++) {
                 this.currentAnim = children[i].animate(
                 [
-                    { transform: 'translateY(0%)', opacity: '1'},
-                    { transform: 'translateY(0%)', opacity: '0.6', borderTopColor: 'transparent'},
-                    { transform: 'translateY(-5dvh)', opacity: '0.5'},
-                    { transform: 'translateY(-10dvh)', opacity: '0', borderTopColor: 'transparent'}
+                    { transform: 'translateY(0%)', opacity: '1', width: '100%', borderTopColor: 'var(--about-tx-color)'},
+                    { transform: 'translateY(0%)', opacity: '0.6', width: '50%', borderTopColor: 'rgba(255,255,255,0)'},
+                    { transform: 'translateY(-5dvh)', opacity: '0.5', width: '1%'},
+                    { transform: 'translateY(-10dvh)', opacity: '0', width: '0%', borderTopColor: 'rgba(255,255,255,0)'}
                 ], {
                     duration: 300,
                     delay: i * 100,
