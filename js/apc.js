@@ -303,7 +303,7 @@ class APC extends HTMLElement {
             let deltaY = e.touches[0].clientY - knobCenterY;
             let angleRad = Math.atan2(deltaY, deltaX);
             let angleDeg = angleRad * (180 / Math.PI);
-            let param = (angleDeg + 258) % 360;
+            let param = (angleDeg + 262) % 360;
             param = Math.max(0., Math.min(param / 360, 1.));
             // + add x pos
             param += this.map(e.touches[0].clientX - knobCenterX, 0, window.innerWidth, 0., 1.);

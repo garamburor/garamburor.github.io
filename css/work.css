@@ -79,7 +79,8 @@ h1 {
     margin: auto;
     object-fit: contain;
     pointer-events: all;
-    left: 7.5%;
+    left: 22%;
+    transform: rotate(8deg);
 }
 
 #apcwrap .tooltip-content {
