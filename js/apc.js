@@ -380,7 +380,7 @@ class APC extends HTMLElement {
         if (tau2<tau1) {
             T = tau1;
         } else {
-            T = tau2 + (tau_on1 - tau1 * ((tau2/tau1) % 1.));
+            T = Math.floor(tau2/tau1)*tau1 + tau1_on
         }
         this.f = 1. / T;
         this.d = tau2 * this.f;
